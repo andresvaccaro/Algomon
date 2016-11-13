@@ -95,5 +95,32 @@ public class AlgomonTests {
 		assertEquals(155d, charmander.getPuntosDeVida(),0.000001d);
 					
 	}
+
+	
+	/**
+	 * sexto test
+	 */
+	@Test
+	public void testBulbasaurYChanseyAtacanConLatigoCepaAotrosAlgomonesYLesQuitan15PuntosDeVidaACadaUno(){
+			
+
+		Algomon rattata = new Rattata();
+		Algomon jigglypuff = new Jigglypuff();
+		
+		assertEquals(170d, rattata.getPuntosDeVida(),0.000001d);
+		assertEquals(130d, jigglypuff.getPuntosDeVida(),0.000001d);
+		
+		Algomon chansey = new Chansey();
+		Algomon bulbasaur = new Bulbasaur();		
+		
+		chansey.atacar(rattata, LatigoCepa.class);				
+		assertEquals(155d, rattata.getPuntosDeVida(),0.000001d);
+		
+		bulbasaur.atacar(jigglypuff, LatigoCepa.class);			
+		assertEquals(115d, jigglypuff.getPuntosDeVida(),0.000001d);
+					
+	}
+	
+	
 	
 }
