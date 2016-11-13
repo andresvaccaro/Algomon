@@ -33,8 +33,7 @@ public class AlgomonTests {
 	 */
 	@Test
 	public void testSquirtleAtacaConBurbujaYCanionAguaABulbasaurYLeQuita5Y10PuntosDeVidaACharmander()
-	{
-						
+	{						
 		Algomon squirtle = new Squirtle();
 		Algomon bulbasaur = new Bulbasaur();	
 		assertEquals(140d, bulbasaur.getPuntosDeVida(),0.000001d);
@@ -43,6 +42,24 @@ public class AlgomonTests {
 		squirtle.atacar(bulbasaur, CanionDeAgua.class);
 		assertEquals(125d, bulbasaur.getPuntosDeVida(),0.000001d);
 		
+	}
+	
+
+
+	/**
+	 * Tercer test
+	 */
+	@Test
+	public void testSquirtleAtacaConBurbujaYCanionAguaAOtrosAlgomonesYLeQuita10Y20PuntosDeVidaACharmander(){
+		Algomon jigglypuff = new Jigglypuff();
+		assertEquals(130d, jigglypuff.getPuntosDeVida(),0.000001d);
+		Algomon chansey = new Chansey();
+		assertEquals(130d, chansey.getPuntosDeVida(),0.000001d);		
+		Algomon squirtle = new Squirtle();
+		squirtle.atacar(jigglypuff, Burbuja.class);
+		assertEquals(120d, jigglypuff.getPuntosDeVida(),0.000001d);
+		squirtle.atacar(chansey, CanionDeAgua.class);
+		assertEquals(110d, chansey.getPuntosDeVida(),0.000001d);		
 	}
 	
 	

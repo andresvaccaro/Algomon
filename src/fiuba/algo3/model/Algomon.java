@@ -40,6 +40,10 @@ public abstract class Algomon {
 	public abstract double obtenerMultiplicadorParaTipoPlanta();
 
 	public abstract double obtenerMultiplicadorParaTipoAgua();
+	
+	public  double obtenerMultiplicadorParaTipoNormal(){
+		return 1d;
+	}
 
 	public void disminuirPuntosDeVida(double puntosADisminuir) {		
 		this.puntosDeVida= this.puntosDeVida - puntosADisminuir;
