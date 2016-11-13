@@ -33,21 +33,14 @@ public abstract class Algomon {
 		return puntosDeVida;
 	}
 
-	public abstract double obtenerMultiplicadorDeAtacante(Algomon algomonAtacante);
-
-	public abstract double obtenerMultiplicadorParaTipoFuego();
-	
-	public abstract double obtenerMultiplicadorParaTipoPlanta();
-
-	public abstract double obtenerMultiplicadorParaTipoAgua();
-	
-	public  double obtenerMultiplicadorParaTipoNormal(){
-		return 1d;
-	}
 
 	public void disminuirPuntosDeVida(double puntosADisminuir) {		
 		this.puntosDeVida= this.puntosDeVida - puntosADisminuir;
 	}
+
+	public abstract double obtenerMultiplicadorDeAtaqueDeAgua();
+
+	public abstract double obtenerMultiplicadorDeAtaqueDePlanta();
 	
 	
 	

@@ -10,7 +10,7 @@ public class Burbuja extends Ataque{
 
 	@Override
 	public void causarEfecto(Algomon algomonAtacante, Algomon algomonAtacado) {
-		algomonAtacado.disminuirPuntosDeVida(this.potencia*algomonAtacado.obtenerMultiplicadorDeAtacante(algomonAtacante));
+		algomonAtacado.disminuirPuntosDeVida(this.potencia * algomonAtacado.obtenerMultiplicadorDeAtaqueDeAgua());
 		
 	}
 

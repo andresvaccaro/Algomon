@@ -3,11 +3,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.Algomon;
-import fiuba.algo3.model.Burbuja;
-import fiuba.algo3.model.Charmander;
-import fiuba.algo3.model.Squirtle;
-
 public class AlgomonTests {
 
 	
@@ -61,6 +56,24 @@ public class AlgomonTests {
 		squirtle.atacar(chansey, CanionDeAgua.class);
 		assertEquals(110d, chansey.getPuntosDeVida(),0.000001d);		
 	}
-	
+
+	/**
+	 * Quinto test
+	 */
+	@Test
+	public void testBulbasaurYChanseyAtacanConLatigoCepaASquirtleYLeQuitan30PuntosDeVida(){
+		Algomon squirtle = new Squirtle();
+		assertEquals(150d, squirtle.getPuntosDeVida(),0.000001d);
+		Algomon chansey = new Chansey();
+		Algomon bulbasaur = new Bulbasaur();		
+		
+		chansey.atacar(squirtle, LatigoCepa.class);				
+		assertEquals(120d, squirtle.getPuntosDeVida(),0.000001d);
+		
+		bulbasaur.atacar(squirtle, LatigoCepa.class);			
+		assertEquals(90d, squirtle.getPuntosDeVida(),0.000001d);
+					
+	}
+		
 	
 }

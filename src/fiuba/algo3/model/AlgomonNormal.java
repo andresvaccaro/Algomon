@@ -3,26 +3,14 @@ package fiuba.algo3.model;
 public class AlgomonNormal extends Algomon {
 
 	@Override
-	public double obtenerMultiplicadorDeAtacante(Algomon algomonAtacante) {
-		return algomonAtacante.obtenerMultiplicadorParaTipoNormal();		
+	public double obtenerMultiplicadorDeAtaqueDeAgua() {
+		return 1d;
 	}
 
 	@Override
-	public double obtenerMultiplicadorParaTipoFuego() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double obtenerMultiplicadorDeAtaqueDePlanta() {
+		return 1d;
 	}
 
-	@Override
-	public double obtenerMultiplicadorParaTipoPlanta() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double obtenerMultiplicadorParaTipoAgua() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }
