@@ -17,4 +17,9 @@ public class AlgomonAgua extends Algomon{
 		return 0.5d;
 	}
 
+	@Override
+	public double obtenerMultiplicadorParaTipoPlanta() {
+		return 0.5d;
+	}
+
 }

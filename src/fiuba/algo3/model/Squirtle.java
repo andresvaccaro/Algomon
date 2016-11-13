@@ -4,6 +4,7 @@ public class Squirtle extends AlgomonAgua {
 
 	public Squirtle() {
 		super();
+		this.puntosDeVida = 150d;
 		
 		Burbuja burbuja = new Burbuja();		
 		ContenedorDeAtaque contenedorDeAtaqueBurbuja= new ContenedorDeAtaque(burbuja,Burbuja.CANTIDAD_ATAQUES_BURBUJA);

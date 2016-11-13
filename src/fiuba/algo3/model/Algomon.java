@@ -36,6 +36,8 @@ public abstract class Algomon {
 	public abstract double obtenerMultiplicadorDeAtacante(Algomon algomonAtacante);
 
 	public abstract double obtenerMultiplicadorParaTipoFuego();
+	
+	public abstract double obtenerMultiplicadorParaTipoPlanta();
 
 	public abstract double obtenerMultiplicadorParaTipoAgua();
 

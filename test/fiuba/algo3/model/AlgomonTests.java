@@ -10,8 +10,12 @@ import fiuba.algo3.model.Squirtle;
 
 public class AlgomonTests {
 
+	
+	/**
+	 * Primer test
+	 */
 	@Test
-	public void testSquirtleAtacaConBurbujaYCanionAguaYLeQuita20Y40PuntosDeVidaACharmander()
+	public void testSquirtleAtacaConBurbujaYCanionAguaACharmanderYLeQuita20Y40PuntosDeVidaACharmander()
 	{
 		Algomon squirtle = new Squirtle();
 		Algomon charmander = new Charmander();	
@@ -19,7 +23,27 @@ public class AlgomonTests {
 		squirtle.atacar(charmander,Burbuja.class);
 		assertEquals(150d, charmander.getPuntosDeVida(),0.000001d);
 		squirtle.atacar(charmander, CanionDeAgua.class);
+		assertEquals(110d, charmander.getPuntosDeVida(),0.000001d);
 		
 	}
 
+
+	/**
+	 * Segundo test
+	 */
+	@Test
+	public void testSquirtleAtacaConBurbujaYCanionAguaABulbasaurYLeQuita5Y10PuntosDeVidaACharmander()
+	{
+						
+		Algomon squirtle = new Squirtle();
+		Algomon bulbasaur = new Bulbasaur();	
+		assertEquals(140d, bulbasaur.getPuntosDeVida(),0.000001d);
+		squirtle.atacar(bulbasaur,Burbuja.class);
+		assertEquals(135d, bulbasaur.getPuntosDeVida(),0.000001d);
+		squirtle.atacar(bulbasaur, CanionDeAgua.class);
+		assertEquals(125d, bulbasaur.getPuntosDeVida(),0.000001d);
+		
+	}
+	
+	
 }

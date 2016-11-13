@@ -1,10 +1,10 @@
 package fiuba.algo3.model;
 
-public class AlgomonFuego extends Algomon{
+public class AlgomonPlanta extends Algomon{
 
 	@Override
 	public double obtenerMultiplicadorDeAtacante(Algomon algomonAtacante) {			
-		return algomonAtacante.obtenerMultiplicadorParaTipoFuego();
+		return algomonAtacante.obtenerMultiplicadorParaTipoPlanta();
 	}
 
 	@Override
