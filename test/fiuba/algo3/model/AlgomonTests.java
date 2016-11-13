@@ -58,7 +58,7 @@ public class AlgomonTests {
 	}
 
 	/**
-	 * Quinto test
+	 * cuarto test
 	 */
 	@Test
 	public void testBulbasaurYChanseyAtacanConLatigoCepaASquirtleYLeQuitan30PuntosDeVida(){
@@ -75,5 +75,25 @@ public class AlgomonTests {
 					
 	}
 		
+	
+	/**
+	 * Quinto test
+	 */
+	@Test
+	public void testBulbasaurYChanseyAtacanConLatigoCepaACharmanderYLeQuitan7PuntosDeVida(){
+			
+
+		Algomon charmander = new Charmander();
+		assertEquals(170d, charmander.getPuntosDeVida(),0.000001d);
+		Algomon chansey = new Chansey();
+		Algomon bulbasaur = new Bulbasaur();		
+		
+		chansey.atacar(charmander, LatigoCepa.class);				
+		assertEquals(162.5d, charmander.getPuntosDeVida(),0.000001d);
+		
+		bulbasaur.atacar(charmander, LatigoCepa.class);			
+		assertEquals(155d, charmander.getPuntosDeVida(),0.000001d);
+					
+	}
 	
 }
