@@ -8,8 +8,9 @@ public class ContenedorDeAtaque {
 		this.ataque = ataque;
 	}
 
-	public void lanzarAtaque(Algomon algomonAtacante, Algomon algomonAtacado) {	
-		ataque.causarEfecto(algomonAtacante, algomonAtacado);
+	public void lanzarAtaque(Algomon algomonAtacante, Algomon algomonAtacado,EstadoAlgomon estadoAlgomon) {
+		estadoAlgomon.aplicarAtaque(ataque,algomonAtacante,algomonAtacado);
+//		ataque.causarEfecto(algomonAtacante, algomonAtacado);
 	}
 	
 	public Boolean sosDeAtaque(Class tipoAtaque){

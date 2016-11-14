@@ -4,12 +4,17 @@ public class AlgomonPlanta extends Algomon{
 
 	@Override
 	public double obtenerMultiplicadorDeAtaqueDeAgua() {
-		return 0.5;
+		return 0.5d;
 	}
 
 	@Override
 	public double obtenerMultiplicadorDeAtaqueDePlanta() {
-		return 0.5;
+		return 0.5d;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeFuego() {	
+		return 2d;
 	}
 
 

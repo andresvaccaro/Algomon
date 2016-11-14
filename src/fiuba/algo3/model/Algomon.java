@@ -7,16 +7,19 @@ public abstract class Algomon {
 
 	protected double puntosDeVida;
 	
-	protected List<ContenedorDeAtaque> contenedoresDeAtaques;	
+	protected List<ContenedorDeAtaque> contenedoresDeAtaques;
+	
+	protected EstadoAlgomon estadoAlgomon;
 	
 	public Algomon() {
 		super();
 		this.contenedoresDeAtaques = new ArrayList<>();
+		this.estadoAlgomon= new EstadoAlgomon();
 	}
 
 	public void atacar(Algomon algomonAtacado, Class tipoDeAtaque) {			
 		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);		
-		contenedorDeAtaque.lanzarAtaque(this,algomonAtacado);
+		contenedorDeAtaque.lanzarAtaque(this,algomonAtacado,this.estadoAlgomon);
 	}
 
 	private ContenedorDeAtaque buscarContenedorDeAtaque(Class tipoDeAtaque) {
@@ -41,6 +44,26 @@ public abstract class Algomon {
 	public abstract double obtenerMultiplicadorDeAtaqueDeAgua();
 
 	public abstract double obtenerMultiplicadorDeAtaqueDePlanta();
+
+	public abstract double obtenerMultiplicadorDeAtaqueDeFuego();
+	
+	public Boolean estaDormido() {
+		return this.estadoAlgomon.estaDormido();		
+	}
+
+	public void dormir() {
+		this.estadoAlgomon.dormir();		
+	}
+
+	public void disminuirDiezPorciento() {		
+		this.puntosDeVida= this.puntosDeVida-this.puntosDeVida*0.10;
+	}
+
+	public void despertar() {
+		this.estadoAlgomon.despertar();		
+	}
+
+	
 	
 	
 	

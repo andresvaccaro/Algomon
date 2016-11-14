@@ -12,6 +12,11 @@ public class AlgomonAgua extends Algomon{
 		return 2d;
 	}
 
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeFuego() {
+		return 0.5d;
+	}
+
 
 
 }

@@ -12,5 +12,10 @@ public class AlgomonFuego extends Algomon{
 		return 0.5d;
 	}
 
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeFuego() {	
+		return 0.5d;
+	}
+
 	
 }

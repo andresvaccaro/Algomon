@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class AlgomonTests {
+public class AlgomonTest {
 
 	
 	/**
@@ -121,6 +121,31 @@ public class AlgomonTests {
 					
 	}
 	
-	
+
+	/**
+	 * Primer test segunda entrega
+	 */
+	@Test
+	public void testJigglypuffYChanseyAtacanConCantoYElAlgomonAtacadoNoPuedeAtacarPorTresTurnos(){
+			
+
+		Algomon chansey = new Chansey();
+		Algomon jigglypuff = new Jigglypuff();
+		
+		Algomon charmander = new Charmander();
+		assertEquals(false,charmander.estaDormido());
+		
+		chansey.atacar(charmander, Canto.class);
+		jigglypuff.atacar(charmander, Canto.class);
+		
+						
+		charmander.atacar(jigglypuff, Fogonaso.class);
+		assertEquals(130d,jigglypuff.getPuntosDeVida(),0.000001d);
+		charmander.atacar(jigglypuff, Fogonaso.class);
+		assertEquals(130d,jigglypuff.getPuntosDeVida(),0.000001d);
+		charmander.atacar(jigglypuff, Fogonaso.class);
+		assertEquals(130d,jigglypuff.getPuntosDeVida(),0.000001d);
+					
+	}
 	
 }

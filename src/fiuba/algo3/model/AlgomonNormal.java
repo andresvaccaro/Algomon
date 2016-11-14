@@ -12,5 +12,10 @@ public class AlgomonNormal extends Algomon {
 		return 1d;
 	}
 
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeFuego() {	
+		return 1d;
+	}
+
 
 }
