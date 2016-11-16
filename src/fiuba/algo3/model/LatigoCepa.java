@@ -9,10 +9,10 @@ public class LatigoCepa extends Ataque {
 		this.tipoAtaque = new AtaquePlanta();
 		this.potencia = 15;
 	}
-	
+
 	@Override
-	public void causarEfecto(Algomon algomonAtacado) {
-		algomonAtacado.disminuirPuntosDeVida(this.potencia*algomonAtacado.obtenerMultiplicadorDeAtaqueDePlanta());
+	public void causarEfecto(Algomon algomonAtacado, Algomon algomonAtacante) {
+		algomonAtacado.disminuirPuntosDeVida(this.potencia * algomonAtacado.obtenerMultiplicadorDeAtaqueDePlanta());
 	}
 
 }

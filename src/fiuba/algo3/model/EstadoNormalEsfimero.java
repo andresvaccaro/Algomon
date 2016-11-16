@@ -4,7 +4,7 @@ public class EstadoNormalEsfimero implements IEstadoEsfimero {
 
 	@Override
 	public void atacar(Ataque ataque, Algomon algomonAtacado,Algomon algomonAtacante) {
-		ataque.causarEfecto(algomonAtacado);
+		ataque.causarEfecto(algomonAtacado,algomonAtacante);
 	}
 
 	@Override

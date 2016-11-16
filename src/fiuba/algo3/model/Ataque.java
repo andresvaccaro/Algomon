@@ -5,6 +5,6 @@ public abstract class Ataque {
 	protected double potencia;
 	protected TipoAtaque tipoAtaque;
 	
-	public abstract void causarEfecto(Algomon algomonAtacado);
+	public abstract void causarEfecto(Algomon algomonAtacado,Algomon algomonAtacante);
 
 }

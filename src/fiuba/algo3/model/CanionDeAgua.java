@@ -10,7 +10,7 @@ public class CanionDeAgua extends Ataque{
 	}
 
 	@Override
-	public void causarEfecto(Algomon algomonAtacado) {
+	public void causarEfecto(Algomon algomonAtacado,Algomon algomonAtacante) {
 		algomonAtacado.disminuirPuntosDeVida(this.potencia*algomonAtacado.obtenerMultiplicadorDeAtaqueDeAgua());
 		
 	}
