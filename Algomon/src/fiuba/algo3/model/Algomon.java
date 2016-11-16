@@ -1,0 +1,70 @@
+package fiuba.algo3.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Algomon {
+
+	protected double puntosDeVida;
+	
+	protected List<ContenedorDeAtaque> contenedoresDeAtaques;
+	
+	protected EstadoAlgomon estadoAlgomon;
+	
+	public Algomon() {
+		super();
+		this.contenedoresDeAtaques = new ArrayList<>();
+		this.estadoAlgomon= new EstadoAlgomon();
+	}
+
+	public void atacar(Algomon algomonAtacado, Class tipoDeAtaque) {			
+		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);		
+		contenedorDeAtaque.lanzarAtaque(this,algomonAtacado,this.estadoAlgomon);
+	}
+
+	private ContenedorDeAtaque buscarContenedorDeAtaque(Class tipoDeAtaque) {
+		ContenedorDeAtaque contenedorEncontrado= null;
+		for (ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques) {
+			if( contenedorDeAtaque.sosDeAtaque(tipoDeAtaque)){
+				contenedorEncontrado= contenedorDeAtaque;
+			}
+		}
+		return contenedorEncontrado;
+	}
+
+	public double getPuntosDeVida() {
+		return puntosDeVida;
+	}
+
+
+	public void disminuirPuntosDeVida(double puntosADisminuir) {		
+		this.puntosDeVida= this.puntosDeVida - puntosADisminuir;
+	}
+
+	public abstract double obtenerMultiplicadorDeAtaqueDeAgua();
+
+	public abstract double obtenerMultiplicadorDeAtaqueDePlanta();
+
+	public abstract double obtenerMultiplicadorDeAtaqueDeFuego();
+	
+	public Boolean estaDormido() {
+		return this.estadoAlgomon.estaDormido();		
+	}
+
+	public void dormir() {
+		this.estadoAlgomon.dormir();		
+	}
+
+	public void disminuirDiezPorciento() {		
+		this.puntosDeVida= this.puntosDeVida-this.puntosDeVida*0.10;
+	}
+
+	public void despertar() {
+		this.estadoAlgomon.despertar();		
+	}
+
+	
+	
+	
+	
+}
