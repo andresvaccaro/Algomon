@@ -14,4 +14,6 @@ public class Burbuja extends Ataque{
 		
 	}
 
+
+
 }

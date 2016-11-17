@@ -9,8 +9,10 @@ public class ContenedorDeAtaque {
 	}
 
 	public void lanzarAtaque(Algomon algomonAtacante, Algomon algomonAtacado,EstadoAlgomon estadoAlgomon) {
-		estadoAlgomon.aplicarAtaque(ataque,algomonAtacante,algomonAtacado);
-//		ataque.causarEfecto(algomonAtacante, algomonAtacado);
+		ataque.cargarAtacado(algomonAtacado);	
+		ataque.cargarAlgomonQueRealizaLaAccion(algomonAtacante);
+		algomonAtacante.getEstadoAlgomon().realizarAccion(ataque); 
+
 	}
 	
 	public Boolean sosDeAtaque(Class tipoAtaque){

@@ -1,16 +1,17 @@
 package fiuba.algo3.model;
 
-public class EstadoNormalEsfimero implements IEstadoEsfimero {
+import fiuba.algo3.model.accion.Accion;
 
-	@Override
-	public void atacar(Ataque ataque, Algomon algomonAtacado,Algomon algomonAtacante) {
-		ataque.causarEfecto(algomonAtacado,algomonAtacante);
-	}
+public class EstadoNormalEsfimero implements IEstadoEsfimero {
 
 	@Override
 	public Boolean estaDormido() {
 		return Boolean.FALSE;
 	}
-		
+
+	@Override
+	public void realizarAccion(Accion accion) {
+		accion.realizarAccion();
+	}
 
 }

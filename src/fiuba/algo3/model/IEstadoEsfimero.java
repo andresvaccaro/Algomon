@@ -1,8 +1,10 @@
 package fiuba.algo3.model;
 
-public interface IEstadoEsfimero {
-	
-	void atacar(Ataque ataque, Algomon algomonAtacado, Algomon algomonAtacante);
+import fiuba.algo3.model.accion.Accion;
 
+public interface IEstadoEsfimero {
+		
 	Boolean estaDormido();
+
+	void realizarAccion(Accion accion);
 }

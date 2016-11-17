@@ -1,5 +1,7 @@
 package fiuba.algo3.model;
 
+import fiuba.algo3.model.accion.Accion;
+
 public class EstadoAlgomon {
 
 	private IEstadoEsfimero estadoEsfimero;
@@ -22,10 +24,14 @@ public class EstadoAlgomon {
 	public void setEstadoPersistente(IEstadoPersistente estadoPersistente) {
 		this.estadoPersistente = estadoPersistente;
 	}
-	public void aplicarAtaque(Ataque ataque, Algomon algomonAtacante, Algomon algomonAtacado) {
-		estadoEsfimero.atacar(ataque,algomonAtacado,algomonAtacante);
-		estadoPersistente.realizarAccion(algomonAtacante);
+
+	public void realizarAccion(Accion accion) {
+		estadoEsfimero.realizarAccion(accion);
+		estadoPersistente.realizarAccion(accion);
 	}
+	
+
+	
 	public void despertar() {
 		estadoEsfimero= new EstadoNormalEsfimero();	
 	}
@@ -37,7 +43,6 @@ public class EstadoAlgomon {
 	public Boolean estaDormido() {
 		return this.estadoEsfimero.estaDormido();
 	}
-	
 	
 	
 		

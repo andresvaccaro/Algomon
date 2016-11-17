@@ -1,10 +1,13 @@
 package fiuba.algo3.model;
 
+import fiuba.algo3.model.accion.Accion;
+
 public class EstadoNormalPersistente implements IEstadoPersistente {
 
+	
+
 	@Override
-	public void realizarAccion(Algomon algomon) {
-		// TODO Auto-generated method stub
+	public void realizarAccion(Accion accion) {	
 		
 	}
 

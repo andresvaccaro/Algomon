@@ -66,4 +66,9 @@ public abstract class Algomon {
 		this.puntosDeVida = this.puntosDeVida + puntosASumar;
 	}
 
+	public EstadoAlgomon getEstadoAlgomon() {
+		return estadoAlgomon;
+	}
+
+	
 }

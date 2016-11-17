@@ -1,7 +1,9 @@
 package fiuba.algo3.model;
 
-public interface IEstadoPersistente {
+import fiuba.algo3.model.accion.Accion;
 
-	public void realizarAccion(Algomon algomon);
+public interface IEstadoPersistente {
+	
+	public void realizarAccion(Accion accion);
 
 }
