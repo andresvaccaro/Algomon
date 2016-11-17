@@ -2,7 +2,7 @@ package fiuba.algo3.model;
 
 public class Fogonazo extends Ataque {
 
-	public static final int CANTIDAD_ATAQUES_FOGONASO = 15;
+	public static final int CANTIDAD_ATAQUES_FOGONASO = 4;
 	public Fogonazo() {
 		super();
 		this.potencia = 2;

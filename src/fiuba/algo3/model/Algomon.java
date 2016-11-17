@@ -27,6 +27,13 @@ public abstract class Algomon {
 		this.estadoAlgomon.realizarAccion(elemento);
 	}
 
+	
+	
+	public int obtenerCantidadDeAtaquesDisponibles(Class tipoDeAtaque) {
+		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);
+		return contenedorDeAtaque.getAtaquesDisponibles();
+	}
+	
 	private ContenedorDeAtaque buscarContenedorDeAtaque(Class tipoDeAtaque) {
 		ContenedorDeAtaque contenedorEncontrado = null;
 		for (ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques) {
@@ -89,6 +96,14 @@ public abstract class Algomon {
 	public void enfriar() {
 		this.estadoAlgomon.enfriar();		
 	}
+
+	public void aumentarCantidadDeAtaques(int cantidadAAumentar){
+		for (ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques) {
+			contenedorDeAtaque.aumentarCantidad(cantidadAAumentar);
+		}
+		
+	}
+
 
 	
 

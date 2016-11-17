@@ -325,6 +325,21 @@ public class AlgomonTest {
 		
 	}
 	
-	
+	@Test
+	public void testCharmanderRecibeVitaminasLuegoDeAtacarDosVecesYAumentaLaCantidadDeAtaquesDisponiblesEn2PorAtaque() {
+		Algomon charmander = new Charmander();
+		Algomon rattata= new Rattata();
+		
+		assertEquals(4, charmander.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
+		charmander.atacar(rattata, Fogonazo.class);
+		charmander.atacar(rattata, Fogonazo.class);
+		assertEquals(2, charmander.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
+		
+		Elemento vitamina = new Vitamina();
+		charmander.recibirElemento(vitamina);
+		assertEquals(4, charmander.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
+		
+		
+	}
 	
 }
