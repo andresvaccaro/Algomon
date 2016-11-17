@@ -4,6 +4,8 @@ public class Rattata extends AlgomonNormal {
 
 	public Rattata() {
 		super();
+		
+
 		this.puntosDeVida = 170;
 	}
 
