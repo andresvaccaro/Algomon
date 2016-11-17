@@ -288,4 +288,26 @@ public class AlgomonTest {
 		
 	}
 	
+	@Test
+	public void testCharmanderRecibeUnaPocionYAumentaSusPuntosEn20() {
+		Algomon charmander = new Charmander();
+		assertEquals(170d, charmander.getPuntosDeVida(), 0.000001d);
+		Elemento pocion = new Pocion();
+		charmander.recibirElemento(pocion);
+		assertEquals(190d, charmander.getPuntosDeVida(), 0.000001d);		
+		
+	}
+	
+	@Test
+	public void testCharmanderRecibeUnaSuperPocionYAumentaSusPuntosEn20() {
+		Algomon charmander = new Charmander();
+		assertEquals(170d, charmander.getPuntosDeVida(), 0.000001d);
+		Elemento superPocion = new SuperPocion();
+		charmander.recibirElemento(superPocion);
+		assertEquals(210d, charmander.getPuntosDeVida(), 0.000001d);		
+		
+	}
+	
+	
+	
 }

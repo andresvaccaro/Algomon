@@ -21,6 +21,11 @@ public abstract class Algomon {
 		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);
 		contenedorDeAtaque.lanzarAtaque(this, algomonAtacado, this.estadoAlgomon);
 	}
+	
+	public void recibirElemento(Elemento elemento) {
+		elemento.cargarAlgomonQueRealizaLaAccion(this);
+		this.estadoAlgomon.realizarAccion(elemento);
+	}
 
 	private ContenedorDeAtaque buscarContenedorDeAtaque(Class tipoDeAtaque) {
 		ContenedorDeAtaque contenedorEncontrado = null;
@@ -76,5 +81,7 @@ public abstract class Algomon {
 	}
 
 	protected abstract double obtenerPuntosDeVidaInicial();
+
+	
 	
 }
