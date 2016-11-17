@@ -7,4 +7,9 @@ public abstract class Elemento extends Accion {
 	@Override
 	public abstract void realizarAccion();
 
+	@Override
+	public boolean puedeRealizarlaDormido() {
+		return Boolean.TRUE;
+	}
+
 }

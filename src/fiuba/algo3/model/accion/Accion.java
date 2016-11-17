@@ -15,6 +15,10 @@ public abstract class Accion {
 	public Algomon getAlgomonQueRealizaLaAccion() {
 		return algomonQueRealizaLaAccion;
 	}
+
+	public abstract boolean puedeRealizarlaDormido();
+	
+	
 	
 	
 	

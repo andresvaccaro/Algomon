@@ -9,6 +9,11 @@ public class EstadoQuemado implements IEstadoPersistente {
 			accion.getAlgomonQueRealizaLaAccion().disminuirDiezPorciento();
 	}
 
+	@Override
+	public Boolean estaQuemado() {
+		return Boolean.TRUE;
+	}
+
 	
 	
 }

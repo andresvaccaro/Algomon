@@ -54,6 +54,10 @@ public abstract class Algomon {
 	public Boolean estaDormido() {
 		return this.estadoAlgomon.estaDormido();
 	}
+	
+	public Boolean estaQuemado() {
+		return this.estadoAlgomon.estaQuemado();
+	}
 
 	public void dormir() {
 		this.estadoAlgomon.dormir();
@@ -81,6 +85,12 @@ public abstract class Algomon {
 	}
 
 	protected abstract double obtenerPuntosDeVidaInicial();
+
+	public void enfriar() {
+		this.estadoAlgomon.enfriar();		
+	}
+
+	
 
 	
 	

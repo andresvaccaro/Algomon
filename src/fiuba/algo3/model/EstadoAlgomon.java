@@ -47,6 +47,12 @@ public class EstadoAlgomon {
 	public void quemar() {
 		this.estadoPersistente = new EstadoQuemado();		
 	}
+	public Boolean estaQuemado() {
+		return this.estadoPersistente.estaQuemado();
+	}
+	public void enfriar() {
+		this.estadoPersistente = new EstadoNormalPersistente();		
+	}
 	
 	
 		

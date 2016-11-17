@@ -19,4 +19,9 @@ public abstract class Ataque extends Accion{
 	public void cargarAtacado(Algomon atacado){
 		this.atacado = atacado;
 	}
+	
+	@Override
+	public boolean puedeRealizarlaDormido() {
+		return Boolean.FALSE;
+	}
 }

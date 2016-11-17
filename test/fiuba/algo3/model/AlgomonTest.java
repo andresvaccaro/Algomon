@@ -308,6 +308,23 @@ public class AlgomonTest {
 		
 	}
 	
+	@Test
+	public void testCharmanderEsQuemadoYDormidoYRecibeUnRestauradorYVuelveAestadosNormales() {
+		Algomon charmander = new Charmander();
+		Algomon jigglypuff = new Jigglypuff();
+		Algomon rattata = new Rattata();
+		jigglypuff.atacar(charmander, Canto.class);
+		assertEquals(true, charmander.estaDormido());
+		rattata.atacar(charmander, Fogonazo.class);
+		assertEquals(true, charmander.estaQuemado());
+		
+		Elemento restaurador = new Restaurador();
+		charmander.recibirElemento(restaurador);
+		assertEquals(false, charmander.estaDormido());
+		assertEquals(false, charmander.estaQuemado());
+		
+	}
+	
 	
 	
 }

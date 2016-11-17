@@ -6,4 +6,6 @@ public interface IEstadoPersistente {
 	
 	public void realizarAccion(Accion accion);
 
+	public Boolean estaQuemado();
+
 }

@@ -11,6 +11,11 @@ public class EstadoNormalPersistente implements IEstadoPersistente {
 		
 	}
 
+	@Override
+	public Boolean estaQuemado() {
+		return Boolean.FALSE;
+	}
+
 	
 
 }

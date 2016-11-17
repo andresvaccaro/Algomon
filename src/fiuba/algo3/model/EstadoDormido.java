@@ -18,6 +18,9 @@ public class EstadoDormido implements IEstadoEsfimero {
 
 	@Override
 	public void realizarAccion(Accion accion) {
+		if(accion.puedeRealizarlaDormido()){
+			accion.realizarAccion();
+		}
 		if (cantidadDeAccionesPendientes == 1) {
 			accion.getAlgomonQueRealizaLaAccion().despertar();
 		} else {
