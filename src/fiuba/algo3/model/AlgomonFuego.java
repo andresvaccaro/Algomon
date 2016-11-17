@@ -1,6 +1,6 @@
 package fiuba.algo3.model;
 
-public class AlgomonFuego extends Algomon{
+public abstract class AlgomonFuego extends Algomon{
 
 	@Override
 	public double obtenerMultiplicadorDeAtaqueDeAgua() {

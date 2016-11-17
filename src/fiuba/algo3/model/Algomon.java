@@ -5,8 +5,8 @@ import java.util.List;
 
 public abstract class Algomon {
 
-	protected double puntosDeVida;
-
+	protected double puntosDeVida;	
+	
 	protected List<ContenedorDeAtaque> contenedoresDeAtaques;
 
 	protected EstadoAlgomon estadoAlgomon;
@@ -55,7 +55,7 @@ public abstract class Algomon {
 	}
 
 	public void disminuirDiezPorciento() {
-		this.puntosDeVida = this.puntosDeVida - this.puntosDeVida * 0.10;
+		this.puntosDeVida = this.puntosDeVida  - obtenerPuntosDeVidaInicial() * 0.10;
 	}
 
 	public void despertar() {
@@ -70,5 +70,11 @@ public abstract class Algomon {
 		return estadoAlgomon;
 	}
 
+	public void quemar() {
+		this.estadoAlgomon.quemar();
+		
+	}
+
+	protected abstract double obtenerPuntosDeVidaInicial();
 	
 }

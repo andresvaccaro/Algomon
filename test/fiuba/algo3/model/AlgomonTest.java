@@ -198,11 +198,11 @@ public class AlgomonTest {
 		chansey.atacar(charmander, Canto.class);
 		jigglypuff.atacar(charmander, Canto.class);
 
-		charmander.atacar(jigglypuff, Fogonaso.class);
+		charmander.atacar(jigglypuff, Fogonazo.class);
 		assertEquals(130d, jigglypuff.getPuntosDeVida(), 0.000001d);
-		charmander.atacar(jigglypuff, Fogonaso.class);
+		charmander.atacar(jigglypuff, Fogonazo.class);
 		assertEquals(130d, jigglypuff.getPuntosDeVida(), 0.000001d);
-		charmander.atacar(jigglypuff, Fogonaso.class);
+		charmander.atacar(jigglypuff, Fogonazo.class);
 		assertEquals(130d, jigglypuff.getPuntosDeVida(), 0.000001d);
 	}
 
@@ -266,4 +266,26 @@ public class AlgomonTest {
 	}
 	
 
+	
+	/**
+	 * Quinto  test segunda entrega	 
+	 */
+	@Test
+	public void testCharmanderYRattataAtacanConFogonazoYElAlgomonAtacadoRecibiraUn10PorCientoDeSusPuntosDeVidaOriginalesEnCada () {
+		Algomon charmander = new Charmander();
+		assertEquals(170d, charmander.getPuntosDeVida(), 0.000001d);
+		Algomon rattata = new Rattata();
+		
+		Algomon jigglypuff = new Jigglypuff();
+		assertEquals(130d, jigglypuff.getPuntosDeVida(), 0.000001d);
+		
+		charmander.atacar(jigglypuff, Fogonazo.class);		
+		assertEquals(128d, jigglypuff.getPuntosDeVida(), 0.000001d);
+		rattata.atacar(jigglypuff, Fogonazo.class);		
+		assertEquals(126d, jigglypuff.getPuntosDeVida(), 0.000001d);
+		jigglypuff.atacar(charmander, Canto.class);
+		assertEquals(113d, jigglypuff.getPuntosDeVida(), 0.000001d);
+		
+	}
+	
 }

@@ -44,6 +44,10 @@ public class EstadoAlgomon {
 		return this.estadoEsfimero.estaDormido();
 	}
 	
+	public void quemar() {
+		this.estadoPersistente = new EstadoQuemado();		
+	}
+	
 	
 		
 	
