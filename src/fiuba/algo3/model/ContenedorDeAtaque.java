@@ -1,32 +1,48 @@
 package fiuba.algo3.model;
 
-public class ContenedorDeAtaque {
-	Ataque ataque;
-	int ataquesDisponibles;
-	
-	public ContenedorDeAtaque(Ataque ataque, int ataquesDisponibles) {
-		this.ataque = ataque;
-		this.ataquesDisponibles = ataquesDisponibles;
-	}
+import java.util.Stack;
 
+public class ContenedorDeAtaque {
+	Stack<Ataque> ataques ;
+	//Ataque ataque;
+	//int ataquesDisponibles;
+	
+	//ESte metodo hay que sacarlo
+	//public ContenedorDeAtaque(Ataque ataque, int ataquesDisponibles) {
+	//	this.ataque = ataque;
+	//	this.ataquesDisponibles = ataquesDisponibles;
+	//}
+	
+	public ContenedorDeAtaque(Stack<Ataque> ataquesACargar){
+		ataques = ataquesACargar;
+		
+	}
+	
+	
 	public void lanzarAtaque(Algomon algomonAtacante, Algomon algomonAtacado,EstadoAlgomon estadoAlgomon) {
+		
+		Ataque ataque = ataques.pop();
 		ataque.cargarAtacado(algomonAtacado);	
 		ataque.cargarAlgomonQueRealizaLaAccion(algomonAtacante);
 		algomonAtacante.getEstadoAlgomon().realizarAccion(ataque); 
-		this.ataquesDisponibles--;
+		//this.ataquesDisponibles--;
 	}
 	
 	public Boolean sosDeAtaque(Class tipoAtaque){
-		return tipoAtaque.equals(this.ataque.getClass());
+		Ataque ataque = ataques.peek();
+		return tipoAtaque.equals(ataque.getClass());
 	}
 
+	//SOLO TE FALTA ARREGLAR ESTE METODO
 	public void aumentarCantidad(int cantidadAAumentar) {
-		this.ataquesDisponibles= this.ataquesDisponibles+cantidadAAumentar;
-		
+		Ataque ataque = ataques.peek();
+		for (int i=0 ; i< cantidadAAumentar ; i++ ){
+			ataques.push(ataque);
+		}	
 	}
 
 	public int getAtaquesDisponibles() {
-		return ataquesDisponibles;
+		return ataques.size();
 	}
 	
 	
