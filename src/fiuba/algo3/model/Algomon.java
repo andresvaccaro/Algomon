@@ -57,6 +57,8 @@ public abstract class Algomon {
 	public abstract double obtenerMultiplicadorDeAtaqueDePlanta();
 
 	public abstract double obtenerMultiplicadorDeAtaqueDeFuego();
+	
+	public abstract double obtenerMultiplicadorDeAtaqueNormal();
 
 	public Boolean estaDormido() {
 		return this.estadoAlgomon.estaDormido();

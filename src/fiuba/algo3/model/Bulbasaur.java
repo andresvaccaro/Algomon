@@ -59,4 +59,9 @@ public class Bulbasaur extends Algomon {
 	public double obtenerMultiplicadorDeAtaqueDeFuego() {
 		return 2d;
 	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueNormal() {
+		return 1d;
+	}
 }

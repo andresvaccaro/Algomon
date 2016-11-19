@@ -16,6 +16,12 @@ public abstract class AlgomonNormal extends Algomon {
 	public double obtenerMultiplicadorDeAtaqueDeFuego() {	
 		return 1d;
 	}
+	
+	@Override
+	public double obtenerMultiplicadorDeAtaqueNormal() {	
+		return 1d;
+	}
+	
 
 
 }

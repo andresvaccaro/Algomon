@@ -9,7 +9,7 @@ public class AtaqueRapido extends Ataque {
 
 	@Override
 	public void causarEfecto(Algomon algomonAtacado, Algomon algomonAtacante) {
-		// TODO Auto-generated method stub
+		algomonAtacado.disminuirPuntosDeVida(this.potencia * algomonAtacado.obtenerMultiplicadorDeAtaqueNormal());
 
 	}
 

@@ -60,4 +60,9 @@ public class Charmander extends Algomon {
 		return 0.5d;
 	}
 
+	@Override
+	public double obtenerMultiplicadorDeAtaqueNormal() {
+		return 1d;
+	}
+
 }
