@@ -2,7 +2,7 @@ package fiuba.algo3.model;
 
 import java.util.Stack;
 
-public class Bulbasaur extends AlgomonPlanta {
+public class Bulbasaur extends Algomon {
 
 	private final static double PUNTOS_DE_VIDA_INICIAL=140d;
 	public static final int CANTIDAD_ATAQUES_CHUPAVIDAS = 8;
@@ -43,5 +43,20 @@ public class Bulbasaur extends AlgomonPlanta {
 	@Override
 	protected double obtenerPuntosDeVidaInicial() {
 		return  PUNTOS_DE_VIDA_INICIAL;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeAgua() {
+		return 0.5d;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDePlanta() {
+		return 0.5d;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeFuego() {
+		return 2d;
 	}
 }

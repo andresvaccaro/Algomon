@@ -2,7 +2,7 @@ package fiuba.algo3.model;
 
 import java.util.Stack;
 
-public class Charmander extends AlgomonFuego {
+public class Charmander extends Algomon {
 	
 	private final static double PUNTOS_DE_VIDA_INICIAL=170d;
 	public static final int CANTIDAD_ATAQUES_BRASAS = 10;
@@ -43,6 +43,21 @@ public class Charmander extends AlgomonFuego {
 	@Override
 	protected double obtenerPuntosDeVidaInicial() {	
 		return PUNTOS_DE_VIDA_INICIAL;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeAgua() {
+		return 2d;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDePlanta() {
+		return 0.5d;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeFuego() {
+		return 0.5d;
 	}
 
 }

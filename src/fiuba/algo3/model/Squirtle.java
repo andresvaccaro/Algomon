@@ -2,7 +2,7 @@ package fiuba.algo3.model;
 
 import java.util.Stack;
 
-public class Squirtle extends AlgomonAgua {
+public class Squirtle extends Algomon {
 	private final static double PUNTOS_DE_VIDA_INICIAL=150d;
 	public static final int CANTIDAD_ATAQUES_BURBUJA = 15;
 	public static final int CANTIDAD_ATAQUES_CANIONDEAGUA = 8;
@@ -44,6 +44,21 @@ public class Squirtle extends AlgomonAgua {
 	@Override
 	protected double obtenerPuntosDeVidaInicial() {
 		return PUNTOS_DE_VIDA_INICIAL;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeAgua() {
+		return 0.5d;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDePlanta() {
+		return 2d;
+	}
+
+	@Override
+	public double obtenerMultiplicadorDeAtaqueDeFuego() {
+		return 0.5d;
 	}
 
 	

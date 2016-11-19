@@ -1,8 +1,6 @@
 package fiuba.algo3.model;
 
 public class ChupaVidas extends Ataque {
-
-	public static final int CANTIDAD_ATAQUES_CHUPA_VIDAS = 8;
 	
 	public ChupaVidas() {
 		super();
