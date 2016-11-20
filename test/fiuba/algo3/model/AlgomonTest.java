@@ -6,9 +6,7 @@ import org.junit.Test;
 
 public class AlgomonTest {
 
-	/**
-	 * Primer test
-	 */
+
 	@Test
 	public void testSquirtleAtacaConBurbujaYCanionAguaACharmanderYLeQuita20Y40PuntosDeVidaACharmander() {
 		Algomon squirtle = new Squirtle();
