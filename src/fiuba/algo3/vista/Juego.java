@@ -34,6 +34,17 @@ public class Juego {
 		this.diccionarioDeAlgomones.put("Squirtle", Squirtle.class);
 	}
 
+	
+	public void agregarEntrenador(String nombreEntrenador) {
+		if(entrenador1==null){
+			entrenador1= new Entrenador(nombreEntrenador);
+		}else{
+			entrenador2 = new Entrenador(nombreEntrenador);
+		}
+		this.entrenadorActivo= entrenador1;
+		
+	}
+	
 	public void agregarCharmanderAentrenador(Entrenador entrenador) {
 		entrenador.agregarAlgomon(new Charmander());
 		
@@ -81,7 +92,7 @@ public class Juego {
 	}
 
 	public void iniciarJuego() {
-		this.entrenadorActivo= this.entrenador1;		
+		this.entrenadorActivo = this.entrenador1;		
 	}
 
 	public Entrenador getEntrenadorActivo() {
@@ -138,6 +149,8 @@ public class Juego {
 		
 		return entrenadorAValidarAlgomones.tieneAlgomonesVivos();
 	}
+
+	
 
 	
 	
