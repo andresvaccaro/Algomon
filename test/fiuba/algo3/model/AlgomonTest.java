@@ -4,6 +4,26 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.model.accion.ataque.Brasas;
+import fiuba.algo3.model.accion.ataque.Burbuja;
+import fiuba.algo3.model.accion.ataque.CanionDeAgua;
+import fiuba.algo3.model.accion.ataque.Canto;
+import fiuba.algo3.model.accion.ataque.ChupaVidas;
+import fiuba.algo3.model.accion.ataque.Fogonazo;
+import fiuba.algo3.model.accion.ataque.LatigoCepa;
+import fiuba.algo3.model.accion.elemento.Elemento;
+import fiuba.algo3.model.accion.elemento.Pocion;
+import fiuba.algo3.model.accion.elemento.Restaurador;
+import fiuba.algo3.model.accion.elemento.SuperPocion;
+import fiuba.algo3.model.accion.elemento.Vitamina;
+import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Bulbasaur;
+import fiuba.algo3.model.algomon.Chansey;
+import fiuba.algo3.model.algomon.Charmander;
+import fiuba.algo3.model.algomon.Jigglypuff;
+import fiuba.algo3.model.algomon.Rattata;
+import fiuba.algo3.model.algomon.Squirtle;
+
 public class AlgomonTest {
 
 

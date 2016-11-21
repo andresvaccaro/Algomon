@@ -2,6 +2,10 @@ package fiuba.algo3.model;
 
 import java.util.Stack;
 
+import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.estado.EstadoAlgomon;
+
 public class ContenedorDeAtaque {
 	Stack<Ataque> ataques ;
 	//Ataque ataque;

@@ -3,15 +3,15 @@ package fiuba.algo3.vista;
 import java.util.HashMap;
 import java.util.List;
 
-import fiuba.algo3.model.Algomon;
-import fiuba.algo3.model.Ataque;
-import fiuba.algo3.model.Bulbasaur;
-import fiuba.algo3.model.Chansey;
-import fiuba.algo3.model.Charmander;
 import fiuba.algo3.model.Entrenador;
-import fiuba.algo3.model.Jigglypuff;
-import fiuba.algo3.model.Rattata;
-import fiuba.algo3.model.Squirtle;
+import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Bulbasaur;
+import fiuba.algo3.model.algomon.Chansey;
+import fiuba.algo3.model.algomon.Charmander;
+import fiuba.algo3.model.algomon.Jigglypuff;
+import fiuba.algo3.model.algomon.Rattata;
+import fiuba.algo3.model.algomon.Squirtle;
 
 public class Juego {
 

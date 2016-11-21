@@ -2,9 +2,9 @@ package fiuba.algo3.model.main;
 
 import java.util.Scanner;
 
-import fiuba.algo3.model.Algomon;
-import fiuba.algo3.model.Ataque;
 import fiuba.algo3.model.Entrenador;
+import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.algomon.Algomon;
 import fiuba.algo3.vista.Juego;
 
 public class main {

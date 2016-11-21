@@ -3,6 +3,9 @@ package fiuba.algo3.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.algomon.Algomon;
+
 public class Entrenador {
 
 	private String nombre;

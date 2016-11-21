@@ -1,6 +1,6 @@
 package fiuba.algo3.model.accion;
 
-import fiuba.algo3.model.Algomon;
+import fiuba.algo3.model.algomon.Algomon;
 
 public abstract class Accion {
 	
