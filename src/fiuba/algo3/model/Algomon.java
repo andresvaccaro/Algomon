@@ -7,6 +7,7 @@ public abstract class Algomon {
 
 	protected double puntosDeVida;	
 	
+	protected String nombre;
 	
 	protected List<ContenedorDeAtaque> contenedoresDeAtaques;
 
@@ -105,6 +106,21 @@ public abstract class Algomon {
 			contenedorDeAtaque.aumentarCantidad(cantidadAAumentar);
 		}
 		
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public List<Ataque> obtenerAtaquesDisponibles() {
+		List<Ataque> ataquesDisponibles= new ArrayList<Ataque>();
+		for (ContenedorDeAtaque contenedorDeAtaque : this.contenedoresDeAtaques) {
+			if(contenedorDeAtaque.getAtaquesDisponibles()>0){
+				ataquesDisponibles.add(contenedorDeAtaque.obtenerAtaque());
+			}
+				
+		}
+		return null;
 	}
 
 

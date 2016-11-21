@@ -45,6 +45,9 @@ public class ContenedorDeAtaque {
 		return ataques.size();
 	}
 	
+	public Ataque obtenerAtaque(){
+		return  ataques.peek();
+	}
 	
 	
 }

@@ -12,6 +12,7 @@ public class Charmander extends Algomon {
 	public Charmander() {
 		super();
 		this.puntosDeVida = PUNTOS_DE_VIDA_INICIAL;
+		this.nombre = "Charmander";
 		
 		Stack<Ataque> ataquesBrasas = new Stack<Ataque>();
 		for (int i=0 ; i < CANTIDAD_ATAQUES_BRASAS ; i++  ) {

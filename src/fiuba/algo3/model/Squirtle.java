@@ -11,6 +11,7 @@ public class Squirtle extends Algomon {
 	public Squirtle() {
 		super();
 		this.puntosDeVida = 150d;
+		this.nombre = "Squirtle";
 		
 		Stack<Ataque> ataquesBurbuja = new Stack<Ataque>();
 		for (int i=0 ; i < CANTIDAD_ATAQUES_BURBUJA ; i++  ) {

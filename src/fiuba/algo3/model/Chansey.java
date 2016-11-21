@@ -12,6 +12,7 @@ public class Chansey extends AlgomonNormal {
 	public Chansey() {
 		super();
 		this.puntosDeVida = PUNTOS_DE_VIDA_INICIAL;
+		this.nombre = "Chansey";
 		
 		Stack<Ataque> ataquesCanto = new Stack<Ataque>();
 		for (int i=0 ; i < CANTIDAD_ATAQUES_CANTO ; i++  ) {

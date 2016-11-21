@@ -13,6 +13,7 @@ public class Rattata extends AlgomonNormal {
 	public Rattata() {
 		super();		
 		this.puntosDeVida = PUNTOS_DE_VIDA_INICIAL;
+		this.nombre = "Rattata";
 
 		Stack<Ataque> ataquesFogonazo = new Stack<Ataque>();
 		for (int i=0 ; i < CANTIDAD_ATAQUES_FOGONAZO ; i++  ) {

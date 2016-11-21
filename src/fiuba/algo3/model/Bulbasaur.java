@@ -12,6 +12,7 @@ public class Bulbasaur extends Algomon {
 	public Bulbasaur() {
 		super();
 		this.puntosDeVida = PUNTOS_DE_VIDA_INICIAL;
+		this.nombre = "Bulbasaur";
 		
 		Stack<Ataque> ataquesChupavidas = new Stack<Ataque>();
 		for (int i=0 ; i < CANTIDAD_ATAQUES_CHUPAVIDAS ; i++  ) {
