@@ -7,6 +7,7 @@ public abstract class Algomon {
 
 	protected double puntosDeVida;	
 	
+	
 	protected List<ContenedorDeAtaque> contenedoresDeAtaques;
 
 	protected EstadoAlgomon estadoAlgomon;
