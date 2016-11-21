@@ -1,8 +1,12 @@
 package fiuba.algo3.vista;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import fiuba.algo3.model.accion.ataque.Fogonazo;
+import fiuba.algo3.model.accion.elemento.Vitamina;
+import fiuba.algo3.model.algomon.Algomon;
 
 public class JuegoTest {
 
@@ -39,10 +43,58 @@ public class JuegoTest {
 		juego.agregarEntrenador("Primer Entrenador");		
 		juego.agregarCharmanderAentrenador(juego.getEntrenadorActivo());
 		juego.agregarBulbasaurAentrenador(juego.getEntrenadorActivo());
-		juego.agregarChanseyAentrenador(juego.getEntrenadorActivo());
-		
-		assertEquals("Charmander", juego.obtenerNombreAlgomonActivo());
-				
+		juego.agregarChanseyAentrenador(juego.getEntrenadorActivo());		
+		assertEquals("Charmander", juego.obtenerNombreAlgomonActivo());			
 	}
 
+	
+	@Test
+	public void testCharmanderAtacaConFogonazoAJigglypuffyLeSaca2PuntosYloDejaQuemado() {
+		Juego juego = new Juego();
+		juego.agregarEntrenador("Primer Entrenador");		
+		juego.agregarCharmanderAentrenador(juego.getEntrenadorActivo());
+		juego.agregarBulbasaurAentrenador(juego.getEntrenadorActivo());
+		juego.agregarChanseyAentrenador(juego.getEntrenadorActivo());		
+		assertEquals("Charmander", juego.obtenerNombreAlgomonActivo());			
+		
+		juego.agregarEntrenador("Segundo Entrenador");		
+		juego.agregarJigglypuffAentrenador(juego.getEntrenador2());
+		juego.agregarBulbasaurAentrenador(juego.getEntrenador2());
+		juego.agregarChanseyAentrenador(juego.getEntrenador2());		
+		assertEquals("Jigglypuff", juego.getEntrenador2().obtenerNombreAlgomonActivo());		
+		juego.atacar(new Fogonazo());		
+		assertEquals(128d, juego.getEntrenador2().obtenerAlgomonActivo().getPuntosDeVida(),0.000001d);		
+		assertEquals(true, juego.getEntrenador2().obtenerAlgomonActivo().estaQuemado());		
+	}
+	
+	@Test
+	public void testCharmanderAtacaConFogonazoATodosLosAlgomonesDelEntrenadorRivalHastaQueFinalizaElJuego() {
+		Juego juego = new Juego();
+		juego.agregarEntrenador("Primer Entrenador");
+		juego.agregarCharmanderAentrenador(juego.getEntrenadorActivo());
+		juego.agregarBulbasaurAentrenador(juego.getEntrenadorActivo());
+		juego.agregarChanseyAentrenador(juego.getEntrenadorActivo());
+		juego.agregarEntrenador("Segundo Entrenador");
+		juego.agregarCharmanderAentrenador(juego.getEntrenador2());
+		juego.agregarBulbasaurAentrenador(juego.getEntrenador2());
+		juego.agregarChanseyAentrenador(juego.getEntrenador2());
+		
+		int posicionAlgomon=0;
+		for (Algomon algomon : juego.getEntrenador2().getAlgomones()) {
+			while(algomon.getPuntosDeVida()>0){
+				juego.atacar(new Fogonazo());
+				juego.enviarElemento(new Vitamina());
+			}
+			juego.cambiarJugador();
+			posicionAlgomon++;
+			juego.cambiarAlgomonActivo(posicionAlgomon+1);
+			juego.cambiarJugador();
+		}
+		assertEquals(true, juego.elJuegoEstaFinalizado());
+		
+	}
+	
+	
+	
+	
 }

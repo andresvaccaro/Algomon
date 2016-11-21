@@ -5,6 +5,7 @@ import java.util.List;
 
 import fiuba.algo3.model.Entrenador;
 import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.algomon.Algomon;
 import fiuba.algo3.model.algomon.Bulbasaur;
 import fiuba.algo3.model.algomon.Chansey;
@@ -147,7 +148,13 @@ public class Juego {
 			entrenadorAValidarAlgomones = this.entrenador1;
 		}		
 		
-		return entrenadorAValidarAlgomones.tieneAlgomonesVivos();
+		return !entrenadorAValidarAlgomones.tieneAlgomonesVivos();
+	}
+
+
+	public void enviarElemento(Elemento elemento) {
+		this.entrenadorActivo.obtenerAlgomonActivo().recibirElemento(elemento);
+	
 	}
 
 	

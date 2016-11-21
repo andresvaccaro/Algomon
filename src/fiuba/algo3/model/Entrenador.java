@@ -41,8 +41,10 @@ public class Entrenador {
 	}
 
 	public void cambiarAlgomonActivo(int numeroAlgomonSeleccionado) {
-		this.algomonActivo = this.algomones.get(numeroAlgomonSeleccionado-1);
-		
+		if(numeroAlgomonSeleccionado-1<=this.algomones.size()-1){
+			this.algomonActivo = this.algomones.get(numeroAlgomonSeleccionado-1);	
+		}
+				
 	}
 
 	public List<Ataque> obtenerAtaquesDeAlgomonActivo() {
