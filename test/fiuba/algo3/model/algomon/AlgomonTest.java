@@ -28,110 +28,90 @@ public class AlgomonTest {
 
 
 	@Test
-	public void test_1_SquirtleAtacaConBurbujaYCanionAguaACharmanderYLeQuita20Y40PuntosDeVidaACharmander() {
-		
+	public void testSquirtleAtacaConBurbujaYCanionAguaACharmanderYLeQuita20Y40PuntosDeVidaACharmander() {
 		Algomon squirtle = new Squirtle();
 		Algomon charmander = new Charmander();
-		
 		assertEquals(170d, charmander.getPuntosDeVida(), 0.000001d);
-		
 		squirtle.atacar(charmander, Burbuja.class);
-		
 		assertEquals(150d, charmander.getPuntosDeVida(), 0.000001d);
-		
 		squirtle.atacar(charmander, CanionDeAgua.class);
-		
 		assertEquals(110d, charmander.getPuntosDeVida(), 0.000001d);
 
 	}
 
-	
+	/**
+	 * Segundo test
+	 */
 	@Test
-	public void test_2_SquirtleAtacaConBurbujaYCanionAguaABulbasaurYLeQuita5Y10PuntosDeVidaACharmander() {
-		
+	public void testSquirtleAtacaConBurbujaYCanionAguaABulbasaurYLeQuita5Y10PuntosDeVidaACharmander() {
 		Algomon squirtle = new Squirtle();
 		Algomon bulbasaur = new Bulbasaur();
-		
 		assertEquals(140d, bulbasaur.getPuntosDeVida(), 0.000001d);
-		
 		squirtle.atacar(bulbasaur, Burbuja.class);
-		
 		assertEquals(135d, bulbasaur.getPuntosDeVida(), 0.000001d);
-		
 		squirtle.atacar(bulbasaur, CanionDeAgua.class);
-		
 		assertEquals(125d, bulbasaur.getPuntosDeVida(), 0.000001d);
 
 	}
 
-	
+	/**
+	 * Tercer test
+	 */
 	@Test
-	public void test3_SquirtleAtacaConBurbujaYCanionAguaAOtrosAlgomonesYLeQuita10Y20PuntosDeVidaACharmander() {
-		
+	public void testSquirtleAtacaConBurbujaYCanionAguaAOtrosAlgomonesYLeQuita10Y20PuntosDeVidaACharmander() {
 		Algomon jigglypuff = new Jigglypuff();
-		
 		assertEquals(130d, jigglypuff.getPuntosDeVida(), 0.000001d);
-		
 		Algomon chansey = new Chansey();
-		
 		assertEquals(130d, chansey.getPuntosDeVida(), 0.000001d);
-		
 		Algomon squirtle = new Squirtle();
-		
 		squirtle.atacar(jigglypuff, Burbuja.class);
-		
 		assertEquals(120d, jigglypuff.getPuntosDeVida(), 0.000001d);
-		
 		squirtle.atacar(chansey, CanionDeAgua.class);
-		
 		assertEquals(110d, chansey.getPuntosDeVida(), 0.000001d);
 	}
 
-	
+	/**
+	 * cuarto test
+	 */
 	@Test
-	public void test4_BulbasaurYChanseyAtacanConLatigoCepaASquirtleYLeQuitan30PuntosDeVida() {
-		
+	public void testBulbasaurYChanseyAtacanConLatigoCepaASquirtleYLeQuitan30PuntosDeVida() {
 		Algomon squirtle = new Squirtle();
-		
 		assertEquals(150d, squirtle.getPuntosDeVida(), 0.000001d);
-		
 		Algomon chansey = new Chansey();
 		Algomon bulbasaur = new Bulbasaur();
 
 		chansey.atacar(squirtle, LatigoCepa.class);
-		
 		assertEquals(120d, squirtle.getPuntosDeVida(), 0.000001d);
 
 		bulbasaur.atacar(squirtle, LatigoCepa.class);
-		
 		assertEquals(90d, squirtle.getPuntosDeVida(), 0.000001d);
 
 	}
 
-	
+	/**
+	 * Quinto test
+	 */
 	@Test
-	public void test5_BulbasaurYChanseyAtacanConLatigoCepaACharmanderYLeQuitan7PuntosDeVida() {
+	public void testBulbasaurYChanseyAtacanConLatigoCepaACharmanderYLeQuitan7PuntosDeVida() {
 
 		Algomon charmander = new Charmander();
-		
 		assertEquals(170d, charmander.getPuntosDeVida(), 0.000001d);
-		
 		Algomon chansey = new Chansey();
 		Algomon bulbasaur = new Bulbasaur();
 
 		chansey.atacar(charmander, LatigoCepa.class);
-		
 		assertEquals(162.5d, charmander.getPuntosDeVida(), 0.000001d);
 
 		bulbasaur.atacar(charmander, LatigoCepa.class);
-		
 		assertEquals(155d, charmander.getPuntosDeVida(), 0.000001d);
 
 	}
 
-	
+	/**
+	 * sexto test
+	 */
 	@Test
-	public void test6_BulbasaurYChanseyAtacanConLatigoCepaAotrosAlgomonesYLesQuitan15PuntosDeVidaACadaUno() {
+	public void testBulbasaurYChanseyAtacanConLatigoCepaAotrosAlgomonesYLesQuitan15PuntosDeVidaACadaUno() {
 
 		Algomon rattata = new Rattata();
 		Algomon jigglypuff = new Jigglypuff();
@@ -143,19 +123,19 @@ public class AlgomonTest {
 		Algomon bulbasaur = new Bulbasaur();
 
 		chansey.atacar(rattata, LatigoCepa.class);
-		
 		assertEquals(155d, rattata.getPuntosDeVida(), 0.000001d);
 
 		bulbasaur.atacar(jigglypuff, LatigoCepa.class);
-		
 		assertEquals(115d, jigglypuff.getPuntosDeVida(), 0.000001d);
 
 	}
 
 	
-	
+	/**
+	 * septimo test
+	 */
 	@Test
-	public void test7_CharmanderAtacaABalbasaurConBrasaYLeQuita32PuntosDeVida(){
+	public void testCharmanderAtacaABalbasaurConBrasaYLeQuita32PuntosDeVida(){
 			
 
 		Algomon charmander = new Charmander();
@@ -163,15 +143,17 @@ public class AlgomonTest {
 		
 		assertEquals(140d, bulbasaur.getPuntosDeVida(),0.000001d);
 				
-		charmander.atacar(bulbasaur, Brasas.class);
-		
+		charmander.atacar(bulbasaur, Brasas.class);				
 		assertEquals(108d, bulbasaur.getPuntosDeVida(),0.000001d);
+		
 					
 	}
 	
-	
+	/**
+	 * octavo test
+	 */
 	@Test
-	public void test8_CharmanderAtacaASquirtleYLeQuita8PuntosDeVida(){
+	public void testCharmanderAtacaASquirtleYLeQuita8PuntosDeVida(){
 			
 
 		Algomon charmander = new Charmander();
@@ -179,15 +161,17 @@ public class AlgomonTest {
 		
 		assertEquals(150d, squirtle.getPuntosDeVida(),0.000001d);
 				
-		charmander.atacar(squirtle, Brasas.class);
-		
+		charmander.atacar(squirtle, Brasas.class);				
 		assertEquals(142, squirtle.getPuntosDeVida(),0.000001d);
+		
 					
 	}
 	
-	
+	/**
+	 * noveno test
+	 */
 	@Test
-	public void test9_CharmanderAtacaAOtrosAlgomonesYLesQuita16PuntosDeVida(){
+	public void testCharmanderAtacaAOtrosAlgomonesYLesQuita16PuntosDeVida(){
 			
 
 		Algomon charmander = new Charmander();
@@ -208,10 +192,15 @@ public class AlgomonTest {
 		assertEquals(114d, jigglypuff.getPuntosDeVida(),0.000001d);
 
 		
+					
 	}
 	
 	
-	//FANTAN TESTS 10 Y 11 DE LA SEGUNDA ENTREGA
+	
+	
+	
+	
+
 
 	/**
 	 * Primer test segunda entrega
