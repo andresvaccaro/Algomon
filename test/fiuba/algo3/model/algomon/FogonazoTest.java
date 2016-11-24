@@ -7,7 +7,7 @@ import org.junit.Test;
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.Fogonazo;
 
-public class FogonazoTests {
+public class FogonazoTest {
 	
 	@Test
 	public void test_CharmanderDejaAChanseyEnEstadoQuemadoYleQuita2PuntosDeVidaPorAtaqueFogonazo(){

@@ -7,7 +7,7 @@ import org.junit.Test;
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.LatigoCepa;
 
-public class LatigoCepaTests {
+public class LatigoCepaTest {
 	
 	@Test
 	public void test_LatigoCepaDeBulbasaurLeCausaEfectoARattataYleQuita15puntosArattata(){

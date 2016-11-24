@@ -7,12 +7,12 @@ import org.junit.Test;
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.ChupaVidas;
 
-public class ChupaVidasTests {
+public class ChupaVidasTest {
 
 	
 	
 	@Test
-	public void test_bulbasaurConAtaqueChupavidasLeQuitaLos30PorCientoDeDañoAlSquirtle(){
+	public void test_bulbasaurConAtaqueChupavidasLeQuitaLos30PorCientoDeDanioAlSquirtle(){
 		
 		Algomon bulbasaur=new Bulbasaur();
 		Algomon squirtle=new Squirtle();
@@ -25,7 +25,7 @@ public class ChupaVidasTests {
 		
 		chupavida.causarEfecto(squirtle, bulbasaur);
 		
-		//bulbasaur le saco el 30% del daño causado a squirtle
+		//bulbasaur le saco el 30% del danio causado a squirtle
 		
 		assertEquals(149d,bulbasaur.getPuntosDeVida(),0.000d);
 		assertEquals(120d,squirtle.getPuntosDeVida(),0.000d);

@@ -8,20 +8,20 @@ import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.CanionDeAgua;
 
 
-public class CañonDeAguaTests {
+public class CanionDeAguaTest {
 	
 	
 	@Test
-	public void test_cañonDeAguaDeSquirtleLeCausaEfectoAcharmanderYleQuita40PuntosDeVidaAcharmander(){
+	public void test_canionDeAguaDeSquirtleLeCausaEfectoAcharmanderYleQuita40PuntosDeVidaAcharmander(){
 		
 		Algomon squirtle=new Squirtle();
 		Algomon charmander=new Charmander();
 		
-		Ataque cañonDeAgua=new CanionDeAgua();
+		Ataque canionDeAgua=new CanionDeAgua();
 		
 		//squirtle le causa el efecto a charmander
 		
-		cañonDeAgua.causarEfecto(charmander, squirtle);
+		canionDeAgua.causarEfecto(charmander, squirtle);
 		
 		assertEquals(130d,charmander.getPuntosDeVida(),0.000d);
 		

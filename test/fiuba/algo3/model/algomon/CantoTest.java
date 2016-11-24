@@ -7,7 +7,7 @@ import org.junit.Test;
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.Canto;
 
-public class CantoTests {
+public class CantoTest {
 
 	
 	@Test

@@ -15,7 +15,7 @@ import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.accion.elemento.Pocion;
 import fiuba.algo3.model.accion.elemento.Vitamina;
 
-public class BulbasaurTests {
+public class BulbasaurTest {
 	
 	
 	
