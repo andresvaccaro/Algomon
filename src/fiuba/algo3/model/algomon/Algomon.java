@@ -25,7 +25,9 @@ public abstract class Algomon {
 	}
 
 	public void atacar(Algomon algomonAtacado, Class tipoDeAtaque) {
+		
 		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);
+		
 		contenedorDeAtaque.lanzarAtaque(this, algomonAtacado, this.estadoAlgomon);
 	}
 	
@@ -114,18 +116,24 @@ public abstract class Algomon {
 	}
 
 	public String getNombre() {
+		
 		return nombre;
 	}
 
 	public List<Ataque> obtenerAtaquesDisponibles() {
+		
 		List<Ataque> ataquesDisponibles= new ArrayList<Ataque>();
+		
 		for (ContenedorDeAtaque contenedorDeAtaque : this.contenedoresDeAtaques) {
+			
 			if(contenedorDeAtaque.getAtaquesDisponibles()>0){
+				
 				ataquesDisponibles.add(contenedorDeAtaque.obtenerAtaque());
 			}
 				
 		}
-		return null;
+		
+		return ataquesDisponibles;
 	}
 
 
