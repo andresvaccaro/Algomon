@@ -28,7 +28,7 @@ public abstract class Algomon {
 		
 		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);
 		
-		contenedorDeAtaque.lanzarAtaque(this, algomonAtacado, this.estadoAlgomon);
+		contenedorDeAtaque.lanzarAtaque(this, algomonAtacado);
 	}
 	
 	public void recibirElemento(Elemento elemento) {

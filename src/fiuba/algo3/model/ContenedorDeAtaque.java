@@ -4,7 +4,6 @@ import java.util.Stack;
 
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.algomon.Algomon;
-import fiuba.algo3.model.estado.EstadoAlgomon;
 
 public class ContenedorDeAtaque {
 	Stack<Ataque> ataques ;
@@ -16,7 +15,7 @@ public class ContenedorDeAtaque {
 	}
 	
 	
-	public void lanzarAtaque(Algomon algomonAtacante, Algomon algomonAtacado,EstadoAlgomon estadoAlgomon) {
+	public void lanzarAtaque(Algomon algomonAtacante, Algomon algomonAtacado) {
 		
 		Ataque ataque = ataques.pop();
 		
