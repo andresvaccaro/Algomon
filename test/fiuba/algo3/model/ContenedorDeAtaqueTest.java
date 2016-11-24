@@ -35,7 +35,18 @@ public class ContenedorDeAtaqueTest {
 				
 	}
 	
+	@Test
+	public void test03SeCreaContenedorConDosAtaquesSeAumentaEn2LaCantidadDeAtaquesDelContenedorYAhoraTiene4Ataques(){
+		LatigoCepa latigoCepa = new LatigoCepa();
+		Stack<Ataque> ataques = new Stack<Ataque>();
+		ataques.push(latigoCepa);
+		ataques.push(latigoCepa);
+		ContenedorDeAtaque contenedor = new ContenedorDeAtaque(ataques);
+		contenedor.aumentarCantidad(2);
+		assertEquals(contenedor.getCantidadAtaquesDisponibles(),4);		
+				
+	}
 	
 	
-
+	
 }
