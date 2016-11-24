@@ -9,20 +9,20 @@ import fiuba.algo3.model.accion.ataque.AtaqueRapido;
 
 public class AtaquesTests {
 	
-//	
-//	@Test
-//	public void test_AtaqueNormalRecibeAchanseyComoAtacanteYrattataComoAtacadoYleQuita16PuntosDeVidaARattata(){
-//		
-//		Ataque ataqueRapido=new AtaqueRapido();
-//		
-//		Algomon chansey=new Chansey();
-//		Algomon rattata=new Rattata();
-//		
-//		ataqueRapido.causarEfecto( rattata, chansey );
-//		
-//		assertEquals(154d,rattata.getPuntosDeVida(),0.000d);
-//		
-//	}
+	
+	@Test
+	public void test_AtaqueNormalRecibeAchanseyComoAtacanteYrattataComoAtacadoYleQuita16PuntosDeVidaARattata(){
+		
+		Ataque ataqueRapido=new AtaqueRapido();
+		
+		Algomon chansey=new Chansey();
+		Algomon rattata=new Rattata();
+		
+		ataqueRapido.causarEfecto( rattata, chansey );
+		
+		assertEquals(154d,rattata.getPuntosDeVida(),0.000d);
+		
+	}
 	
 
 	@Test
