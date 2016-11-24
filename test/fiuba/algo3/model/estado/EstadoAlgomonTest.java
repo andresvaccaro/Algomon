@@ -36,5 +36,21 @@ public class EstadoAlgomonTest {
 		assertFalse(estado.estaQuemado());
 		
 	}
+	
+	@Test
+	public void test04SeVerificaQueElEstadoQueEstaDormidoYQuemadoPuedaCambiarseAEstadosNormales(){
+		
+		EstadoAlgomon estado = new EstadoAlgomon();
+		estado.dormir();
+		estado.quemar();
+		assertTrue(estado.estaDormido());
+		assertTrue(estado.estaQuemado());
+		
+		estado.enfriar();
+		estado.despertar();
+		assertFalse(estado.estaDormido());
+		assertFalse(estado.estaQuemado());
+	
+	}
 
 }
