@@ -54,9 +54,9 @@ public class BulbasaurTests {
 		bulbasaur.recibirElemento(new Vitamina());
 	
 		
-		assertEquals(12,bulbasaur.obtenerCantidadDeAtaquesDisponibles(LatigoCepa.class));
-		assertEquals(10,bulbasaur.obtenerCantidadDeAtaquesDisponibles(ChupaVidas.class));
-		assertEquals(18,bulbasaur.obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class));
+			assertEquals(12,bulbasaur.obtenerCantidadDeAtaquesDisponibles(LatigoCepa.class));
+			assertEquals(10,bulbasaur.obtenerCantidadDeAtaquesDisponibles(ChupaVidas.class));
+			assertEquals(18,bulbasaur.obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class));
 	}
 	
 	
