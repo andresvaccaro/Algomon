@@ -60,6 +60,17 @@ public class BulbasaurTests {
 	}
 	
 	
+	@Test
+	public void test_BulbasaurNoEstaDormido(){
+		
+		Algomon bulbasaur=new Bulbasaur();
+		
+		assertFalse(bulbasaur.getEstadoAlgomon().estaDormido());
+		
+	}
+	
+
+	
 	
 	
 	
