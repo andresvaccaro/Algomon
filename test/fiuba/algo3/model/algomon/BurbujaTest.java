@@ -7,7 +7,7 @@ import org.junit.Test;
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.Burbuja;
 
-public class BurbujaTests {
+public class BurbujaTest {
 	
 	@Test
 	public void test_AtaqueConBurbujaDeSquirtleCausaEfectoABulbasaurYleQuita5PuntosDeVidaAbulbasaur(){

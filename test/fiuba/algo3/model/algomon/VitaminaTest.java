@@ -10,7 +10,7 @@ import fiuba.algo3.model.accion.ataque.Fogonazo;
 import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.accion.elemento.Vitamina;
 
-public class VitaminaTests {
+public class VitaminaTest {
 	
 	
 	@Test

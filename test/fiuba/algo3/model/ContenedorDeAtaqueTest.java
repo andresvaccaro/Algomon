@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.Brasas;
+import fiuba.algo3.model.accion.ataque.LatigoCepa;
 
 public class ContenedorDeAtaqueTest {
 	
@@ -21,5 +22,20 @@ public class ContenedorDeAtaqueTest {
 		assertEquals(contenedor.getCantidadAtaquesDisponibles(),1);
 		
 	}
+	
+	@Test
+	public void test02SeCreaContenedorConTresAtaquesYElContenedorTieneEseAtaque(){
+		LatigoCepa latigoCepa = new LatigoCepa();
+		Stack<Ataque> ataques = new Stack<Ataque>();
+		ataques.push(latigoCepa);
+		ataques.push(latigoCepa);
+		ataques.push(latigoCepa);
+		ContenedorDeAtaque contenedor = new ContenedorDeAtaque(ataques);
+		assertEquals(contenedor.obtenerAtaque(),latigoCepa);		
+				
+	}
+	
+	
+	
 
 }

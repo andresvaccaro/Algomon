@@ -5,7 +5,7 @@ import org.junit.Test;
 import fiuba.algo3.model.accion.Accion;
 import fiuba.algo3.model.accion.elemento.Pocion;
 
-public class EstadoQuemadoTests {
+public class EstadoQuemadoTest {
 	
 	
 	@Test
