@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.algomon.Algomon;
 import fiuba.algo3.model.algomon.Bulbasaur;
 import fiuba.algo3.model.algomon.Charmander;
@@ -58,6 +59,19 @@ public class EntrenadorTest {
 		entrenador.cambiarAlgomonActivo(3);
 		assertEquals(entrenador.obtenerAlgomonActivo(),charmander);
 		assertEquals(entrenador.obtenerNombreAlgomonActivo(),"Charmander");
+		
+	}
+	
+	@Test
+	public void test05SeAgregan2AlgomonesAlEntrenadorYSeObtieneLaListaDeAtaquesDelAlgomonActivo(){
+		Entrenador entrenador = new Entrenador("Ash");
+		Algomon squirtle = new Squirtle();
+		Algomon charmander = new Charmander();
+		entrenador.agregarAlgomon(squirtle);
+		entrenador.agregarAlgomon(charmander);
+		List<Ataque> ataquesDeSquirtle = squirtle.obtenerAtaquesDisponibles();
+		assertEquals(entrenador.obtenerAtaquesDeAlgomonActivo().size(),3);
+		assertEquals(entrenador.obtenerAtaquesDeAlgomonActivo(),ataquesDeSquirtle);
 		
 	}
 	
