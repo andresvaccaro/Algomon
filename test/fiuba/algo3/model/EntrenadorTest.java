@@ -75,5 +75,20 @@ public class EntrenadorTest {
 		
 	}
 	
-	
+	@Test
+	public void test06LosAlgomonesCorrespondientesAlEntrenadorSeQuedanSinVidaEntoncesElEntrenadorNoTieneAlgomonesVivos(){
+		Entrenador entrenador = new Entrenador("Ash");
+		Algomon squirtle = new Squirtle();
+		Algomon charmander = new Charmander();
+		entrenador.agregarAlgomon(squirtle);
+		entrenador.agregarAlgomon(charmander);
+		assertTrue(entrenador.tieneAlgomonesVivos());
+		
+		double puntosDeVidaSquirtle = squirtle.getPuntosDeVida();
+		double puntosDeVidaCharmander = charmander.getPuntosDeVida();
+		squirtle.disminuirPuntosDeVida(puntosDeVidaSquirtle);
+		charmander.disminuirPuntosDeVida(puntosDeVidaCharmander);
+		assertFalse(entrenador.tieneAlgomonesVivos());
+		
+	}
 }
