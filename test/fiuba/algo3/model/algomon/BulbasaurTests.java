@@ -8,8 +8,12 @@ import java.util.List;
 import org.junit.Test;
 
 import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.accion.ataque.AtaqueRapido;
+import fiuba.algo3.model.accion.ataque.ChupaVidas;
+import fiuba.algo3.model.accion.ataque.LatigoCepa;
 import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.accion.elemento.Pocion;
+import fiuba.algo3.model.accion.elemento.Vitamina;
 
 public class BulbasaurTests {
 	
@@ -37,6 +41,26 @@ public class BulbasaurTests {
 		assertEquals(160d,bulbasaur.getPuntosDeVida(),0.000d);
 		
 	}
+	
+	@Test
+	public void test_BulbasaurRecibeUnaVitaminaYseLeIncrementaEn2LaCantidadDeTodosSusAtaques(){
+		
+		Algomon bulbasaur=new Bulbasaur();
+		
+		assertEquals(10,bulbasaur.obtenerCantidadDeAtaquesDisponibles(LatigoCepa.class));
+		assertEquals(8,bulbasaur.obtenerCantidadDeAtaquesDisponibles(ChupaVidas.class));
+		assertEquals(16,bulbasaur.obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class));
+		
+		bulbasaur.recibirElemento(new Vitamina());
+	
+		
+		assertEquals(12,bulbasaur.obtenerCantidadDeAtaquesDisponibles(LatigoCepa.class));
+		assertEquals(10,bulbasaur.obtenerCantidadDeAtaquesDisponibles(ChupaVidas.class));
+		assertEquals(18,bulbasaur.obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class));
+	}
+	
+	
+	
 	
 	
 	

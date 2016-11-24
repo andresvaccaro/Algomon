@@ -18,6 +18,7 @@ public class ContenedorDeAtaque {
 	//}
 	
 	public ContenedorDeAtaque(Stack<Ataque> ataquesACargar){
+		
 		ataques = ataquesACargar;
 		
 	}
@@ -26,30 +27,46 @@ public class ContenedorDeAtaque {
 	public void lanzarAtaque(Algomon algomonAtacante, Algomon algomonAtacado,EstadoAlgomon estadoAlgomon) {
 		
 		Ataque ataque = ataques.pop();
-		ataque.cargarAtacado(algomonAtacado);	
+		
+		ataque.cargarAtacado(algomonAtacado);
+		
 		ataque.cargarAlgomonQueRealizaLaAccion(algomonAtacante);
-		algomonAtacante.getEstadoAlgomon().realizarAccion(ataque); 
+		
+		algomonAtacante.getEstadoAlgomon().realizarAccion(ataque);
+		
 		//this.ataquesDisponibles--;
 	}
 	
+	
 	public Boolean sosDeAtaque(Class tipoAtaque){
+		
 		Ataque ataque = ataques.peek();
+		
 		return tipoAtaque.equals(ataque.getClass());
+		
 	}
 
 	//SOLO TE FALTA ARREGLAR ESTE METODO
 	public void aumentarCantidad(int cantidadAAumentar) {
-		Ataque ataque = ataques.peek();
+		
+	   Ataque ataque = ataques.peek();
+		
 		for (int i=0 ; i< cantidadAAumentar ; i++ ){
-			ataques.push(ataque);
+			
+			ataques.push( ataque );
 		}	
 	}
+	
+	
 
 	public int getAtaquesDisponibles() {
+		
 		return ataques.size();
 	}
 	
+	
 	public Ataque obtenerAtaque(){
+		
 		return  ataques.peek();
 	}
 	

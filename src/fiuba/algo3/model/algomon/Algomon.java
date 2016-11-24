@@ -108,9 +108,11 @@ public abstract class Algomon {
 		this.estadoAlgomon.enfriar();		
 	}
 
-	public void aumentarCantidadDeAtaques(int cantidadAAumentar){
-		for (ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques) {
-			contenedorDeAtaque.aumentarCantidad(cantidadAAumentar);
+	public void aumentarCantidadDeAtaques( int cantidadAAumentar ){
+		
+		for ( ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques ) {
+			
+			contenedorDeAtaque.aumentarCantidad( cantidadAAumentar );
 		}
 		
 	}
@@ -137,8 +139,4 @@ public abstract class Algomon {
 	}
 
 
-	
-
-	
-	
 }

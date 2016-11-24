@@ -12,7 +12,8 @@ public class Brasas extends Ataque {
 
 	@Override
 	public void causarEfecto(Algomon algomonAtacado,Algomon algomonAtacante) {
-		algomonAtacado.disminuirPuntosDeVida(this.potencia * algomonAtacado.obtenerMultiplicadorDeAtaqueDeFuego());		
+		
+		algomonAtacado.disminuirPuntosDeVida( this.potencia * algomonAtacado.obtenerMultiplicadorDeAtaqueDeFuego() );		
 	}
 
 }
