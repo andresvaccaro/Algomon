@@ -23,6 +23,8 @@ public class CantoTests {
 		canto.causarEfecto(charmander, chansey);
 		
 		assertTrue(charmander.estaDormido());
+		
+		//faltaria el tema de los turmos
 	}
 	
 	
