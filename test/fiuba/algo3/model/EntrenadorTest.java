@@ -46,5 +46,20 @@ public class EntrenadorTest {
 		
 	}
 	
+	@Test
+	public void test04SeAgregan3AlgomonesAlEntrenadorYSeCambiaElAlgomonActivoPorElTerceroAgregado(){
+		Entrenador entrenador = new Entrenador("Ash");
+		Algomon squirtle = new Squirtle();
+		Algomon charmander = new Charmander();
+		Algomon bulbasaur = new Bulbasaur();
+		entrenador.agregarAlgomon(squirtle);
+		entrenador.agregarAlgomon(bulbasaur);
+		entrenador.agregarAlgomon(charmander);
+		entrenador.cambiarAlgomonActivo(3);
+		assertEquals(entrenador.obtenerAlgomonActivo(),charmander);
+		assertEquals(entrenador.obtenerNombreAlgomonActivo(),"Charmander");
+		
+	}
+	
 	
 }
