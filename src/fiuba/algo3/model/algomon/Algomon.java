@@ -40,7 +40,7 @@ public abstract class Algomon {
 	
 	public int obtenerCantidadDeAtaquesDisponibles(Class tipoDeAtaque) {
 		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);
-		return contenedorDeAtaque.getAtaquesDisponibles();
+		return contenedorDeAtaque.getCantidadAtaquesDisponibles();
 	}
 	
 	private ContenedorDeAtaque buscarContenedorDeAtaque(Class tipoDeAtaque) {
@@ -128,7 +128,7 @@ public abstract class Algomon {
 		
 		for (ContenedorDeAtaque contenedorDeAtaque : this.contenedoresDeAtaques) {
 			
-			if(contenedorDeAtaque.getAtaquesDisponibles()>0){
+			if(contenedorDeAtaque.getCantidadAtaquesDisponibles()>0){
 				
 				ataquesDisponibles.add(contenedorDeAtaque.obtenerAtaque());
 			}

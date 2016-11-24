@@ -8,14 +8,6 @@ import fiuba.algo3.model.estado.EstadoAlgomon;
 
 public class ContenedorDeAtaque {
 	Stack<Ataque> ataques ;
-	//Ataque ataque;
-	//int ataquesDisponibles;
-	
-	//ESte metodo hay que sacarlo
-	//public ContenedorDeAtaque(Ataque ataque, int ataquesDisponibles) {
-	//	this.ataque = ataque;
-	//	this.ataquesDisponibles = ataquesDisponibles;
-	//}
 	
 	public ContenedorDeAtaque(Stack<Ataque> ataquesACargar){
 		
@@ -34,7 +26,6 @@ public class ContenedorDeAtaque {
 		
 		algomonAtacante.getEstadoAlgomon().realizarAccion(ataque);
 		
-		//this.ataquesDisponibles--;
 	}
 	
 	
@@ -46,7 +37,6 @@ public class ContenedorDeAtaque {
 		
 	}
 
-	//SOLO TE FALTA ARREGLAR ESTE METODO
 	public void aumentarCantidad(int cantidadAAumentar) {
 		
 	   Ataque ataque = ataques.peek();
@@ -59,7 +49,7 @@ public class ContenedorDeAtaque {
 	
 	
 
-	public int getAtaquesDisponibles() {
+	public int getCantidadAtaquesDisponibles() {
 		
 		return ataques.size();
 	}
