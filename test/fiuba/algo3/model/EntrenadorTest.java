@@ -8,7 +8,9 @@ import java.util.List;
 import org.junit.Test;
 
 import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Bulbasaur;
 import fiuba.algo3.model.algomon.Charmander;
+import fiuba.algo3.model.algomon.Squirtle;
 
 public class EntrenadorTest {
 
@@ -27,6 +29,20 @@ public class EntrenadorTest {
 		Algomon charmander = new Charmander();
 		entrenador.agregarAlgomon(charmander);
 		assertEquals(entrenador.obtenerAlgomonActivo(),charmander);
+		
+	}
+	
+	@Test
+	public void test03SeAgregan3AlgomonesAlEntrenadorYSeVerificaQueElActivoSeaElPrimeroAgregado(){
+		Entrenador entrenador = new Entrenador("Ash");
+		Algomon squirtle = new Squirtle();
+		Algomon charmander = new Charmander();
+		Algomon bulbasaur = new Bulbasaur();
+		entrenador.agregarAlgomon(squirtle);
+		entrenador.agregarAlgomon(bulbasaur);
+		entrenador.agregarAlgomon(charmander);
+		assertEquals(entrenador.obtenerAlgomonActivo(),squirtle);
+		assertEquals(entrenador.obtenerNombreAlgomonActivo(),"Squirtle");
 		
 	}
 	
