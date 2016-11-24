@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="fiuba.algo3.vista.JuegoController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Button layoutX="89.0" layoutY="86.0" mnemonicParsing="false" text="Agregar Algomon" />
+    <Label layoutX="54.0" layoutY="14.0" text="Entrenador 1" />
+    <ComboBox layoutX="110.0" layoutY="45.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Label layoutX="40.0" layoutY="48.0" text="Algomon" />
+    <Button layoutX="373.0" layoutY="87.0" mnemonicParsing="false" text="Agregar Algomon" />
+    <Label layoutX="338.0" layoutY="15.0" text="Entrenador 2" />
+    <ComboBox layoutX="394.0" layoutY="46.0" fx:id="cbx" />     
+    <Label layoutX="324.0" layoutY="49.0" text="Algomon" />
+  </children>
+</AnchorPane>

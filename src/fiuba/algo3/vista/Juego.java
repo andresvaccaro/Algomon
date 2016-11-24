@@ -1,5 +1,6 @@
 package fiuba.algo3.vista;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -155,6 +156,18 @@ public class Juego {
 	public void enviarElemento(Elemento elemento) {
 		this.entrenadorActivo.obtenerAlgomonActivo().recibirElemento(elemento);
 	
+	}
+
+
+	public List<Algomon> obtenerTodosLosAlgomones() {
+		List<Algomon> algomones= new ArrayList<Algomon>();
+		algomones.add(new Bulbasaur());
+		algomones.add(new Chansey());
+		algomones.add(new Charmander());
+		algomones.add(new Jigglypuff());
+		algomones.add(new Rattata());
+		algomones.add(new Squirtle());
+		return algomones;		
 	}
 
 	

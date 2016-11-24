@@ -138,5 +138,10 @@ public abstract class Algomon {
 		return ataquesDisponibles;
 	}
 
+	@Override
+	public String toString() {
+		return nombre ;
+	}
+
 
 }

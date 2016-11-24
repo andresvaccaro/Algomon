@@ -1,12 +1,22 @@
 package fiuba.algo3.vista;
 
-import static org.junit.Assert.assertEquals;
+
+
+import static org.junit.Assert.*;
+
+import java.util.List;
 
 import org.junit.Test;
 
 import fiuba.algo3.model.accion.ataque.Fogonazo;
 import fiuba.algo3.model.accion.elemento.Vitamina;
 import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Bulbasaur;
+import fiuba.algo3.model.algomon.Chansey;
+import fiuba.algo3.model.algomon.Charmander;
+import fiuba.algo3.model.algomon.Jigglypuff;
+import fiuba.algo3.model.algomon.Rattata;
+import fiuba.algo3.model.algomon.Squirtle;
 
 public class JuegoTest {
 
@@ -94,6 +104,19 @@ public class JuegoTest {
 		
 	}
 	
+	@Test
+	public void testObtieneTodosLosAlgomonesDelJuego() {
+		Juego juego = new Juego();
+		List<Algomon> algomones = juego.obtenerTodosLosAlgomones();
+		assertEquals(Bulbasaur.class, algomones.get(0).getClass());
+		assertEquals(Chansey.class, algomones.get(1).getClass());
+		assertEquals(Charmander.class, algomones.get(2).getClass());
+		assertEquals(Jigglypuff.class, algomones.get(3).getClass());
+		assertEquals(Rattata.class, algomones.get(4).getClass());
+		assertEquals(Squirtle.class, algomones.get(5).getClass());
+								
+		
+	}
 	
 	
 }
