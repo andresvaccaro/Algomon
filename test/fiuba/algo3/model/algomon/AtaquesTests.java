@@ -11,7 +11,7 @@ public class AtaquesTests {
 	
 	
 	@Test
-	public void test_AtaqueNormalRecibeAchanseyComoAtacanteYrattataComoAtacadoYleQuita16PuntosDeVidaARattata(){
+	public void test_AtaqueNormalRecibeAchanseyComoAtacanteYrattataComoAtacadoYleQuita10PuntosDeVidaARattata(){
 		
 		Ataque ataqueRapido=new AtaqueRapido();
 		
@@ -20,7 +20,7 @@ public class AtaquesTests {
 		
 		ataqueRapido.causarEfecto( rattata, chansey );
 		
-		assertEquals(154d,rattata.getPuntosDeVida(),0.000d);
+		assertEquals(160d,rattata.getPuntosDeVida(),0.000d);
 		
 	}
 	
