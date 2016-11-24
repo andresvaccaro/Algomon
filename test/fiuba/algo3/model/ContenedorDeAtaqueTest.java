@@ -1,6 +1,5 @@
 package fiuba.algo3.model;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.*;
 
 import java.util.Stack;
@@ -10,6 +9,9 @@ import org.junit.Test;
 import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.Brasas;
 import fiuba.algo3.model.accion.ataque.LatigoCepa;
+import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Bulbasaur;
+import fiuba.algo3.model.algomon.Charmander;
 
 public class ContenedorDeAtaqueTest {
 	
@@ -57,6 +59,26 @@ public class ContenedorDeAtaqueTest {
 		assertTrue(contenedor.sosDeAtaque(Brasas.class));
 		
 	}
+	
+	@Test
+	public void test05SeLanzaAtaqueDeUnContenedorYEsteReduceSuCantidadDeAtaques(){
+		Brasas brasas = new Brasas();
+		Stack<Ataque> ataques = new Stack<Ataque>();
+		ataques.push(brasas);
+		ataques.push(brasas);
+		ataques.push(brasas);
+		ContenedorDeAtaque contenedor = new ContenedorDeAtaque(ataques);
+		assertEquals(contenedor.getCantidadAtaquesDisponibles(),3);
+		
+		Algomon charmander = new Charmander();
+		Algomon balbasaur = new Bulbasaur();
+		
+		contenedor.lanzarAtaque(charmander, balbasaur);
+		
+		assertEquals(contenedor.getCantidadAtaquesDisponibles(),2);
+		
+	}
+	
 	
 	
 	
