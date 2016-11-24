@@ -30,7 +30,6 @@ public class EstadoAlgomon {
 		estadoPersistente.realizarAccion(accion);
 	}
 	
-
 	
 	public void despertar() {
 		estadoEsfimero= new EstadoNormalEsfimero();	
