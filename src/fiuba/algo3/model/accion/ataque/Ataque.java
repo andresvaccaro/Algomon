@@ -5,8 +5,7 @@ import fiuba.algo3.model.algomon.Algomon;
 
 public abstract class Ataque extends Accion{
 
-	protected double potencia;
-	protected TipoAtaque tipoAtaque;	
+	protected double potencia;	
 	protected Algomon atacado;
 	
 	public abstract void causarEfecto(Algomon algomonAtacado,Algomon algomonAtacante);

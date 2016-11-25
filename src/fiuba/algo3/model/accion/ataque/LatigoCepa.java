@@ -7,7 +7,6 @@ public class LatigoCepa extends Ataque {
 
 	public LatigoCepa() {
 		super();
-		this.tipoAtaque = new AtaquePlanta();
 		this.potencia = 15;
 	}
 
