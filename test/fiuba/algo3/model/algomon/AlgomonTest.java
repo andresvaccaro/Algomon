@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.model.accion.ataque.AtaqueRapido;
 import fiuba.algo3.model.accion.ataque.Brasas;
 import fiuba.algo3.model.accion.ataque.Burbuja;
 import fiuba.algo3.model.accion.ataque.CanionDeAgua;
@@ -207,6 +208,43 @@ public class AlgomonTest {
 		assertEquals(114d, chansey.getPuntosDeVida(),0.000001d);	
 		assertEquals(114d, jigglypuff.getPuntosDeVida(),0.000001d);
 
+		
+	}
+	
+	@Test
+	public void test10_AlgomonesAtacanConAtaqueRapidoAOtrosAlgomonesYLesQuitan10PuntosDeVidaIndependientementeDelAlgomonQueSea(){
+			
+		Algomon rattata = new Rattata();
+		Algomon jigglypuff = new Jigglypuff();
+		Algomon chansey = new Chansey();
+		Algomon charmander = new Charmander();
+		Algomon squirtle = new Squirtle();
+		Algomon bulbasaur = new Bulbasaur();
+		
+		assertEquals(130d, chansey.getPuntosDeVida(),0.000001d);	
+		assertEquals(170d, charmander.getPuntosDeVida(),0.000001d);
+		assertEquals(150d, squirtle.getPuntosDeVida(),0.000001d);
+		assertEquals(140d, bulbasaur.getPuntosDeVida(),0.000001d);
+		
+		rattata.atacar(chansey, AtaqueRapido.class);		
+		rattata.atacar(charmander, AtaqueRapido.class);				
+		rattata.atacar(squirtle, AtaqueRapido.class);
+		rattata.atacar(bulbasaur,AtaqueRapido.class);
+		
+		assertEquals(120d, chansey.getPuntosDeVida(),0.000001d);
+		assertEquals(160d, charmander.getPuntosDeVida(),0.000001d);	
+		assertEquals(140d, squirtle.getPuntosDeVida(),0.000001d);
+		assertEquals(130d, bulbasaur.getPuntosDeVida(),0.000001d);
+		
+		jigglypuff.atacar(chansey, AtaqueRapido.class);		
+		jigglypuff.atacar(charmander, AtaqueRapido.class);				
+		jigglypuff.atacar(squirtle, AtaqueRapido.class);
+		jigglypuff.atacar(bulbasaur,AtaqueRapido.class);
+		
+		assertEquals(110d, chansey.getPuntosDeVida(),0.000001d);
+		assertEquals(150d, charmander.getPuntosDeVida(),0.000001d);	
+		assertEquals(130d, squirtle.getPuntosDeVida(),0.000001d);
+		assertEquals(120d, bulbasaur.getPuntosDeVida(),0.000001d);
 		
 	}
 	
