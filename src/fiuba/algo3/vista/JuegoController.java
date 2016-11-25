@@ -5,11 +5,16 @@ import fiuba.algo3.model.algomon.Algomon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 public class JuegoController {
 
@@ -37,6 +42,35 @@ public class JuegoController {
 	@FXML
 	private TableView tablaAlgomonesAgregadosEntrenador2 = new TableView();
 
+	@FXML
+	private Button botonAgregarAlgomonEntrenador1;
+
+	@FXML
+	private Button botonAgregarAlgomonEntrenador2;
+	
+	@FXML
+	private Button botonIniciarJuego;
+	
+	@FXML
+	private Pane panelDeJuego;
+	
+	@FXML
+	private TextField txtEntrenadorActivo;
+	
+	@FXML
+	private TextField txtAlgomonActivo;
+	
+
+	@FXML
+	private ComboBox<String> acciones;
+	
+	@FXML
+	private ComboBox<String> cbxAtaquesDisponibles;
+	@FXML
+	private ComboBox<String> cbxElementosDisponibles;
+	@FXML
+	private ComboBox<String> cbxAlgomonesDisponibles;
+	
 	ObservableList<Algomon> datosTablaAlgomonesEntrenador1 = FXCollections.observableArrayList();
 	ObservableList<Algomon> datosTablaAlgomonesEntrenador2 = FXCollections.observableArrayList();
 
@@ -46,12 +80,14 @@ public class JuegoController {
 
 		juego.agregarEntrenador("Oscar");
 		juego.agregarEntrenador("Fabian");
+		juego.iniciarJuego();
 		for (Algomon algomon : juego.obtenerTodosLosAlgomones()) {
 			items.add(algomon.getNombre());
 		}
 		comboAlgomonesEntrenador1.setItems(items);
 		comboAlgomonesEntrenador2.setItems(items);
 		generarTablas();
+		panelDeJuego.setVisible(false);
 	}
 
 	private void generarTablas() {
@@ -100,7 +136,32 @@ public class JuegoController {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	private void iniciarJuego() {
+		this.botonAgregarAlgomonEntrenador1.setDisable(true);
+		this.botonAgregarAlgomonEntrenador2.setDisable(true);
+		this.comboAlgomonesEntrenador1.setDisable(true);
+		this.comboAlgomonesEntrenador2.setDisable(true);
+		this.panelDeJuego.setVisible(true);
+		this.botonIniciarJuego.setDisable(true);
+		this.txtEntrenadorActivo.setText(juego.obtenerNombreJugadorActivo());
+		this.txtEntrenadorActivo.setEditable(false);
+		this.txtAlgomonActivo.setText(juego.obtenerNombreAlgomonActivo());
+		this.txtAlgomonActivo.setEditable(false);
+//		this.cbxAlgomonesDisponibles.setDisable(true);
+//		this.cbxAtaquesDisponibles.setDisable(true);
+//		this.cbxElementosDisponibles.setDisable(true);
+	}
 
+	@FXML
+	private void habilitarPanelDeAcciones() {
+		int accionSeleccionadaIndex = this.acciones.getSelectionModel().getSelectedIndex();
+		if(accionSeleccionadaIndex==1){
+//			this.cbxAtaquesDisponibles.setDisable(false);
+		}
+	}
+	
 	public MainAlgomon getMainAlgomon() {
 		return mainAlgomon;
 	}

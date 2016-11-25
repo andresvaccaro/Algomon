@@ -5,19 +5,45 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="419.0" prefWidth="662.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="fiuba.algo3.vista.JuegoController">
+<AnchorPane prefHeight="587.0" prefWidth="790.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="fiuba.algo3.vista.JuegoController">
   <!-- TODO Add Nodes -->
   <children>
-    <Button layoutX="89.0" layoutY="86.0" mnemonicParsing="false" text="Agregar Algomon" onAction="#agregarAlgomonEntrenador1"/>
+    <Button fx:id="botonAgregarAlgomonEntrenador1" layoutX="90.0" layoutY="76.0" mnemonicParsing="false" onAction="#agregarAlgomonEntrenador1" text="Agregar Algomon" />
     <Label layoutX="54.0" layoutY="14.0" text="Entrenador 1" />
-    <ComboBox fx:id="comboAlgomonesEntrenador1" layoutX="110.0" layoutY="45.0" />
+    <ComboBox fx:id="comboAlgomonesEntrenador1" layoutX="97.0" layoutY="46.0" />
     <Label layoutX="40.0" layoutY="48.0" text="Algomon" />
-    <Button layoutX="373.0" layoutY="87.0" mnemonicParsing="false" text="Agregar Algomon" onAction="#agregarAlgomonEntrenador2"/>
+    <Button fx:id="botonAgregarAlgomonEntrenador2" layoutX="387.0" layoutY="76.0" mnemonicParsing="false" onAction="#agregarAlgomonEntrenador2" text="Agregar Algomon" />
     <Label layoutX="338.0" layoutY="15.0" text="Entrenador 2" />
     <ComboBox fx:id="comboAlgomonesEntrenador2" layoutX="394.0" layoutY="46.0" />
     <Label layoutX="324.0" layoutY="49.0" text="Algomon" />
-    <TableView layoutX="35.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" editable="false"  fx:id="tablaAlgomonesAgregadosEntrenador1"/>         
-    <TableView layoutX="349.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" editable="false" fx:id="tablaAlgomonesAgregadosEntrenador2"/>          
+    <TableView fx:id="tablaAlgomonesAgregadosEntrenador1" editable="false" layoutX="40.0" layoutY="109.0" prefHeight="200.0" prefWidth="200.0" />
+    <TableView fx:id="tablaAlgomonesAgregadosEntrenador2" editable="false" layoutX="356.0" layoutY="109.0" prefHeight="200.0" prefWidth="200.0" />
+    <Button fx:id="botonIniciarJuego" layoutX="251.0" layoutY="137.0" mnemonicParsing="false" onAction="#iniciarJuego" text="Iniciar Juego" />
+    <Pane fx:id="panelDeJuego" layoutX="38.0" layoutY="325.0" prefHeight="200.0" prefWidth="621.0">
+      <children>
+        <Label layoutX="33.0" layoutY="14.0" prefWidth="178.0" text="Es turno de" />
+        <TextField fx:id="txtEntrenadorActivo" layoutX="122.0" layoutY="11.0" prefWidth="200.0" />
+        <Button layoutX="499.0" layoutY="129.0" mnemonicParsing="false" text="Realizar Accion" />
+        <Label layoutX="33.0" layoutY="45.0" text="Seleccionar Accion" />
+        <ComboBox layoutX="151.0" layoutY="43.0" onAction="#habilitarPanelDeAcciones" fx:id="acciones">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Realizar Ataque" />
+              <String fx:value="Entregar Elemento" />
+              <String fx:value="Cambiar Algomon Activo" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextField fx:id="txtAlgomonActivo" layoutX="360.0" layoutY="11.0" prefWidth="200.0" />
+        <ComboBox layoutX="151.0" layoutY="80.0" fx:id="cbxAtaquesDisponibles"/>          
+        <ComboBox layoutX="151.0" layoutY="109.0" fx:id="cbxElementosDisponibles" />          
+        <ComboBox layoutX="151.0" layoutY="140.0" fx:id="cbxAlgomonesDisponibles"/>          
+        <Label layoutX="48.0" layoutY="80.0" text="Ataques" />
+        <Label layoutX="48.0" layoutY="104.0" text="Elementos" />
+        <Label layoutX="48.0" layoutY="140.0" text="Algomones" />
+      </children>
+    </Pane>
   </children>
 </AnchorPane>
