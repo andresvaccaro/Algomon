@@ -146,6 +146,17 @@ public class Entrenador {
 		}
 		return elementos;
 	}
+
+	public List<Algomon> obtenerAlgomonesNoActivos() {
+		List<Algomon> algomonesNoActivos= new ArrayList<Algomon>();
+		
+		for (Algomon algomon : this.algomones) {
+			if(!algomon.equals(this.algomonActivo)){
+				algomonesNoActivos.add(algomon);
+			}
+		}
+		return algomonesNoActivos;
+	}
 	
 	
 	

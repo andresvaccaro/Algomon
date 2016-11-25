@@ -78,6 +78,7 @@ public class JuegoController {
 	ObservableList<Algomon> datosTablaAlgomonesEntrenador2 = FXCollections.observableArrayList();
 	ObservableList<String> datosAtaques = FXCollections.observableArrayList();
 	ObservableList<String> datosElementos = FXCollections.observableArrayList();
+	ObservableList<String> datosAlgomones = FXCollections.observableArrayList();
 	
 
 	@FXML
@@ -168,18 +169,34 @@ public class JuegoController {
 			cargarAtaques();
 			this.cbxAlgomonesDisponibles.setDisable(true);
 			this.cbxElementosDisponibles.setDisable(true);
+		}else{
+			if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
+				this.cbxAtaquesDisponibles.setDisable(true);
+				this.cbxAlgomonesDisponibles.setDisable(true);
+				this.cbxElementosDisponibles.setDisable(false);
+				cargarElementos();				
+			}else{
+				this.cbxAtaquesDisponibles.setDisable(true);
+				this.cbxAlgomonesDisponibles.setDisable(false);
+				this.cbxElementosDisponibles.setDisable(true);
+				cargarAlgomonesNoActivos();				
+			}
 		}
-		if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
-			this.cbxAtaquesDisponibles.setDisable(true);
-			this.cbxAlgomonesDisponibles.setDisable(true);
-			this.cbxElementosDisponibles.setDisable(false);
-			cargarElementos();
-			
-		}
+		
 
 	}
 
+	private void cargarAlgomonesNoActivos() {
+		datosAlgomones.clear();
+		for (Algomon algomon : juego.getEntrenadorActivo().obtenerAlgomonesNoActivos()) {
+			datosAlgomones.add(algomon.getClass().getSimpleName());
+		}
+		cbxAlgomonesDisponibles.setItems(datosAlgomones);
+		
+	}
+
 	private void cargarElementos() {
+		datosElementos.clear();
 		for (Elemento elemento : juego.getEntrenadorActivo().obtenerElementosDisponibles()) {
 			datosElementos.add(elemento.getClass().getSimpleName());
 		}
@@ -188,7 +205,8 @@ public class JuegoController {
 	}
 
 	private void cargarAtaques() {
-		for (Ataque ataque : juego.obtenerAtaquesDeAlgomonActivo()) {
+		datosAtaques.clear();
+		for (Ataque ataque : juego.obtenerAtaquesDeAlgomonActivo()) {			
 			datosAtaques.add(ataque.getClass().getSimpleName());
 		}
 		cbxAtaquesDisponibles.setItems(datosAtaques);
@@ -197,6 +215,9 @@ public class JuegoController {
 	private void refrescarPantalla() {
 		this.txtAlgomonActivo.setText(juego.obtenerNombreAlgomonActivo());
 		this.txtEntrenadorActivo.setText(juego.obtenerNombreJugadorActivo());
+		this.cbxAlgomonesDisponibles.setDisable(true);
+		this.cbxAtaquesDisponibles.setDisable(true);
+		this.cbxElementosDisponibles.setDisable(true);		
 	}
 
 	@FXML
