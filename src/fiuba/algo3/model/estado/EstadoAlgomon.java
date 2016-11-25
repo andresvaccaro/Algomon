@@ -32,11 +32,11 @@ public class EstadoAlgomon {
 	
 	
 	public void despertar() {
-		estadoEsfimero= new EstadoNormalEsfimero();	
+		this.setEstadoEsfimero(new EstadoNormalEsfimero());	
 	}
 	
 	public void dormir() {
-		estadoEsfimero = new EstadoDormido();		
+		this.setEstadoEsfimero(new EstadoDormido());		
 	}
 	
 	public Boolean estaDormido() {
@@ -44,13 +44,13 @@ public class EstadoAlgomon {
 	}
 	
 	public void quemar() {
-		this.estadoPersistente = new EstadoQuemado();		
+		this.setEstadoPersistente(new EstadoQuemado());		
 	}
 	public Boolean estaQuemado() {
 		return this.estadoPersistente.estaQuemado();
 	}
 	public void enfriar() {
-		this.estadoPersistente = new EstadoNormalPersistente();		
+		this.setEstadoPersistente(new EstadoNormalPersistente());		
 	}
 	
 	

@@ -14,6 +14,8 @@ public class EstadoAlgomonTest {
 		EstadoAlgomon estado = new EstadoAlgomon();
 		assertFalse(estado.estaDormido());
 		assertFalse(estado.estaQuemado());
+		assertEquals(estado.getEstadoEsfimero().getClass(),new EstadoNormalEsfimero().getClass());
+		assertEquals(estado.getEstadoPersistente().getClass(),new EstadoNormalPersistente().getClass());
 		
 	}
 	

@@ -55,10 +55,6 @@ public class Entrenador {
 		return this.algomonActivo;		
 	}
 
-	public Ataque obtenerAtaqueDePosicion(int i) {		
-		return null;
-	}
-
 	public Boolean tieneAlgomonesVivos() {
 		Boolean tieneTodosVivos= Boolean.TRUE;		
 		for (Algomon algomon : algomones) {
