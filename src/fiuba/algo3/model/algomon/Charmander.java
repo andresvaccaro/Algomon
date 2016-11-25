@@ -72,4 +72,10 @@ public class Charmander extends Algomon {
 		return 1d;
 	}
 
+	@Override
+	public Algomon clone() throws CloneNotSupportedException {
+		Charmander charmander = new Charmander();
+		return charmander;
+	}
+
 }

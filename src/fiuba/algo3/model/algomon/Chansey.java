@@ -53,6 +53,12 @@ public class Chansey extends AlgomonNormal {
 		return PUNTOS_DE_VIDA_INICIAL;
 	}
 
+	@Override	
+	public Algomon clone() throws CloneNotSupportedException {
+		Chansey chansey = new Chansey();
+		return chansey;
+	}
+
 	
 
 }

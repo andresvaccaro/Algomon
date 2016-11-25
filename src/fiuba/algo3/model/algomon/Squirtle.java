@@ -73,6 +73,11 @@ public class Squirtle extends Algomon {
 		return 1d;
 	}
 
+	@Override
+	public Algomon clone() throws CloneNotSupportedException {
+		Squirtle squirtle = new Squirtle();
+		return squirtle;
+	}
 	
 	
 }

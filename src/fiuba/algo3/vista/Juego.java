@@ -17,7 +17,7 @@ import fiuba.algo3.model.algomon.Squirtle;
 
 public class Juego {
 
-	private HashMap<String, Class> diccionarioDeAlgomones;
+	private HashMap<String, Algomon> diccionarioDeAlgomones;
 	
 	private Entrenador entrenador1;
 	
@@ -28,12 +28,12 @@ public class Juego {
 	public Juego() {
 		super();
 		this.diccionarioDeAlgomones = new HashMap<>();
-		this.diccionarioDeAlgomones.put("Charmander", Charmander.class);
-		this.diccionarioDeAlgomones.put("Bulbasaur", Bulbasaur.class);
-		this.diccionarioDeAlgomones.put("Chansey", Chansey.class);
-		this.diccionarioDeAlgomones.put("Jigglypuff", Jigglypuff.class);		
-		this.diccionarioDeAlgomones.put("Rattata", Rattata.class);
-		this.diccionarioDeAlgomones.put("Squirtle", Squirtle.class);
+		this.diccionarioDeAlgomones.put("Charmander", new Charmander());
+		this.diccionarioDeAlgomones.put("Bulbasaur", new Bulbasaur());
+		this.diccionarioDeAlgomones.put("Chansey", new Chansey());
+		this.diccionarioDeAlgomones.put("Jigglypuff", new Jigglypuff());		
+		this.diccionarioDeAlgomones.put("Rattata", new Rattata());
+		this.diccionarioDeAlgomones.put("Squirtle", new  Squirtle());
 	}
 
 	
@@ -168,6 +168,11 @@ public class Juego {
 		algomones.add(new Rattata());
 		algomones.add(new Squirtle());
 		return algomones;		
+	}
+
+
+	public void agregarAlgomonAEntrenador(String nombreAlgomon, Entrenador entrenador) throws CloneNotSupportedException {		 ;
+		 entrenador.agregarAlgomon(this.diccionarioDeAlgomones.get(nombreAlgomon).clone()); 
 	}
 
 	

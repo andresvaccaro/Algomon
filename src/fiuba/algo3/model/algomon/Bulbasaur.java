@@ -71,4 +71,12 @@ public class Bulbasaur extends Algomon {
 	public double obtenerMultiplicadorDeAtaqueNormal() {
 		return 1d;
 	}
+
+	@Override
+	public Algomon clone() throws CloneNotSupportedException {
+		Bulbasaur bulbasaur = new Bulbasaur();
+		return bulbasaur;
+	}
+
+	
 }

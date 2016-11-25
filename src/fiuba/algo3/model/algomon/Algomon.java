@@ -8,7 +8,7 @@ import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.estado.EstadoAlgomon;
 
-public abstract class Algomon {
+public abstract class Algomon implements Cloneable {
 
 	protected double puntosDeVida;	
 	
@@ -143,5 +143,6 @@ public abstract class Algomon {
 		return nombre ;
 	}
 
+	public abstract Algomon clone() throws CloneNotSupportedException;
 
 }
