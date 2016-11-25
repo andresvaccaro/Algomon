@@ -1,22 +1,26 @@
 package fiuba.algo3.vista;
 
 import fiuba.algo3.MainAlgomon;
+import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.algomon.Algomon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 
 public class JuegoController {
+
+	private static final int REALIZAR_ATAQUE_ACCION_INDICE = 0;
+	private static final int EVIAR_ELEMENTO_ACCION_INDICE = 1;
+	private static final int CAMBIAR_ALGOMON_INDICE = 2;
 
 	@FXML
 	private MenuButton menuJugador1;
@@ -47,32 +51,34 @@ public class JuegoController {
 
 	@FXML
 	private Button botonAgregarAlgomonEntrenador2;
-	
+
 	@FXML
 	private Button botonIniciarJuego;
-	
+
 	@FXML
 	private Pane panelDeJuego;
-	
+
 	@FXML
 	private TextField txtEntrenadorActivo;
-	
+
 	@FXML
 	private TextField txtAlgomonActivo;
-	
 
 	@FXML
 	private ComboBox<String> acciones;
-	
+
 	@FXML
 	private ComboBox<String> cbxAtaquesDisponibles;
 	@FXML
 	private ComboBox<String> cbxElementosDisponibles;
 	@FXML
 	private ComboBox<String> cbxAlgomonesDisponibles;
-	
+
 	ObservableList<Algomon> datosTablaAlgomonesEntrenador1 = FXCollections.observableArrayList();
 	ObservableList<Algomon> datosTablaAlgomonesEntrenador2 = FXCollections.observableArrayList();
+	ObservableList<String> datosAtaques = FXCollections.observableArrayList();
+	ObservableList<String> datosElementos = FXCollections.observableArrayList();
+	
 
 	@FXML
 	private void initialize() {
@@ -96,7 +102,7 @@ public class JuegoController {
 		TableColumn<Algomon, String> vida = new TableColumn<>("Vida");
 		vida.setCellValueFactory(new PropertyValueFactory<Algomon, String>("puntosDeVida"));
 		tablaAlgomonesAgregadosEntrenador1.getColumns().addAll(nombre, vida);
-		
+
 		TableColumn<Algomon, String> nombreTablaEntrenador2 = new TableColumn<>("Nombre");
 		nombreTablaEntrenador2.setCellValueFactory(new PropertyValueFactory<Algomon, String>("nombre"));
 		TableColumn<Algomon, String> vidaTablaEntrenador2 = new TableColumn<>("Vida");
@@ -136,7 +142,7 @@ public class JuegoController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	private void iniciarJuego() {
 		this.botonAgregarAlgomonEntrenador1.setDisable(true);
@@ -149,19 +155,57 @@ public class JuegoController {
 		this.txtEntrenadorActivo.setEditable(false);
 		this.txtAlgomonActivo.setText(juego.obtenerNombreAlgomonActivo());
 		this.txtAlgomonActivo.setEditable(false);
-//		this.cbxAlgomonesDisponibles.setDisable(true);
-//		this.cbxAtaquesDisponibles.setDisable(true);
-//		this.cbxElementosDisponibles.setDisable(true);
+		this.cbxAlgomonesDisponibles.setDisable(true);
+		this.cbxAtaquesDisponibles.setDisable(true);
+		this.cbxElementosDisponibles.setDisable(true);
 	}
 
 	@FXML
-	private void habilitarPanelDeAcciones() {
+	private void habilitarAccion() {
 		int accionSeleccionadaIndex = this.acciones.getSelectionModel().getSelectedIndex();
-		if(accionSeleccionadaIndex==1){
-//			this.cbxAtaquesDisponibles.setDisable(false);
+		if (accionSeleccionadaIndex == REALIZAR_ATAQUE_ACCION_INDICE) {
+			this.cbxAtaquesDisponibles.setDisable(false);
+			cargarAtaques();
+			this.cbxAlgomonesDisponibles.setDisable(true);
+			this.cbxElementosDisponibles.setDisable(true);
 		}
+		if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
+			this.cbxAtaquesDisponibles.setDisable(true);
+			this.cbxAlgomonesDisponibles.setDisable(true);
+			this.cbxElementosDisponibles.setDisable(false);
+			cargarElementos();
+			
+		}
+
 	}
-	
+
+	private void cargarElementos() {
+		for (Elemento elemento : juego.getEntrenadorActivo().obtenerElementosDisponibles()) {
+			datosElementos.add(elemento.getClass().getSimpleName());
+		}
+		cbxElementosDisponibles.setItems(datosElementos);
+		
+	}
+
+	private void cargarAtaques() {
+		for (Ataque ataque : juego.obtenerAtaquesDeAlgomonActivo()) {
+			datosAtaques.add(ataque.getClass().getSimpleName());
+		}
+		cbxAtaquesDisponibles.setItems(datosAtaques);
+	}
+
+	private void refrescarPantalla() {
+		this.txtAlgomonActivo.setText(juego.obtenerNombreAlgomonActivo());
+		this.txtEntrenadorActivo.setText(juego.obtenerNombreJugadorActivo());
+	}
+
+	@FXML
+	private void realizarAccion() {
+		juego.cambiarJugador();
+		refrescarPantalla();
+
+	}
+
 	public MainAlgomon getMainAlgomon() {
 		return mainAlgomon;
 	}

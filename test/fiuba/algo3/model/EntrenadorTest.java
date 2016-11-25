@@ -1,6 +1,8 @@
 package fiuba.algo3.model;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,11 @@ import java.util.List;
 import org.junit.Test;
 
 import fiuba.algo3.model.accion.ataque.Ataque;
+import fiuba.algo3.model.accion.elemento.Elemento;
+import fiuba.algo3.model.accion.elemento.Pocion;
+import fiuba.algo3.model.accion.elemento.Restaurador;
+import fiuba.algo3.model.accion.elemento.SuperPocion;
+import fiuba.algo3.model.accion.elemento.Vitamina;
 import fiuba.algo3.model.algomon.Algomon;
 import fiuba.algo3.model.algomon.Bulbasaur;
 import fiuba.algo3.model.algomon.Charmander;
@@ -89,6 +96,17 @@ public class EntrenadorTest {
 		squirtle.disminuirPuntosDeVida(puntosDeVidaSquirtle);
 		charmander.disminuirPuntosDeVida(puntosDeVidaCharmander);
 		assertFalse(entrenador.tieneAlgomonesVivos());
+		
+	}
+	
+	@Test
+	public void test07SeCreaUnEntrenadorYSeObtienenTodosLosElementosDisponibles(){
+		Entrenador entrenador = new Entrenador("Ash");
+		List<Elemento> elementos = entrenador.obtenerElementosDisponibles();
+		assertEquals(Pocion.class, elementos.get(0).getClass());
+		assertEquals(SuperPocion.class, elementos.get(1).getClass());
+		assertEquals(Vitamina.class, elementos.get(2).getClass());
+		assertEquals(Restaurador.class, elementos.get(3).getClass());
 		
 	}
 }
