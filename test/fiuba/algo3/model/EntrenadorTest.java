@@ -24,31 +24,44 @@ public class EntrenadorTest {
 
 	@Test
 	public void test01SeCreaEntrenadorSinAlgomonesYSeVerificaQueEsteNoTengaNinguno(){
+		
 		Entrenador entrenador = new Entrenador("Ash");
+		
 		assertEquals(entrenador.getNombre(),"Ash");
+		
 		List<Algomon> listaSinAlgomones = new ArrayList<Algomon>();
+		
 		assertEquals(entrenador.getAlgomones(),listaSinAlgomones);
 		
 	}
 	
 	@Test
 	public void test02SeAgregaAlgomonAlEntrenadorYSeVerificaQueSeAgregue(){
+		
 		Entrenador entrenador = new Entrenador("Ash");
+		
 		Algomon charmander = new Charmander();
+		
 		entrenador.agregarAlgomon(charmander);
+		
 		assertEquals(entrenador.obtenerAlgomonActivo(),charmander);
 		
 	}
 	
+	
 	@Test
 	public void test03SeAgregan3AlgomonesAlEntrenadorYSeVerificaQueElActivoSeaElPrimeroAgregado(){
+		
 		Entrenador entrenador = new Entrenador("Ash");
+		
 		Algomon squirtle = new Squirtle();
 		Algomon charmander = new Charmander();
 		Algomon bulbasaur = new Bulbasaur();
+		
 		entrenador.agregarAlgomon(squirtle);
 		entrenador.agregarAlgomon(bulbasaur);
 		entrenador.agregarAlgomon(charmander);
+		
 		assertEquals(entrenador.obtenerAlgomonActivo(),squirtle);
 		assertEquals(entrenador.obtenerNombreAlgomonActivo(),"Squirtle");
 		
