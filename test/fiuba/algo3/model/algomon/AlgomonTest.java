@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.AtaqueRapido;
 import fiuba.algo3.model.accion.ataque.Brasas;
 import fiuba.algo3.model.accion.ataque.Burbuja;
@@ -249,8 +250,27 @@ public class AlgomonTest {
 	}
 	
 	
-	//FANTAN TESTS 10 Y 11 DE LA SEGUNDA ENTREGA
+	//FANTAN TESTS dela  11 DE LA SEGUNDA ENTREGA
 
+	@Test
+	public void test11_algomonesAgotanLaCantidadDisponibleDeCadaAtaqueYnoPuedenVolverAutilizarlos(){
+		
+		Algomon rattata = new Rattata();
+		Algomon charmander=new Charmander();
+		
+		Ataque fogonazo=new Fogonazo();
+		
+		assertEquals(4d, charmander.obtenerCantidadDeAtaquesDisponibles(fogonazo.getClass()),0.000d);
+		
+		charmander.atacar(rattata, fogonazo.getClass());
+		charmander.atacar(rattata, fogonazo.getClass());
+		charmander.atacar(rattata, fogonazo.getClass());
+
+		
+		assertEquals(1d, charmander.obtenerCantidadDeAtaquesDisponibles(fogonazo.getClass()),0.000d);
+		
+	}
+	
 	/**
 	 * Primer test segunda entrega
 	 */
