@@ -250,26 +250,7 @@ public class AlgomonTest {
 	}
 	
 	
-	//FANTAN TESTS dela  11 DE LA SEGUNDA ENTREGA
-
-	@Test
-	public void test11_algomonesAgotanLaCantidadDisponibleDeCadaAtaqueYnoPuedenVolverAutilizarlos(){
-		
-		Algomon rattata = new Rattata();
-		Algomon charmander=new Charmander();
-		
-		Ataque fogonazo=new Fogonazo();
-		
-		assertEquals(4d, charmander.obtenerCantidadDeAtaquesDisponibles(fogonazo.getClass()),0.000d);
-		
-		charmander.atacar(rattata, fogonazo.getClass());
-		charmander.atacar(rattata, fogonazo.getClass());
-		charmander.atacar(rattata, fogonazo.getClass());
-
-		
-		assertEquals(1d, charmander.obtenerCantidadDeAtaquesDisponibles(fogonazo.getClass()),0.000d);
-		
-	}
+	
 	
 	/**
 	 * Primer test segunda entrega
