@@ -15,30 +15,40 @@ public class BrasasTest {
 
 	
 	@Test
-	public void test_AtaqueConBrasasRecibeComoAtacanteACharmanderYaSquirtleComoAtacadoYleQuita8PuntosASquitle(){
+	public void test_charmanderUtilizaElAtaqueBrasaYleQuita8PuntosASquitle(){
 		
 		Algomon squirtle=new Squirtle();
 		Algomon charmander=new Charmander();
 		
 		Ataque brasas=new Brasas();
 		
+		brasas.cargarAlgomonQueRealizaLaAccion(charmander);
+		brasas.cargarAtacado(squirtle);
+		
+		assertEquals(150d,brasas.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		
 		brasas.causarEfecto(squirtle, charmander);
 		
-		assertEquals(142d,squirtle.getPuntosDeVida(),0.000d);
+		assertEquals(142d, brasas.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 	}
 	
 	
 	@Test
-	public void test_AtaqueConBrasasRecibeACharmanderComoAtacante_y_A_JiggypuffComoAtacadoYleQuita16PuntosAjigglipuff(){
+	public void test_elAtaqueConBrasasDeCharmanderLeQuita16PuntosDeVidaAjigglypuff(){
 		
 		Algomon charmander=new Charmander();
 		Algomon jigglipuff=new Jigglypuff();
 		
 		Ataque brasas=new Brasas();
 		
+		brasas.cargarAlgomonQueRealizaLaAccion(charmander);
+		brasas.cargarAtacado(jigglipuff);
+		
+		assertEquals(130d, brasas.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		
 		brasas.causarEfecto(jigglipuff, charmander);
 		
-		assertEquals(114d,jigglipuff.getPuntosDeVida(),0.000d);
+		assertEquals(114d, brasas.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 		
 	}
 }

@@ -16,7 +16,7 @@ public class AtaqueRapidoTest {
 	
 	
 	@Test
-	public void test_chanseyLeCausaEfectoArattataYleQuita10PuntosDeVida(){
+	public void test1_chanseyLeCausaEfectoArattataYleQuita10PuntosDeVida(){
 		
 		Ataque ataqueRapido=new AtaqueRapido();
 		
@@ -34,16 +34,19 @@ public class AtaqueRapidoTest {
 	
 
 	@Test
-	public void test_AtaqueRapidoRecibeCharmanderComoAtacanteYaBulbasaurComoAtacadoYleQuita10PuntosAlAtacadoOseaBulbasaur(){
+	public void test2_CharmanderAtacaConAtaqueRapidoYleQuita10PuntosDeVidaA_Bulbasaur(){
 		
 		Ataque ataqueRapido=new AtaqueRapido();
 		
 		Algomon charmander=new Charmander();
 		Algomon bulbasaur=new Bulbasaur();
 		
+		ataqueRapido.cargarAlgomonQueRealizaLaAccion(charmander);
+		ataqueRapido.cargarAtacado(bulbasaur);
+		
 		ataqueRapido.causarEfecto( bulbasaur , charmander );
 		
-		assertEquals(130d,bulbasaur.getPuntosDeVida(),0.000d);
+		assertEquals(130d, ataqueRapido.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 		
 
 	}
