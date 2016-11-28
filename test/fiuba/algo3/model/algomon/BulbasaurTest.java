@@ -70,13 +70,26 @@ public class BulbasaurTest {
 		
 		assertFalse(bulbasaur.getEstadoAlgomon().estaDormido());
 		
-		bulbasaur.dormir();
+		bulbasaur.getEstadoAlgomon().dormir();
 		
 		assertTrue(bulbasaur.getEstadoAlgomon().estaDormido());
 		
-		bulbasaur.despertar();
+		bulbasaur.getEstadoAlgomon().despertar();
 		
 		assertFalse(bulbasaur.getEstadoAlgomon().estaDormido());
+		
+	}
+	
+	@Test
+	public void test5_bulbasaurIncrementaSusPuntosDeVidaEn3(){
+		
+		Algomon bulbasaur=new Bulbasaur();
+		
+		assertEquals(140d,bulbasaur.getPuntosDeVida(),0.000d);
+		
+		bulbasaur.aumentarPuntosDeVida(3);
+		
+		assertEquals(143d,bulbasaur.getPuntosDeVida(),0.000d);
 		
 	}
 
