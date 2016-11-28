@@ -26,6 +26,7 @@ public class SuperPocionTest {
 		unaSuperPocion.realizarAccion();
 		
 		assertEquals(210d,charmander.getPuntosDeVida(),0.000d);
+		assertEquals(210d,unaSuperPocion.getAlgomonQueRealizaLaAccion().getPuntosDeVida(),0.000d);
 		
 	}
 }
