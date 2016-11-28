@@ -13,7 +13,7 @@ public class PocionTest {
 	
 	
 	@Test 
-	public void test_unaPocionSeLeAsignaAchanseyYleIncrementa20PuntosDeVida(){
+	public void test_chanseySeCargaUnaPocionYleIncrementa20PuntosDeVida(){
 	
 		Algomon chansey=new Chansey();
 		
@@ -25,6 +25,7 @@ public class PocionTest {
 		
 		unaPocion.realizarAccion();
 		
+		assertEquals(150d,unaPocion.getAlgomonQueRealizaLaAccion().getPuntosDeVida(),0.000d);
 		assertEquals(150d,chansey.getPuntosDeVida(),0.000d);
 		
 	}

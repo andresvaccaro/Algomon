@@ -51,6 +51,8 @@ public class RestauradorTest {
 			
 			restaurador.realizarAccion();
 			
+			assertFalse( restaurador.getAlgomonQueRealizaLaAccion().estaDormido() );
+			assertFalse( restaurador.getAlgomonQueRealizaLaAccion().estaQuemado() );
 			assertFalse( rattata.estaDormido() );
 			assertFalse( rattata.estaQuemado() );
 			
