@@ -26,12 +26,21 @@ public class ChupaVidasTest {
 		
 		Ataque chupavida=new ChupaVidas();
 		
+		chupavida.cargarAlgomonQueRealizaLaAccion(bulbasaur);
+		chupavida.cargarAtacado(squirtle);
+		
+		
+		
 		chupavida.causarEfecto(squirtle, bulbasaur);
 		
 		//bulbasaur le saco el 30% del danio causado a squirtle
 		
 		assertEquals(149d,bulbasaur.getPuntosDeVida(),0.000d);
 		assertEquals(120d,squirtle.getPuntosDeVida(),0.000d);
+		
+		assertEquals(149d,chupavida.getAlgomonQueRealizaLaAccion().getPuntosDeVida(),0.000d);
+		assertEquals(120d,chupavida.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		
 		
 		
 	}

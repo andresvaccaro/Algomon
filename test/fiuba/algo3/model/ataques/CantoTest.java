@@ -21,11 +21,15 @@ public class CantoTest {
 		
 		Ataque canto=new Canto();
 	
+		canto.cargarAlgomonQueRealizaLaAccion(chansey);
+		canto.cargarAtacado(charmander);
+	
 		assertFalse(charmander.estaDormido());
 		
 		canto.causarEfecto(charmander, chansey);
 		
 		assertTrue(charmander.estaDormido());
+		assertTrue( canto.getAlgomonAtacado().estaDormido());
 		
 		//faltaria el tema de los turmos
 	}

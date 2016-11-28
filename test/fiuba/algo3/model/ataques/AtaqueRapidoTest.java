@@ -44,8 +44,12 @@ public class AtaqueRapidoTest {
 		ataqueRapido.cargarAlgomonQueRealizaLaAccion(charmander);
 		ataqueRapido.cargarAtacado(bulbasaur);
 		
+		assertEquals(140d,bulbasaur.getPuntosDeVida(),0.000d);	
+		assertEquals(140d, ataqueRapido.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		
 		ataqueRapido.causarEfecto( bulbasaur , charmander );
 		
+		assertEquals(130d,bulbasaur.getPuntosDeVida(),0.000d);	
 		assertEquals(130d, ataqueRapido.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 		
 

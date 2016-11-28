@@ -44,10 +44,13 @@ public class BrasasTest {
 		brasas.cargarAlgomonQueRealizaLaAccion(charmander);
 		brasas.cargarAtacado(jigglipuff);
 		
+		
+		assertEquals(130d,jigglipuff.getPuntosDeVida(),0.000d);
 		assertEquals(130d, brasas.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 		
 		brasas.causarEfecto(jigglipuff, charmander);
 		
+		assertEquals(114d,jigglipuff.getPuntosDeVida(),0.000d);
 		assertEquals(114d, brasas.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 		
 	}

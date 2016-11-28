@@ -15,18 +15,25 @@ public class CanionDeAguaTest {
 	
 	
 	@Test
-	public void test_canionDeAguaDeSquirtleLeCausaEfectoAcharmanderYleQuita40PuntosDeVidaAcharmander(){
+	public void test_canionDeAguaDeSquirtleLeCausaEfectoAcharmanderYleQuita40PuntosDeVida(){
 		
 		Algomon squirtle=new Squirtle();
 		Algomon charmander=new Charmander();
 		
 		Ataque canionDeAgua=new CanionDeAgua();
 		
-		//squirtle le causa el efecto a charmander
+		canionDeAgua.cargarAlgomonQueRealizaLaAccion(squirtle);
+		canionDeAgua.cargarAtacado(charmander);
 		
+		
+		assertEquals(170d,charmander.getPuntosDeVida(),0.000d);	
+		assertEquals(170d, canionDeAgua.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		
+		//squirtle le causa el efecto a charmander
 		canionDeAgua.causarEfecto(charmander, squirtle);
 		
 		assertEquals(130d,charmander.getPuntosDeVida(),0.000d);
+		assertEquals(130d, canionDeAgua.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 		
 	}
 
