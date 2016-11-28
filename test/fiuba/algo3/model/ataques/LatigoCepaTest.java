@@ -20,9 +20,18 @@ public class LatigoCepaTest {
 		
 		Ataque latigoCepa=new LatigoCepa();
 		
+		latigoCepa.cargarAlgomonQueRealizaLaAccion(Bulbasaur);
+		latigoCepa.cargarAtacado(rattata);
+		
+		assertEquals(170d,rattata.getPuntosDeVida(),0.000d);
+		assertEquals(170d,latigoCepa.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		
+		
 		latigoCepa.causarEfecto(rattata, Bulbasaur);
 		
 		assertEquals(155d,rattata.getPuntosDeVida(),0.000d);
+		assertEquals(155d,latigoCepa.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		
 		
 	}
 

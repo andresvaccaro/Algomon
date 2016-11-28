@@ -18,12 +18,19 @@ public class FogonazoTest {
 		Algomon charmander=new Charmander();
 		Algomon chansey=new Chansey();
 		
-		assertFalse(chansey.estaQuemado());
 		
 		Ataque fogonazo=new Fogonazo();
 		
 		fogonazo.cargarAlgomonQueRealizaLaAccion(charmander);
 		fogonazo.cargarAtacado(chansey);
+		
+		assertFalse(chansey.estaQuemado());
+		assertFalse(fogonazo.getAlgomonAtacado().estaQuemado());
+		
+		
+		assertEquals(130d,fogonazo.getAlgomonAtacado().getPuntosDeVida(),0.000d);
+		assertEquals(130d,chansey.getPuntosDeVida(),0.000d);
+		
 		
 		fogonazo.causarEfecto(chansey, charmander);
 		
