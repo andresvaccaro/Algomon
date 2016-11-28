@@ -16,16 +16,19 @@ public class AtaqueRapidoTest {
 	
 	
 	@Test
-	public void test_AtaqueRapidoRecibeAchanseyComoAtacanteYrattataComoAtacadoYleQuita10PuntosDeVidaARattata(){
+	public void test_chanseyLeCausaEfectoArattataYleQuita10PuntosDeVida(){
 		
 		Ataque ataqueRapido=new AtaqueRapido();
 		
 		Algomon chansey=new Chansey();
 		Algomon rattata=new Rattata();
 		
+		ataqueRapido.cargarAlgomonQueRealizaLaAccion(chansey);
+		ataqueRapido.cargarAtacado(rattata);
+		
 		ataqueRapido.causarEfecto( rattata, chansey );
 		
-		assertEquals(160d,rattata.getPuntosDeVida(),0.000d);
+		assertEquals(160d, ataqueRapido.getAlgomonAtacado().getPuntosDeVida() ,0.000d);
 		
 	}
 	

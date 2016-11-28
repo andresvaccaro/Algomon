@@ -20,8 +20,16 @@ public abstract class Ataque extends Accion{
 		this.atacado = atacado;
 	}
 	
+	
+	public Algomon getAlgomonAtacado(){
+		
+		return this.atacado;
+	}
+	
 	@Override
 	public boolean puedeRealizarlaDormido() {
 		return Boolean.FALSE;
 	}
+	
+	
 }
