@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.ataque.Ataque;
 import fiuba.algo3.model.accion.ataque.AtaqueRapido;
 import fiuba.algo3.model.accion.ataque.Brasas;
 import fiuba.algo3.model.accion.ataque.Burbuja;
