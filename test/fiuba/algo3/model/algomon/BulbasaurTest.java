@@ -68,16 +68,15 @@ public class BulbasaurTest {
 		
 		Algomon bulbasaur=new Bulbasaur();
 		
-		assertFalse(bulbasaur.estaDormido());
+		assertFalse(bulbasaur.getEstadoAlgomon().estaDormido());
 		
 		bulbasaur.dormir();
 		
-		assertTrue(bulbasaur.estaDormido());
+		assertTrue(bulbasaur.getEstadoAlgomon().estaDormido());
 		
 		bulbasaur.despertar();
 		
-		assertFalse(bulbasaur.estaDormido());
-		
+		assertFalse(bulbasaur.getEstadoAlgomon().estaDormido());
 		
 	}
 
