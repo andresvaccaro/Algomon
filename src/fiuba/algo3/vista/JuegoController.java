@@ -225,31 +225,46 @@ public class JuegoController {
 			this.datosTablaAlgomonesEntrenador1.add(algomon);
 		}
 		this.tablaAlgomonesAgregadosEntrenador1.setItems(this.datosTablaAlgomonesEntrenador1);
-		
+
 		this.datosTablaAlgomonesEntrenador2.clear();
 		for (Algomon algomon : juego.getEntrenador2().getAlgomones()) {
 			this.datosTablaAlgomonesEntrenador2.add(algomon);
 		}
 		this.tablaAlgomonesAgregadosEntrenador2.setItems(this.datosTablaAlgomonesEntrenador2);
-		
+
 	}
 
 	@FXML
 	private void realizarAccion() {
-		
+
 		int accionSeleccionadaIndex = this.acciones.getSelectionModel().getSelectedIndex();
 		if (accionSeleccionadaIndex == REALIZAR_ATAQUE_ACCION_INDICE) {
 			String nombreAtaque = obtenerAtaqueSeleccionado();
-			Ataque ataque= this.juego.obetenerAtaque(nombreAtaque);
-			juego.atacar(ataque);		
+			Ataque ataque = this.juego.obetenerAtaque(nombreAtaque);
+			juego.atacar(ataque);
+			juego.cambiarJugador();
+		} else {
+			if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
+				String nombreElemento = obtenerElementoSeleccionado();
+				Elemento elemento = this.juego.obtenerElemento(nombreElemento);
+				this.juego.enviarElemento(elemento);
+				juego.cambiarJugador();
+			}
+
 		}
-		juego.cambiarJugador();
+
 		refrescarPantalla();
+	}
+
+	private String obtenerElementoSeleccionado() {
+		int elementoSeleccionadoIndex = this.cbxElementosDisponibles.getSelectionModel().getSelectedIndex();
+		String nombreElementoSeleccionado = datosElementos.get(elementoSeleccionadoIndex);
+		return nombreElementoSeleccionado;
 	}
 
 	private String obtenerAtaqueSeleccionado() {
 		int ataqueSeleccionadoIndex = this.cbxAtaquesDisponibles.getSelectionModel().getSelectedIndex();
-		String nombreAtaqueSeleccionado=datosAtaques.get(ataqueSeleccionadoIndex);
+		String nombreAtaqueSeleccionado = datosAtaques.get(ataqueSeleccionadoIndex);
 		return nombreAtaqueSeleccionado;
 	}
 
