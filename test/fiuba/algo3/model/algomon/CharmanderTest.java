@@ -17,7 +17,7 @@ public class CharmanderTest {
 	public void test1_CharmanderRecibeUnaSuperPocionEincrementa40puntoDeVida(){
 		
 		
-		Algomon charmander=new Charmander();
+		Charmander charmander=new Charmander();
 	
 		assertEquals(170d,charmander.getPuntosDeVida(),0.000d);
 		
@@ -30,7 +30,7 @@ public class CharmanderTest {
 	@Test
 	public void test2_charmanderRecibeUnaVitaminaYseIncrementaEn_2_laCantidadDeSusAtaques(){
 		
-		Algomon charmander=new Charmander();
+		Charmander charmander=new Charmander();
 		
 		assertEquals(16,charmander.obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class));
 		assertEquals(4,charmander.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
@@ -42,6 +42,44 @@ public class CharmanderTest {
 		assertEquals(6,charmander.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
 		assertEquals(12,charmander.obtenerCantidadDeAtaquesDisponibles(Brasas.class));
 	
+	}
+	
+	@Test
+	public void test3_charmanderNoDeberiaEstarDormidoNiTampocoQuemado_LuegoSeDuermeYseQuema(){
+		
+		Charmander charmander=new Charmander();
+		
+		assertFalse(charmander.estaDormido());
+		assertFalse(charmander.estaQuemado());
+		
+		charmander.dormir();
+		charmander.quemar();
+		
+		assertTrue(charmander.estaDormido());
+		assertTrue(charmander.estaQuemado());
+		
+		charmander.despertar();
+		
+		assertFalse(charmander.estaDormido());
+	}
+	
+	@Test
+	public void test4_charmanderReduce10PorCientoSusPuntosDeVidaInicial_y_ademasReduce8puntosDeSuVida(){
+		
+		
+		Charmander charmander=new Charmander();
+		
+		assertEquals(170d,charmander.getPuntosDeVida(),0.000d);
+		
+		charmander.disminuirDiezPorciento();
+		
+		assertEquals(153d,charmander.getPuntosDeVida(),0.000d);
+		
+		charmander.disminuirPuntosDeVida(8);
+		
+		assertEquals(145d,charmander.getPuntosDeVida(),0.000d);
+	
+		
 	}
 	
 

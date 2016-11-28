@@ -17,7 +17,7 @@ public class BulbasaurTest {
 	@Test
 	public void Test1_bulbasaurRecibeUnaPocionYseVerificaSusPuntosDeVida(){
 		
-		Algomon bulbasaur=new Bulbasaur();
+		Bulbasaur bulbasaur=new Bulbasaur();
 		
 		assertEquals(140d,bulbasaur.getPuntosDeVida(),0.000d);
 		
@@ -31,7 +31,7 @@ public class BulbasaurTest {
 	@Test
 	public void Test2_bulbasaurRecibeUnaVitaminaYseVerificaQueSusAtaquesSeHayaIncrementadoEn2(){
 		
-		Algomon bulbasaur=new Bulbasaur();
+		Bulbasaur bulbasaur=new Bulbasaur();
 		
 		assertEquals(16d,bulbasaur.obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class),0.000d);
 		assertEquals(10d,bulbasaur.obtenerCantidadDeAtaquesDisponibles(LatigoCepa.class),0.000d);
@@ -49,8 +49,8 @@ public class BulbasaurTest {
 	@Test
 	public void Test3_bulbasaurIncrementaSusPuntosDeVidaCuandoRealizaUnAtaqueChupaVidasAotroAlgomon(){
 		
-		Algomon bulbasaur=new Bulbasaur();
-		Algomon squirtle=new Squirtle();
+		Bulbasaur bulbasaur=new Bulbasaur();
+		Squirtle squirtle=new Squirtle();
 
 		assertEquals(140d,bulbasaur.getPuntosDeVida(),0.000d);
 		assertEquals(150d,squirtle.getPuntosDeVida(),0.000d);
@@ -65,7 +65,7 @@ public class BulbasaurTest {
 	@Test
 	public void Test4_bulbasaurSeCreaEnEstadoDespiertoYluegoSeLoDuermeParaLuegoDespertarlo(){
 		
-		Algomon bulbasaur=new Bulbasaur();
+		Bulbasaur bulbasaur=new Bulbasaur();
 		
 		assertFalse(bulbasaur.getEstadoAlgomon().estaDormido());
 		
@@ -82,7 +82,7 @@ public class BulbasaurTest {
 	@Test
 	public void test5_bulbasaurIncrementaSusPuntosDeVidaEn3(){
 		
-		Algomon bulbasaur=new Bulbasaur();
+		Bulbasaur bulbasaur=new Bulbasaur();
 		
 		assertEquals(140d,bulbasaur.getPuntosDeVida(),0.000d);
 		
