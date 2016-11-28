@@ -16,7 +16,7 @@ public class VitaminaTest {
 	
 	
 	@Test
-	public void test_unaVitaminaSeAplicaArattataYleIncrementa2AtodosSusAtaques(){
+	public void test_unaVitaminaSeAplica_A_RattataYleIncrementa2AtodosSusAtaques(){
 		
 		Algomon rattata=new Rattata();
 		
@@ -29,6 +29,11 @@ public class VitaminaTest {
 		vitamina.cargarAlgomonQueRealizaLaAccion(rattata);
 		
 		vitamina.realizarAccion();
+		
+		
+		assertEquals(6,vitamina.getAlgomonQueRealizaLaAccion().obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
+		assertEquals(17,vitamina.getAlgomonQueRealizaLaAccion().obtenerCantidadDeAtaquesDisponibles(Burbuja.class));
+		assertEquals(18,vitamina.getAlgomonQueRealizaLaAccion().obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class));
 		
 		assertEquals(6,rattata.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
 		assertEquals(17,rattata.obtenerCantidadDeAtaquesDisponibles(Burbuja.class));
