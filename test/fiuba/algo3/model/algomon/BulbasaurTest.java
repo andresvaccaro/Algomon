@@ -62,5 +62,23 @@ public class BulbasaurTest {
 		assertEquals(120d,squirtle.getPuntosDeVida(),0.000d);
 		
 	}
+	
+	@Test
+	public void Test4_bulbasaurSeCreaEnEstadoDespiertoYluegoSeLoDuermeParaLuegoDespertarlo(){
+		
+		Algomon bulbasaur=new Bulbasaur();
+		
+		assertFalse(bulbasaur.estaDormido());
+		
+		bulbasaur.dormir();
+		
+		assertTrue(bulbasaur.estaDormido());
+		
+		bulbasaur.despertar();
+		
+		assertFalse(bulbasaur.estaDormido());
+		
+		
+	}
 
 }
