@@ -46,5 +46,21 @@ public class BulbasaurTest {
 		
 		
 	}
+	
+	@Test
+	public void Test3_bulbasaurIncrementaSusPuntosDeVidaCuandoRealizaUnAtaqueChupaVidasAotroAlgomon(){
+		
+		Algomon bulbasaur=new Bulbasaur();
+		Algomon squirtle=new Squirtle();
+
+		assertEquals(140d,bulbasaur.getPuntosDeVida(),0.000d);
+		assertEquals(150d,squirtle.getPuntosDeVida(),0.000d);
+		
+		bulbasaur.atacar(squirtle, ChupaVidas.class);
+		
+		assertEquals(149d,bulbasaur.getPuntosDeVida(),0.000d);
+		assertEquals(120d,squirtle.getPuntosDeVida(),0.000d);
+		
+	}
 
 }
