@@ -13,7 +13,7 @@ import fiuba.algo3.model.algomon.Charmander;
 public class FogonazoTest {
 	
 	@Test
-	public void test_CharmanderDejaAChanseyEnEstadoQuemadoYleQuita2PuntosDeVidaPorAtaqueFogonazo(){
+	public void test_CharmanderDejaAChanseyEnEstadoQuemadoYleQuita2PuntosDeVidaPorElAtaqueFogonazo(){
 		
 		Algomon charmander=new Charmander();
 		Algomon chansey=new Chansey();
@@ -22,11 +22,18 @@ public class FogonazoTest {
 		
 		Ataque fogonazo=new Fogonazo();
 		
+		fogonazo.cargarAlgomonQueRealizaLaAccion(charmander);
+		fogonazo.cargarAtacado(chansey);
+		
 		fogonazo.causarEfecto(chansey, charmander);
 		
+		
+		assertTrue(fogonazo.getAlgomonAtacado().estaQuemado());
 		assertTrue(chansey.estaQuemado());
 		
+		assertEquals(128d,fogonazo.getAlgomonAtacado().getPuntosDeVida(),0.000d);
 		assertEquals(128d,chansey.getPuntosDeVida(),0.000d);
+		
 	}
 
 }
