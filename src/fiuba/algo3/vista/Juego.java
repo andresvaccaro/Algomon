@@ -18,7 +18,7 @@ import fiuba.algo3.model.algomon.Squirtle;
 public class Juego {
 
 	private HashMap<String, Algomon> diccionarioDeAlgomones;
-	
+			
 	private Entrenador entrenador1;
 	
 	private Entrenador entrenador2;
@@ -174,6 +174,20 @@ public class Juego {
 	public void agregarAlgomonAEntrenador(String nombreAlgomon, Entrenador entrenador) throws CloneNotSupportedException {		 ;
 		 entrenador.agregarAlgomon(this.diccionarioDeAlgomones.get(nombreAlgomon).clone()); 
 	}
+
+
+	public Ataque obetenerAtaque(String nombreAtaque) {
+		Ataque ataqueEncontrado = null;
+		for (Ataque ataque : obtenerAtaquesDeAlgomonActivo()) {
+			if(ataque.getClass().getSimpleName().equals(nombreAtaque)){
+				ataqueEncontrado = ataque;
+			}
+		}
+		return ataqueEncontrado;
+	}
+
+
+	
 
 	
 

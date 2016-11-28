@@ -79,7 +79,6 @@ public class JuegoController {
 	ObservableList<String> datosAtaques = FXCollections.observableArrayList();
 	ObservableList<String> datosElementos = FXCollections.observableArrayList();
 	ObservableList<String> datosAlgomones = FXCollections.observableArrayList();
-	
 
 	@FXML
 	private void initialize() {
@@ -169,20 +168,19 @@ public class JuegoController {
 			cargarAtaques();
 			this.cbxAlgomonesDisponibles.setDisable(true);
 			this.cbxElementosDisponibles.setDisable(true);
-		}else{
+		} else {
 			if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
 				this.cbxAtaquesDisponibles.setDisable(true);
 				this.cbxAlgomonesDisponibles.setDisable(true);
 				this.cbxElementosDisponibles.setDisable(false);
-				cargarElementos();				
-			}else{
+				cargarElementos();
+			} else {
 				this.cbxAtaquesDisponibles.setDisable(true);
 				this.cbxAlgomonesDisponibles.setDisable(false);
 				this.cbxElementosDisponibles.setDisable(true);
-				cargarAlgomonesNoActivos();				
+				cargarAlgomonesNoActivos();
 			}
 		}
-		
 
 	}
 
@@ -192,7 +190,7 @@ public class JuegoController {
 			datosAlgomones.add(algomon.getClass().getSimpleName());
 		}
 		cbxAlgomonesDisponibles.setItems(datosAlgomones);
-		
+
 	}
 
 	private void cargarElementos() {
@@ -201,12 +199,12 @@ public class JuegoController {
 			datosElementos.add(elemento.getClass().getSimpleName());
 		}
 		cbxElementosDisponibles.setItems(datosElementos);
-		
+
 	}
 
 	private void cargarAtaques() {
 		datosAtaques.clear();
-		for (Ataque ataque : juego.obtenerAtaquesDeAlgomonActivo()) {			
+		for (Ataque ataque : juego.obtenerAtaquesDeAlgomonActivo()) {
 			datosAtaques.add(ataque.getClass().getSimpleName());
 		}
 		cbxAtaquesDisponibles.setItems(datosAtaques);
@@ -217,14 +215,42 @@ public class JuegoController {
 		this.txtEntrenadorActivo.setText(juego.obtenerNombreJugadorActivo());
 		this.cbxAlgomonesDisponibles.setDisable(true);
 		this.cbxAtaquesDisponibles.setDisable(true);
-		this.cbxElementosDisponibles.setDisable(true);		
+		this.cbxElementosDisponibles.setDisable(true);
+		this.refrescarTablasDeVidasDeAlgomones();
+	}
+
+	private void refrescarTablasDeVidasDeAlgomones() {
+		this.datosTablaAlgomonesEntrenador1.clear();
+		for (Algomon algomon : juego.getEntrenador1().getAlgomones()) {
+			this.datosTablaAlgomonesEntrenador1.add(algomon);
+		}
+		this.tablaAlgomonesAgregadosEntrenador1.setItems(this.datosTablaAlgomonesEntrenador1);
+		
+		this.datosTablaAlgomonesEntrenador2.clear();
+		for (Algomon algomon : juego.getEntrenador2().getAlgomones()) {
+			this.datosTablaAlgomonesEntrenador2.add(algomon);
+		}
+		this.tablaAlgomonesAgregadosEntrenador2.setItems(this.datosTablaAlgomonesEntrenador2);
+		
 	}
 
 	@FXML
 	private void realizarAccion() {
+		
+		int accionSeleccionadaIndex = this.acciones.getSelectionModel().getSelectedIndex();
+		if (accionSeleccionadaIndex == REALIZAR_ATAQUE_ACCION_INDICE) {
+			String nombreAtaque = obtenerAtaqueSeleccionado();
+			Ataque ataque= this.juego.obetenerAtaque(nombreAtaque);
+			juego.atacar(ataque);		
+		}
 		juego.cambiarJugador();
 		refrescarPantalla();
+	}
 
+	private String obtenerAtaqueSeleccionado() {
+		int ataqueSeleccionadoIndex = this.cbxAtaquesDisponibles.getSelectionModel().getSelectedIndex();
+		String nombreAtaqueSeleccionado=datosAtaques.get(ataqueSeleccionadoIndex);
+		return nombreAtaqueSeleccionado;
 	}
 
 	public MainAlgomon getMainAlgomon() {

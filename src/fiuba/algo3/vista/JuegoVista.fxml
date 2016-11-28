@@ -27,7 +27,7 @@
         <TextField fx:id="txtEntrenadorActivo" layoutX="122.0" layoutY="11.0" prefWidth="200.0" />
         <Button layoutX="499.0" layoutY="129.0" mnemonicParsing="false" text="Realizar Accion" onAction="#realizarAccion"/>
         <Label layoutX="33.0" layoutY="45.0" text="Seleccionar Accion" />
-        <ComboBox layoutX="151.0" layoutY="43.0" onAction="#habilitarAccion" fx:id="acciones">
+        <ComboBox layoutX="151.0" layoutY="43.0" onAction="#habilitarAccion"  fx:id="acciones">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Realizar Ataque" />
