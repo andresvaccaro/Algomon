@@ -145,5 +145,9 @@ public abstract class Algomon implements Cloneable {
 	}
 
 	public abstract Algomon clone() throws CloneNotSupportedException;
+	
+	public String obtenerDescripcionDeEstado(){
+		return this.estadoAlgomon.getEstadoEsfimero().getClass().getSimpleName() + " - "+this.estadoAlgomon.getEstadoPersistente().getClass().getSimpleName();
+	}
 
 }

@@ -195,4 +195,8 @@ public class Juego {
 		return elementoEncontrado;
 	}
 
+	public String obtenerEstadoAlgomonActivo() {		
+		return this.entrenadorActivo.obtenerAlgomonActivo().obtenerDescripcionDeEstado();
+	}
+
 }

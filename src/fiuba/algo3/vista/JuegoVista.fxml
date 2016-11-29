@@ -21,7 +21,7 @@
     <TableView fx:id="tablaAlgomonesAgregadosEntrenador1" editable="false" layoutX="67.0" layoutY="109.0" prefHeight="103.0" prefWidth="200.0" />
     <TableView fx:id="tablaAlgomonesAgregadosEntrenador2" editable="false" layoutX="405.0" layoutY="109.0" prefHeight="103.0" prefWidth="200.0" />
     <Button fx:id="botonIniciarJuego" layoutX="286.0" layoutY="103.0" mnemonicParsing="false" onAction="#iniciarJuego" text="Iniciar Juego" />
-    <Pane fx:id="panelDeJuego" layoutX="45.0" layoutY="339.0" prefHeight="200.0" prefWidth="621.0">
+    <Pane fx:id="panelDeJuego" layoutX="45.0" layoutY="339.0" prefHeight="200.0" prefWidth="740.0">
       <children>
         <Label layoutX="33.0" layoutY="14.0" prefWidth="178.0" text="Es turno de" />
         <TextField fx:id="txtEntrenadorActivo" layoutX="122.0" layoutY="11.0" prefWidth="200.0" />
@@ -36,16 +36,19 @@
             </FXCollections>
           </items>
         </ComboBox>
-        <TextField fx:id="txtAlgomonActivo" layoutX="360.0" layoutY="11.0" prefWidth="200.0" />
+        <TextField fx:id="txtAlgomonActivo" layoutX="472.0" layoutY="14.0" prefWidth="200.0" />
         <ComboBox fx:id="cbxAtaquesDisponibles" layoutX="151.0" layoutY="80.0" />
         <ComboBox fx:id="cbxElementosDisponibles" layoutX="151.0" layoutY="109.0" />
         <ComboBox fx:id="cbxAlgomonesDisponibles" layoutX="151.0" layoutY="140.0" />
         <Label layoutX="48.0" layoutY="80.0" text="Ataques" />
         <Label layoutX="48.0" layoutY="104.0" text="Elementos" />
         <Label layoutX="48.0" layoutY="140.0" text="Algomones" />
+        <Label layoutX="356.0" layoutY="14.0" text="Algomon Activo" />
+        <Label layoutX="356.0" layoutY="42.0" text="Estado" />
+        <TextField fx:id="txtEstadoAlgomonActivo" layoutX="418.0" layoutY="42.0" prefWidth="296.0" />
       </children>
     </Pane>
-    <TableView fx:id="tablaElementosEntrenador1" layoutX="67.0" layoutY="224.0" prefHeight="103.0" prefWidth="200.0"/>
-    <TableView fx:id="tablaElementosEntrenador2" layoutX="402.0" layoutY="224.0" prefHeight="103.0" prefWidth="200.0"/>
+    <TableView fx:id="tablaElementosEntrenador1" layoutX="67.0" layoutY="224.0" prefHeight="103.0" prefWidth="200.0" />
+    <TableView fx:id="tablaElementosEntrenador2" layoutX="402.0" layoutY="224.0" prefHeight="103.0" prefWidth="200.0" />
   </children>
 </AnchorPane>

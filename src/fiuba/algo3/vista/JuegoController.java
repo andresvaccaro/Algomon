@@ -69,6 +69,10 @@ public class JuegoController {
 
 	@FXML
 	private TextField txtAlgomonActivo;
+	
+	
+	@FXML
+	private TextField txtEstadoAlgomonActivo;
 
 	@FXML
 	private ComboBox<String> acciones;
@@ -195,6 +199,8 @@ public class JuegoController {
 			this.panelDeJuego.setVisible(true);
 			this.botonIniciarJuego.setDisable(true);
 			this.txtEntrenadorActivo.setText(juego.obtenerNombreJugadorActivo());
+			this.txtEstadoAlgomonActivo.setText(juego.obtenerEstadoAlgomonActivo());
+			this.txtEstadoAlgomonActivo.setEditable(false);
 			this.txtEntrenadorActivo.setEditable(false);
 			this.txtAlgomonActivo.setText(juego.obtenerNombreAlgomonActivo());
 			this.txtAlgomonActivo.setEditable(false);
@@ -279,6 +285,7 @@ public class JuegoController {
 	private void refrescarPantalla() {
 		this.txtAlgomonActivo.setText(juego.obtenerNombreAlgomonActivo());
 		this.txtEntrenadorActivo.setText(juego.obtenerNombreJugadorActivo());
+		this.txtEstadoAlgomonActivo.setText(juego.obtenerEstadoAlgomonActivo());
 		this.acciones.getSelectionModel().clearSelection();
 		this.cbxAlgomonesDisponibles.setDisable(true);
 		this.cbxAlgomonesDisponibles.getSelectionModel().clearSelection();
