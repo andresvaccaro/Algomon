@@ -86,8 +86,8 @@ public class JuegoController {
 	ObservableList<String> datosElementos = FXCollections.observableArrayList();
 	ObservableList<String> datosAlgomones = FXCollections.observableArrayList();
 	
-	ObservableList<Elemento> datosElementosEntrenador1 = FXCollections.observableArrayList();
-	ObservableList<Elemento> datosElementosEntrenador2 = FXCollections.observableArrayList();
+	ObservableList<ElementoView> datosElementosEntrenador1 = FXCollections.observableArrayList();
+	ObservableList<ElementoView> datosElementosEntrenador2 = FXCollections.observableArrayList();
 
 	@FXML
 	private void initialize() {
@@ -118,13 +118,17 @@ public class JuegoController {
 		vidaTablaEntrenador2.setCellValueFactory(new PropertyValueFactory<Algomon, String>("puntosDeVida"));
 		tablaAlgomonesAgregadosEntrenador2.getColumns().addAll(nombreTablaEntrenador2, vidaTablaEntrenador2);
 		
-		TableColumn<Elemento, String> nombreColumnaElementoEntrenador1 = new TableColumn<>("Nombre");
-		nombreColumnaElementoEntrenador1.setCellValueFactory(new PropertyValueFactory<Elemento, String>("nombre"));
-		this.tablaElementosEntrenador1.getColumns().addAll(nombreColumnaElementoEntrenador1);
+		TableColumn<ElementoView, String> nombreColumnaElementoEntrenador1 = new TableColumn<>("Nombre");
+		nombreColumnaElementoEntrenador1.setCellValueFactory(new PropertyValueFactory<ElementoView, String>("nombre"));
+		TableColumn<ElementoView, String> cantidadDeElementosDisponibles1 = new TableColumn<>("Disponibles");
+		cantidadDeElementosDisponibles1.setCellValueFactory(new PropertyValueFactory<ElementoView, String>("cantidadDisponible"));
+		this.tablaElementosEntrenador1.getColumns().addAll(nombreColumnaElementoEntrenador1,cantidadDeElementosDisponibles1);
 		
 		TableColumn<Elemento, String> nombreColumnaElementoEntrenador2 = new TableColumn<>("Nombre");
 		nombreColumnaElementoEntrenador2.setCellValueFactory(new PropertyValueFactory<Elemento, String>("nombre"));
-		this.tablaElementosEntrenador2.getColumns().addAll(nombreColumnaElementoEntrenador2);
+		TableColumn<ElementoView, String> cantidadDeElementosDisponibles2 = new TableColumn<>("Disponibles");
+		cantidadDeElementosDisponibles2.setCellValueFactory(new PropertyValueFactory<ElementoView, String>("cantidadDisponible"));
+		this.tablaElementosEntrenador2.getColumns().addAll(nombreColumnaElementoEntrenador2,cantidadDeElementosDisponibles2);
 	}
 
 	@FXML
@@ -205,12 +209,19 @@ public class JuegoController {
 	private void cargarElementosEntrenadores() {
 		this.datosElementosEntrenador1.clear();
 		for (Elemento elemento: juego.getEntrenador1().obtenerElementosDisponibles()) {
-			this.datosElementosEntrenador1.add(elemento);
+			ElementoView elementoView = new ElementoView();
+			elementoView.setNombre(elemento.getNombre());
+			elementoView.setCantidadDisponible(String.valueOf(juego.getEntrenador1().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
+			this.datosElementosEntrenador1.add(elementoView);
 		}
 		this.tablaElementosEntrenador1.setItems(this.datosElementosEntrenador1);
+		
 		this.datosElementosEntrenador2.clear();
 		for (Elemento elemento: juego.getEntrenador2().obtenerElementosDisponibles()) {
-			this.datosElementosEntrenador2.add(elemento);
+			ElementoView elementoView = new ElementoView();
+			elementoView.setNombre(elemento.getNombre());
+			elementoView.setCantidadDisponible(String.valueOf(juego.getEntrenador2().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
+			this.datosElementosEntrenador2.add(elementoView);
 		}
 		this.tablaElementosEntrenador2.setItems(this.datosElementosEntrenador2);
 	}

@@ -163,6 +163,14 @@ public class Entrenador {
 		elementos.remove(elementos.size()-1);
 		
 	}
+
+	public int obtenerCantidadDeElementosDisponibles(String nombreElemento) {
+		int cantidad=0;
+		if(this.cotenedorDeElementos.get(nombreElemento)!=null){
+			cantidad = this.cotenedorDeElementos.get(nombreElemento).size();
+		}
+		return cantidad;		
+	}
 	
 	
 	

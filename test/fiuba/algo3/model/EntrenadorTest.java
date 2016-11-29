@@ -137,5 +137,19 @@ public class EntrenadorTest {
 	}
 	
 
+	@Test
+	public void testSeBuscaUnElementoQueNoContieneElEntrenadorYretornaComoCantidadCero(){
+		Entrenador entrenador = new Entrenador("Ash");
+		assertEquals(0, entrenador.obtenerCantidadDeElementosDisponibles("Sopa"));				
+	}
+	
+	@Test
+	public void testSeBuscaLaCantidadDeSuperpocionesYdevuelve2(){
+		Entrenador entrenador = new Entrenador("Ash");
+		assertEquals(2, entrenador.obtenerCantidadDeElementosDisponibles("SuperPocion"));				
+	}
+	
+	
+	
 	
 }
