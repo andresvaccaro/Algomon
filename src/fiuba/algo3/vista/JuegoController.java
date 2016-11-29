@@ -312,7 +312,7 @@ public class JuegoController {
 		}
 		if(this.juego.elJuegoEstaFinalizado()){
 			Alert alertaJuegoFinalizado = new Alert(AlertType.INFORMATION);
-			alertaJuegoFinalizado.setTitle("Se terminó el juego");
+			alertaJuegoFinalizado.setTitle("Se termino el juego");
 			alertaJuegoFinalizado.setHeaderText("El ganador es");
 			alertaJuegoFinalizado.setContentText(juego.obtenerNombreJugadorActivo());
 			alertaJuegoFinalizado.showAndWait();
