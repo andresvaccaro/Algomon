@@ -155,6 +155,7 @@ public class Juego {
 
 	public void enviarElemento(Elemento elemento) {
 		this.entrenadorActivo.obtenerAlgomonActivo().recibirElemento(elemento);
+		this.entrenadorActivo.descontarElemento(elemento);
 
 	}
 

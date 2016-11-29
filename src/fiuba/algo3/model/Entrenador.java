@@ -157,6 +157,12 @@ public class Entrenador {
 		}
 		return algomonesNoActivos;
 	}
+
+	public void descontarElemento(Elemento elemento) {
+		List<Elemento> elementos=this.cotenedorDeElementos.get(elemento.getNombre());
+		elementos.remove(elementos.size()-1);
+		
+	}
 	
 	
 	

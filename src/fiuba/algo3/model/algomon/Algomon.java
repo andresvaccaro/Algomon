@@ -10,10 +10,10 @@ import fiuba.algo3.model.estado.EstadoAlgomon;
 
 public abstract class Algomon implements Cloneable {
 
-	protected double puntosDeVida;	
-	
+	protected double puntosDeVida;
+
 	protected String nombre;
-	
+
 	protected List<ContenedorDeAtaque> contenedoresDeAtaques;
 
 	protected EstadoAlgomon estadoAlgomon;
@@ -25,24 +25,22 @@ public abstract class Algomon implements Cloneable {
 	}
 
 	public void atacar(Algomon algomonAtacado, Class tipoDeAtaque) {
-		
+
 		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);
-		
+
 		contenedorDeAtaque.lanzarAtaque(this, algomonAtacado);
 	}
-	
+
 	public void recibirElemento(Elemento elemento) {
 		elemento.cargarAlgomonQueRealizaLaAccion(this);
 		this.estadoAlgomon.realizarAccion(elemento);
 	}
 
-	
-	
 	public int obtenerCantidadDeAtaquesDisponibles(Class tipoDeAtaque) {
 		ContenedorDeAtaque contenedorDeAtaque = buscarContenedorDeAtaque(tipoDeAtaque);
 		return contenedorDeAtaque.getCantidadAtaquesDisponibles();
 	}
-	
+
 	private ContenedorDeAtaque buscarContenedorDeAtaque(Class tipoDeAtaque) {
 		ContenedorDeAtaque contenedorEncontrado = null;
 		for (ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques) {
@@ -59,6 +57,9 @@ public abstract class Algomon implements Cloneable {
 
 	public void disminuirPuntosDeVida(double puntosADisminuir) {
 		this.puntosDeVida = this.puntosDeVida - puntosADisminuir;
+		if (this.puntosDeVida < 0) {
+			this.puntosDeVida = 0;
+		}
 	}
 
 	public abstract double obtenerMultiplicadorDeAtaqueDeAgua();
@@ -66,13 +67,13 @@ public abstract class Algomon implements Cloneable {
 	public abstract double obtenerMultiplicadorDeAtaqueDePlanta();
 
 	public abstract double obtenerMultiplicadorDeAtaqueDeFuego();
-	
+
 	public abstract double obtenerMultiplicadorDeAtaqueNormal();
 
 	public Boolean estaDormido() {
 		return this.estadoAlgomon.estaDormido();
 	}
-	
+
 	public Boolean estaQuemado() {
 		return this.estadoAlgomon.estaQuemado();
 	}
@@ -82,7 +83,7 @@ public abstract class Algomon implements Cloneable {
 	}
 
 	public void disminuirDiezPorciento() {
-		this.puntosDeVida = this.puntosDeVida  - obtenerPuntosDeVidaInicial() * 0.10;
+		this.puntosDeVida = this.puntosDeVida - obtenerPuntosDeVidaInicial() * 0.10;
 	}
 
 	public void despertar() {
@@ -99,48 +100,48 @@ public abstract class Algomon implements Cloneable {
 
 	public void quemar() {
 		this.estadoAlgomon.quemar();
-		
+
 	}
 
 	protected abstract double obtenerPuntosDeVidaInicial();
 
 	public void enfriar() {
-		this.estadoAlgomon.enfriar();		
+		this.estadoAlgomon.enfriar();
 	}
 
-	public void aumentarCantidadDeAtaques( int cantidadAAumentar ){
-		
-		for ( ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques ) {
-			
-			contenedorDeAtaque.aumentarCantidad( cantidadAAumentar );
+	public void aumentarCantidadDeAtaques(int cantidadAAumentar) {
+
+		for (ContenedorDeAtaque contenedorDeAtaque : contenedoresDeAtaques) {
+
+			contenedorDeAtaque.aumentarCantidad(cantidadAAumentar);
 		}
-		
+
 	}
 
 	public String getNombre() {
-		
+
 		return nombre;
 	}
 
 	public List<Ataque> obtenerAtaquesDisponibles() {
-		
-		List<Ataque> ataquesDisponibles= new ArrayList<Ataque>();
-		
+
+		List<Ataque> ataquesDisponibles = new ArrayList<Ataque>();
+
 		for (ContenedorDeAtaque contenedorDeAtaque : this.contenedoresDeAtaques) {
-			
-			if(contenedorDeAtaque.getCantidadAtaquesDisponibles()>0){
-				
+
+			if (contenedorDeAtaque.getCantidadAtaquesDisponibles() > 0) {
+
 				ataquesDisponibles.add(contenedorDeAtaque.obtenerAtaque());
 			}
-				
+
 		}
-		
+
 		return ataquesDisponibles;
 	}
 
 	@Override
 	public String toString() {
-		return nombre ;
+		return nombre;
 	}
 
 	public abstract Algomon clone() throws CloneNotSupportedException;
