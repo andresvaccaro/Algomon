@@ -141,8 +141,7 @@ public class Juego {
 
 	}
 
-	public Boolean elJuegoEstaFinalizado() {
-		Boolean estaTerminado = Boolean.FALSE;
+	public Boolean elJuegoEstaFinalizado() {		
 		Entrenador entrenadorAValidarAlgomones;
 		if (this.entrenadorActivo.equals(this.entrenador1)) {
 			entrenadorAValidarAlgomones = this.entrenador2;

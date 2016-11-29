@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import fiuba.algo3.model.accion.ataque.AtaqueRapido;
 import fiuba.algo3.model.accion.ataque.Fogonazo;
 import fiuba.algo3.model.accion.elemento.Vitamina;
 import fiuba.algo3.model.algomon.Algomon;
@@ -81,19 +82,15 @@ public class JuegoTest {
 	public void testCharmanderAtacaConFogonazoATodosLosAlgomonesDelEntrenadorRivalHastaQueFinalizaElJuego() {
 		Juego juego = new Juego();
 		juego.agregarEntrenador("Primer Entrenador");
-		juego.agregarCharmanderAentrenador(juego.getEntrenadorActivo());
-		juego.agregarBulbasaurAentrenador(juego.getEntrenadorActivo());
-		juego.agregarChanseyAentrenador(juego.getEntrenadorActivo());
+		juego.agregarCharmanderAentrenador(juego.getEntrenadorActivo());		
 		juego.agregarEntrenador("Segundo Entrenador");
-		juego.agregarCharmanderAentrenador(juego.getEntrenador2());
-		juego.agregarBulbasaurAentrenador(juego.getEntrenador2());
 		juego.agregarChanseyAentrenador(juego.getEntrenador2());
+		
 		
 		int posicionAlgomon=0;
 		for (Algomon algomon : juego.getEntrenador2().getAlgomones()) {
 			while(algomon.getPuntosDeVida()>0){
-				juego.atacar(new Fogonazo());
-				juego.enviarElemento(new Vitamina());
+				juego.atacar(new AtaqueRapido());						
 			}
 			juego.cambiarJugador();
 			posicionAlgomon++;

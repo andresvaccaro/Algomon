@@ -18,7 +18,7 @@ public class Entrenador {
 
 	private static final int CANTIDAD_DE_SUPER_POCIONES = 2;
 
-	private static final int CANTIDAD_VITAMINAS = 2;
+	private static final int CANTIDAD_VITAMINAS = 400;
 
 	private static final int CANTIDAD_RESTAURADORES =2;
 
