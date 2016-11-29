@@ -132,8 +132,10 @@ public class EntrenadorTest {
 		entrenador.agregarAlgomon(new Squirtle());
 		List<Algomon> algomones= entrenador.obtenerAlgomonesNoActivos();
 		assertEquals(Bulbasaur.class, algomones.get(0).getClass());
-		assertEquals(Squirtle.class, algomones.get(1).getClass());
-		
+		assertEquals(Squirtle.class, algomones.get(1).getClass());		
 		
 	}
+	
+
+	
 }
