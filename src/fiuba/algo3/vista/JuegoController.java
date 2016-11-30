@@ -325,6 +325,9 @@ public class JuegoController {
 				String nombreElemento = obtenerElementoSeleccionado();
 				Elemento elemento = this.juego.obtenerElemento(nombreElemento);
 				this.juego.enviarElemento(elemento);				
+			}else{
+				String algomonSeleccionado= obtenerAlgomonSeleccionado();
+				this.juego.cambiarAlgomonActivo(algomonSeleccionado);
 			}
 
 		}
@@ -343,6 +346,10 @@ public class JuegoController {
 		}
 
 		refrescarPantalla();
+	}
+
+	private String obtenerAlgomonSeleccionado() {		
+		return this.datosAlgomones.get(this.cbxAlgomonesDisponibles.getSelectionModel().getSelectedIndex()); 	
 	}
 
 	private String obtenerElementoSeleccionado() {

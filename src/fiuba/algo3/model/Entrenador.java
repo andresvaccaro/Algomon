@@ -171,6 +171,15 @@ public class Entrenador {
 		}
 		return cantidad;		
 	}
+
+	public void cambiarAlgomonActivo(String algomonSeleccionado) {
+		for (Algomon algomon : algomones) {
+			if(algomon.getNombre().equals(algomonSeleccionado)){
+				algomonActivo= algomon;
+			}
+		}
+		
+	}
 	
 	
 	

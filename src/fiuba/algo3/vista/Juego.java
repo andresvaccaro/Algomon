@@ -199,4 +199,8 @@ public class Juego {
 		return this.entrenadorActivo.obtenerAlgomonActivo().obtenerDescripcionDeEstado();
 	}
 
+	public void cambiarAlgomonActivo(String algomonSeleccionado) {		
+		this.entrenadorActivo.cambiarAlgomonActivo(algomonSeleccionado);		
+	}
+
 }
