@@ -149,7 +149,7 @@ public class Juego {
 			entrenadorAValidarAlgomones = this.entrenador1;
 		}
 
-		return !entrenadorAValidarAlgomones.tieneAlgomonesVivos();
+		return !entrenadorAValidarAlgomones.tieneAlgomonesVivos() || !entrenadorAValidarAlgomones.tieneMasAccionesParaRealizar();
 	}
 
 	public void enviarElemento(Elemento elemento) {

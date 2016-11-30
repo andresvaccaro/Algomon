@@ -18,7 +18,7 @@ public class Entrenador {
 
 	private static final int CANTIDAD_DE_SUPER_POCIONES = 2;
 
-	private static final int CANTIDAD_VITAMINAS = 400;
+	private static final int CANTIDAD_VITAMINAS = 4;
 
 	private static final int CANTIDAD_RESTAURADORES =2;
 
@@ -180,6 +180,30 @@ public class Entrenador {
 		}
 		
 	}
+
+	public Boolean tieneMasAccionesParaRealizar() {		
+		return tieneAtaquesDisponibles() || tieneElementosDisponibles();
+	}
+
+	private Boolean tieneElementosDisponibles() {
+		Boolean elementosDisponibles = Boolean.FALSE;
+		if(this.obtenerElementosDisponibles().size()<=0){
+			elementosDisponibles = Boolean.FALSE;
+		}
+		return elementosDisponibles;
+	}
+
+	private Boolean tieneAtaquesDisponibles() {
+		Boolean tieneAtaquesDisponibles = Boolean.FALSE;
+		for (Algomon algomon : algomones) {
+			if(algomon.tieneAtaquesDisponibles()){
+				tieneAtaquesDisponibles = Boolean.TRUE;
+			}
+		}
+		return tieneAtaquesDisponibles;
+	}
+
+	
 	
 	
 	

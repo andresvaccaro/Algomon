@@ -150,6 +150,8 @@ public class EntrenadorTest {
 		assertEquals(2, entrenador.obtenerCantidadDeElementosDisponibles("SuperPocion"));				
 	}
 	
+
+	
 	
 	
 	

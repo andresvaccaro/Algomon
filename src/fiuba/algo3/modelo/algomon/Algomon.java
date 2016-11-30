@@ -150,4 +150,12 @@ public abstract class Algomon implements Cloneable {
 		return this.estadoAlgomon.getEstadoEsfimero().getClass().getSimpleName() + " - "+this.estadoAlgomon.getEstadoPersistente().getClass().getSimpleName();
 	}
 
+	public Boolean tieneAtaquesDisponibles() {
+		Boolean ataquesDisponibles = Boolean.FALSE;
+		if(this.obtenerAtaquesDisponibles().size()>0){
+			ataquesDisponibles = Boolean.TRUE;
+		}
+		return ataquesDisponibles;
+	}
+
 }
