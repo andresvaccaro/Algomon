@@ -1,4 +1,4 @@
-package fiuba.algo3.model.algomon;
+package fiuba.algo3.model.elementos;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.accion.elemento.SuperPocion;
+import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Charmander;
 
 public class SuperPocionTest {
 	
@@ -24,6 +26,7 @@ public class SuperPocionTest {
 		unaSuperPocion.realizarAccion();
 		
 		assertEquals(210d,charmander.getPuntosDeVida(),0.000d);
+		assertEquals(210d,unaSuperPocion.getAlgomonQueRealizaLaAccion().getPuntosDeVida(),0.000d);
 		
 	}
 }

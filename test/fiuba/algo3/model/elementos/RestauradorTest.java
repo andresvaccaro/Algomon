@@ -1,4 +1,4 @@
-package fiuba.algo3.model.algomon;
+package fiuba.algo3.model.elementos;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,10 @@ import fiuba.algo3.model.accion.ataque.Canto;
 import fiuba.algo3.model.accion.ataque.Fogonazo;
 import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.accion.elemento.Restaurador;
+import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Chansey;
+import fiuba.algo3.model.algomon.Charmander;
+import fiuba.algo3.model.algomon.Rattata;
 
 public class RestauradorTest {
 
@@ -47,6 +51,8 @@ public class RestauradorTest {
 			
 			restaurador.realizarAccion();
 			
+			assertFalse( restaurador.getAlgomonQueRealizaLaAccion().estaDormido() );
+			assertFalse( restaurador.getAlgomonQueRealizaLaAccion().estaQuemado() );
 			assertFalse( rattata.estaDormido() );
 			assertFalse( rattata.estaQuemado() );
 			

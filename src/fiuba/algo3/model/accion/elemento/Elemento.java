@@ -3,6 +3,8 @@ package fiuba.algo3.model.accion.elemento;
 import fiuba.algo3.model.accion.Accion;
 
 public abstract class Elemento extends Accion {
+	
+	private String nombre = this.getClass().getSimpleName();
 
 	@Override
 	public abstract void realizarAccion();
@@ -12,4 +14,10 @@ public abstract class Elemento extends Accion {
 		return Boolean.TRUE;
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
+	
+
+	
 }

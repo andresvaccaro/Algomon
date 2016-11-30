@@ -249,8 +249,39 @@ public class AlgomonTest {
 	}
 	
 	
-	//FANTAN TESTS 10 Y 11 DE LA SEGUNDA ENTREGA
 
+	@Test
+	public void test11_AlgomonesAgotanLaCantidadDisponibleDeAtaquesYNoPuedenVolverAUtilizarlos(){
+			
+		Algomon charmander = new Charmander();
+		Algomon squirtle = new Squirtle();
+		Algomon rattata = new Rattata();
+		Algomon jigglypuff = new Jigglypuff();
+		
+		assertEquals(130d, jigglypuff.getPuntosDeVida(),0.000001d);	
+		int cantidadAtaquesFogonazo = charmander.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class);
+		for(int i=0 ; i < cantidadAtaquesFogonazo ; i++){
+			charmander.atacar(jigglypuff, Fogonazo.class);
+		}
+		assertEquals(122d, jigglypuff.getPuntosDeVida(),0.000001d);
+		assertEquals(charmander.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class),0);
+		charmander.atacar(jigglypuff, Fogonazo.class);
+		assertEquals(122d, jigglypuff.getPuntosDeVida(),0.000001d);
+		
+		assertEquals(170d, rattata.getPuntosDeVida(),0.000001d);	
+		int cantidadAtaquesBurbuja = squirtle.obtenerCantidadDeAtaquesDisponibles(Burbuja.class);
+		for(int i=0 ; i < cantidadAtaquesBurbuja ; i++){
+			squirtle.atacar(rattata, Burbuja.class);
+		}
+		assertEquals(20d, rattata.getPuntosDeVida(),0.000001d);
+		assertEquals(squirtle.obtenerCantidadDeAtaquesDisponibles(Burbuja.class),0);
+		squirtle.atacar(rattata, Burbuja.class);
+		assertEquals(20d, rattata.getPuntosDeVida(),0.000001d);
+		
+	}
+	
+	
+	
 	/**
 	 * Primer test segunda entrega
 	 */

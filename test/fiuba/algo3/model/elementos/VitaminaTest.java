@@ -1,4 +1,4 @@
-package fiuba.algo3.model.algomon;
+package fiuba.algo3.model.elementos;
 
 import static org.junit.Assert.*;
 
@@ -9,12 +9,14 @@ import fiuba.algo3.model.accion.ataque.Burbuja;
 import fiuba.algo3.model.accion.ataque.Fogonazo;
 import fiuba.algo3.model.accion.elemento.Elemento;
 import fiuba.algo3.model.accion.elemento.Vitamina;
+import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.model.algomon.Rattata;
 
 public class VitaminaTest {
 	
 	
 	@Test
-	public void test_unaVitaminaSeAplicaArattataYleIncrementa2AtodosSusAtaques(){
+	public void test_unaVitaminaSeAplica_A_RattataYleIncrementa2AtodosSusAtaques(){
 		
 		Algomon rattata=new Rattata();
 		
@@ -27,6 +29,11 @@ public class VitaminaTest {
 		vitamina.cargarAlgomonQueRealizaLaAccion(rattata);
 		
 		vitamina.realizarAccion();
+		
+		
+		assertEquals(6,vitamina.getAlgomonQueRealizaLaAccion().obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
+		assertEquals(17,vitamina.getAlgomonQueRealizaLaAccion().obtenerCantidadDeAtaquesDisponibles(Burbuja.class));
+		assertEquals(18,vitamina.getAlgomonQueRealizaLaAccion().obtenerCantidadDeAtaquesDisponibles(AtaqueRapido.class));
 		
 		assertEquals(6,rattata.obtenerCantidadDeAtaquesDisponibles(Fogonazo.class));
 		assertEquals(17,rattata.obtenerCantidadDeAtaquesDisponibles(Burbuja.class));
