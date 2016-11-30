@@ -4,10 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.elemento.Elemento;
-import fiuba.algo3.model.accion.elemento.SuperPocion;
-import fiuba.algo3.model.algomon.Algomon;
-import fiuba.algo3.model.algomon.Charmander;
+import fiuba.algo3.modelo.accion.elemento.Elemento;
+import fiuba.algo3.modelo.accion.elemento.SuperPocion;
+import fiuba.algo3.modelo.algomon.Algomon;
+import fiuba.algo3.modelo.algomon.Charmander;
 
 public class SuperPocionTest {
 	

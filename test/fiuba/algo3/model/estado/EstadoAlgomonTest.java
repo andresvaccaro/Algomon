@@ -2,8 +2,11 @@ package fiuba.algo3.model.estado;
 
 import static org.junit.Assert.*;
 
-
 import org.junit.Test;
+
+import fiuba.algo3.modelo.estado.EstadoAlgomon;
+import fiuba.algo3.modelo.estado.EstadoNormalEsfimero;
+import fiuba.algo3.modelo.estado.EstadoNormalPersistente;
 
 
 public class EstadoAlgomonTest {

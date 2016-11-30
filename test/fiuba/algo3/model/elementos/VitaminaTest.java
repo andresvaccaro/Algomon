@@ -4,13 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.ataque.AtaqueRapido;
-import fiuba.algo3.model.accion.ataque.Burbuja;
-import fiuba.algo3.model.accion.ataque.Fogonazo;
-import fiuba.algo3.model.accion.elemento.Elemento;
-import fiuba.algo3.model.accion.elemento.Vitamina;
-import fiuba.algo3.model.algomon.Algomon;
-import fiuba.algo3.model.algomon.Rattata;
+import fiuba.algo3.modelo.accion.ataque.AtaqueRapido;
+import fiuba.algo3.modelo.accion.ataque.Burbuja;
+import fiuba.algo3.modelo.accion.ataque.Fogonazo;
+import fiuba.algo3.modelo.accion.elemento.Elemento;
+import fiuba.algo3.modelo.accion.elemento.Vitamina;
+import fiuba.algo3.modelo.algomon.Algomon;
+import fiuba.algo3.modelo.algomon.Rattata;
 
 public class VitaminaTest {
 	

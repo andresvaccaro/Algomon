@@ -4,11 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.ataque.Ataque;
-import fiuba.algo3.model.accion.ataque.Burbuja;
-import fiuba.algo3.model.algomon.Algomon;
-import fiuba.algo3.model.algomon.Bulbasaur;
-import fiuba.algo3.model.algomon.Squirtle;
+import fiuba.algo3.modelo.accion.ataque.Ataque;
+import fiuba.algo3.modelo.accion.ataque.Burbuja;
+import fiuba.algo3.modelo.algomon.Algomon;
+import fiuba.algo3.modelo.algomon.Bulbasaur;
+import fiuba.algo3.modelo.algomon.Squirtle;
 
 public class BurbujaTest {
 	

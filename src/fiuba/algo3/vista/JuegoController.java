@@ -1,9 +1,9 @@
 package fiuba.algo3.vista;
 
 import fiuba.algo3.MainAlgomon;
-import fiuba.algo3.model.accion.ataque.Ataque;
-import fiuba.algo3.model.accion.elemento.Elemento;
-import fiuba.algo3.model.algomon.Algomon;
+import fiuba.algo3.modelo.accion.ataque.Ataque;
+import fiuba.algo3.modelo.accion.elemento.Elemento;
+import fiuba.algo3.modelo.algomon.Algomon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

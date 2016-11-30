@@ -4,11 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.ataque.AtaqueRapido;
-import fiuba.algo3.model.accion.ataque.ChupaVidas;
-import fiuba.algo3.model.accion.ataque.LatigoCepa;
-import fiuba.algo3.model.accion.elemento.Pocion;
-import fiuba.algo3.model.accion.elemento.Vitamina;
+import fiuba.algo3.modelo.accion.ataque.AtaqueRapido;
+import fiuba.algo3.modelo.accion.ataque.ChupaVidas;
+import fiuba.algo3.modelo.accion.ataque.LatigoCepa;
+import fiuba.algo3.modelo.accion.elemento.Pocion;
+import fiuba.algo3.modelo.accion.elemento.Vitamina;
+import fiuba.algo3.modelo.algomon.Bulbasaur;
+import fiuba.algo3.modelo.algomon.Squirtle;
 
 public class BulbasaurTest {
 	

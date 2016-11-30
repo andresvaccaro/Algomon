@@ -4,11 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.ataque.Ataque;
-import fiuba.algo3.model.accion.ataque.LatigoCepa;
-import fiuba.algo3.model.algomon.Algomon;
-import fiuba.algo3.model.algomon.Bulbasaur;
-import fiuba.algo3.model.algomon.Rattata;
+import fiuba.algo3.modelo.accion.ataque.Ataque;
+import fiuba.algo3.modelo.accion.ataque.LatigoCepa;
+import fiuba.algo3.modelo.algomon.Algomon;
+import fiuba.algo3.modelo.algomon.Bulbasaur;
+import fiuba.algo3.modelo.algomon.Rattata;
 
 public class LatigoCepaTest {
 	

@@ -4,11 +4,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.ataque.AtaqueRapido;
-import fiuba.algo3.model.accion.ataque.Brasas;
-import fiuba.algo3.model.accion.ataque.Fogonazo;
-import fiuba.algo3.model.accion.elemento.SuperPocion;
-import fiuba.algo3.model.accion.elemento.Vitamina;
+import fiuba.algo3.modelo.accion.ataque.AtaqueRapido;
+import fiuba.algo3.modelo.accion.ataque.Brasas;
+import fiuba.algo3.modelo.accion.ataque.Fogonazo;
+import fiuba.algo3.modelo.accion.elemento.SuperPocion;
+import fiuba.algo3.modelo.accion.elemento.Vitamina;
+import fiuba.algo3.modelo.algomon.Charmander;
 
 public class CharmanderTest {
 	

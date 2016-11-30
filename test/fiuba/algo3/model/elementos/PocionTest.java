@@ -4,10 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.elemento.Elemento;
-import fiuba.algo3.model.accion.elemento.Pocion;
-import fiuba.algo3.model.algomon.Algomon;
-import fiuba.algo3.model.algomon.Chansey;
+import fiuba.algo3.modelo.accion.elemento.Elemento;
+import fiuba.algo3.modelo.accion.elemento.Pocion;
+import fiuba.algo3.modelo.algomon.Algomon;
+import fiuba.algo3.modelo.algomon.Chansey;
 
 public class PocionTest {
 	

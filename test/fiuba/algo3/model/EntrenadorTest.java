@@ -9,16 +9,17 @@ import java.util.List;
 
 import org.junit.Test;
 
-import fiuba.algo3.model.accion.ataque.Ataque;
-import fiuba.algo3.model.accion.elemento.Elemento;
-import fiuba.algo3.model.accion.elemento.Pocion;
-import fiuba.algo3.model.accion.elemento.Restaurador;
-import fiuba.algo3.model.accion.elemento.SuperPocion;
-import fiuba.algo3.model.accion.elemento.Vitamina;
-import fiuba.algo3.model.algomon.Algomon;
-import fiuba.algo3.model.algomon.Bulbasaur;
-import fiuba.algo3.model.algomon.Charmander;
-import fiuba.algo3.model.algomon.Squirtle;
+import fiuba.algo3.modelo.Entrenador;
+import fiuba.algo3.modelo.accion.ataque.Ataque;
+import fiuba.algo3.modelo.accion.elemento.Elemento;
+import fiuba.algo3.modelo.accion.elemento.Pocion;
+import fiuba.algo3.modelo.accion.elemento.Restaurador;
+import fiuba.algo3.modelo.accion.elemento.SuperPocion;
+import fiuba.algo3.modelo.accion.elemento.Vitamina;
+import fiuba.algo3.modelo.algomon.Algomon;
+import fiuba.algo3.modelo.algomon.Bulbasaur;
+import fiuba.algo3.modelo.algomon.Charmander;
+import fiuba.algo3.modelo.algomon.Squirtle;
 
 public class EntrenadorTest {
 
