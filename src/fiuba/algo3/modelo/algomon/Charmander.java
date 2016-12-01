@@ -78,4 +78,9 @@ public class Charmander extends Algomon {
 		return charmander;
 	}
 
+	@Override
+	public String obtenerUrlImagen() {
+		return "imagenes/charmander.png";
+	}
+
 }

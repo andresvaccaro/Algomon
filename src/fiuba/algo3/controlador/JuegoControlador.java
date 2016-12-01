@@ -1,5 +1,7 @@
 package fiuba.algo3.controlador;
 
+import java.io.File;
+
 import fiuba.algo3.MainAlgomon;
 import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
@@ -9,14 +11,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 public class JuegoControlador {
@@ -94,6 +98,11 @@ public class JuegoControlador {
 	ObservableList<ElementoVista> datosElementosEntrenador1 = FXCollections.observableArrayList();
 	ObservableList<ElementoVista> datosElementosEntrenador2 = FXCollections.observableArrayList();
 
+	@FXML
+	private ImageView imagenAlgomonAtacante;
+	@FXML
+	private ImageView imagenAlgomonAtacado;
+	
 	@FXML
 	private void initialize() {
 		juego = new Juego();
@@ -209,8 +218,18 @@ public class JuegoControlador {
 			this.cbxAtaquesDisponibles.setDisable(true);
 			this.cbxElementosDisponibles.setDisable(true);
 			cargarElementosEntrenadores();
+			cargarImagenAlgomones();			  
 		}
 
+	}
+
+	private void cargarImagenAlgomones() {				
+        Image image = new Image(new File(this.juego.obtenerUrlImagenAtacante()).toURI().toString());        
+        imagenAlgomonAtacante.setImage(image);	
+        
+        Image image2 = new Image(new File(this.juego.obtenerUrlImagenAtacado()).toURI().toString());        
+        imagenAlgomonAtacado.setImage(image2);	
+		
 	}
 
 	private void cargarElementosEntrenadores() {
@@ -296,6 +315,7 @@ public class JuegoControlador {
 		this.cbxElementosDisponibles.getSelectionModel().clearSelection();
 		this.refrescarTablasDeVidasDeAlgomones();
 		this.cargarElementosEntrenadores();
+		this.cargarImagenAlgomones();
 	}
 
 	private void refrescarTablasDeVidasDeAlgomones() {

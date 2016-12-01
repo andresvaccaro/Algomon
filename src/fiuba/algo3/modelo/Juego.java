@@ -202,4 +202,16 @@ public class Juego {
 		this.entrenadorActivo.cambiarAlgomonActivo(algomonSeleccionado);		
 	}
 
+	public String obtenerUrlImagenAtacante() {	
+		return this.getEntrenadorActivo().obtenerAlgomonActivo().obtenerUrlImagen();
+	}
+
+	public String obtenerUrlImagenAtacado() {
+		if(this.entrenadorActivo.equals(this.entrenador1)){
+			return this.entrenador2.obtenerAlgomonActivo().obtenerUrlImagen();
+		}else{
+			return this.entrenador1.obtenerAlgomonActivo().obtenerUrlImagen();
+		}		
+	}
+
 }

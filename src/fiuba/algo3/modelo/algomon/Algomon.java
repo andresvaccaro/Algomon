@@ -17,6 +17,8 @@ public abstract class Algomon implements Cloneable {
 	protected List<ContenedorDeAtaque> contenedoresDeAtaques;
 
 	protected EstadoAlgomon estadoAlgomon;
+	
+	public abstract String obtenerUrlImagen();
 
 	public Algomon() {
 		super();

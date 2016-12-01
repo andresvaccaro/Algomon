@@ -59,6 +59,11 @@ public class Chansey extends AlgomonNormal {
 		return chansey;
 	}
 
+	@Override
+	public String obtenerUrlImagen() {
+		return "imagenes/chansey.png";	
+	}
+
 	
 
 }

@@ -14,7 +14,7 @@ public class Bulbasaur extends Algomon {
 	public static final int CANTIDAD_ATAQUES_CHUPAVIDAS = 8;
 	public static final int CANTIDAD_ATAQUES_LATIGO_CEPA = 10;
 	public static final int CANTIDAD_ATAQUES_ATAQUE_RAPIDO = 16;
-	
+			
 	public Bulbasaur() {
 		super();
 		this.puntosDeVida = PUNTOS_DE_VIDA_INICIAL;
@@ -76,6 +76,11 @@ public class Bulbasaur extends Algomon {
 	public Algomon clone() throws CloneNotSupportedException {
 		Bulbasaur bulbasaur = new Bulbasaur();
 		return bulbasaur;
+	}
+
+	@Override
+	public String obtenerUrlImagen() {		
+		return "imagenes/bulbasaur.png";
 	}
 
 	

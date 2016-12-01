@@ -57,4 +57,9 @@ public class Jigglypuff extends AlgomonNormal {
 		return jigglypuff;
 	}
 
+	@Override
+	public String obtenerUrlImagen() {
+		return "imagenes/jigglypuff.png";
+	}
+
 }

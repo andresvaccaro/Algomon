@@ -59,5 +59,10 @@ public class Rattata extends AlgomonNormal {
 		return rattata;
 	}
 
+	@Override
+	public String obtenerUrlImagen() {
+		return "imagenes/rattata.png";
+	}
+
 	
 }

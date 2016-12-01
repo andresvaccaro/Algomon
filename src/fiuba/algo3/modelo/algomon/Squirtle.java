@@ -78,6 +78,11 @@ public class Squirtle extends Algomon {
 		Squirtle squirtle = new Squirtle();
 		return squirtle;
 	}
+
+	@Override
+	public String obtenerUrlImagen() {
+		return "imagenes/squirtle.png";
+	}
 	
 	
 }
