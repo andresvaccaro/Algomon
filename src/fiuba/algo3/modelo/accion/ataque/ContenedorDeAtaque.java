@@ -1,8 +1,7 @@
-package fiuba.algo3.modelo;
+package fiuba.algo3.modelo.accion.ataque;
 
 import java.util.Stack;
 
-import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.algomon.Algomon;
 
 public class ContenedorDeAtaque {

@@ -6,9 +6,9 @@ import java.util.Stack;
 
 import org.junit.Test;
 
-import fiuba.algo3.modelo.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.accion.ataque.Brasas;
+import fiuba.algo3.modelo.accion.ataque.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.ataque.LatigoCepa;
 import fiuba.algo3.modelo.algomon.Algomon;
 import fiuba.algo3.modelo.algomon.Bulbasaur;

@@ -3,8 +3,8 @@ package fiuba.algo3.modelo.algomon;
 import java.util.ArrayList;
 import java.util.List;
 
-import fiuba.algo3.modelo.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
+import fiuba.algo3.modelo.accion.ataque.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.elemento.Elemento;
 import fiuba.algo3.modelo.estado.EstadoAlgomon;
 

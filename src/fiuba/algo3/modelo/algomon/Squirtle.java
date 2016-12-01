@@ -2,11 +2,11 @@ package fiuba.algo3.modelo.algomon;
 
 import java.util.Stack;
 
-import fiuba.algo3.modelo.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.accion.ataque.AtaqueRapido;
 import fiuba.algo3.modelo.accion.ataque.Burbuja;
 import fiuba.algo3.modelo.accion.ataque.CanionDeAgua;
+import fiuba.algo3.modelo.accion.ataque.ContenedorDeAtaque;
 
 public class Squirtle extends Algomon {
 	private final static double PUNTOS_DE_VIDA_INICIAL=150d;

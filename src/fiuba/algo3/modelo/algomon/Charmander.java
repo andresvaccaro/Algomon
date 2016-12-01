@@ -2,10 +2,10 @@ package fiuba.algo3.modelo.algomon;
 
 import java.util.Stack;
 
-import fiuba.algo3.modelo.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.accion.ataque.AtaqueRapido;
 import fiuba.algo3.modelo.accion.ataque.Brasas;
+import fiuba.algo3.modelo.accion.ataque.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.ataque.Fogonazo;
 
 public class Charmander extends Algomon {

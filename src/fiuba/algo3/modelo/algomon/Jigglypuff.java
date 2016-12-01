@@ -2,11 +2,11 @@ package fiuba.algo3.modelo.algomon;
 
 import java.util.Stack;
 
-import fiuba.algo3.modelo.ContenedorDeAtaque;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.accion.ataque.AtaqueRapido;
 import fiuba.algo3.modelo.accion.ataque.Burbuja;
 import fiuba.algo3.modelo.accion.ataque.Canto;
+import fiuba.algo3.modelo.accion.ataque.ContenedorDeAtaque;
 
 public class Jigglypuff extends AlgomonNormal {
 
