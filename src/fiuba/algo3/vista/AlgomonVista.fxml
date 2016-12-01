@@ -5,26 +5,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="fiuba.algo3.controlador.AlgomonCotrolador">
-  <top>
-    <MenuBar>
-      <menus>
-        <Menu mnemonicParsing="false" text="Juego">
-          <items>
-            <MenuItem mnemonicParsing="false" onAction="#inicializarJuego" text="Nuevo" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Delete" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-  </top>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+	prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+	xmlns="http://javafx.com/javafx/2.2" fx:controller="fiuba.algo3.controlador.AlgomonCotrolador">
+	<top>
+		<MenuBar>
+			<menus>
+				<Menu mnemonicParsing="false" text="Juego">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#inicializarJuego"
+							text="Nuevo" />
+					</items>
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#salirJuego"
+							text="Salir" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" text="About" onAction="#autores"  />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
 </BorderPane>

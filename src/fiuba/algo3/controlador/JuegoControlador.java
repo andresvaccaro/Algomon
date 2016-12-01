@@ -103,12 +103,18 @@ public class JuegoControlador {
 	@FXML
 	private ImageView imagenAlgomonAtacado;
 	
+	
+	@FXML
+	private TextField txtNombreEntrenador1;
+	@FXML
+	private TextField txtNombreEntrenador2;
+	
 	@FXML
 	private void initialize() {
 		juego = new Juego();
 
-		juego.agregarEntrenador("Oscar");
-		juego.agregarEntrenador("Fabian");
+		juego.agregarEntrenador("Entrenador1");
+		juego.agregarEntrenador("Entrenador2");
 		juego.iniciarJuego();
 		for (Algomon algomon : juego.obtenerTodosLosAlgomones()) {
 			items.add(algomon.getNombre());

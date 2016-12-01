@@ -17,7 +17,7 @@
     <Label layoutX="28.0" layoutY="34.0" text="Algomon" />
     <Button fx:id="botonAgregarAlgomonEntrenador2" layoutX="93.0" layoutY="350.0" mnemonicParsing="false" onAction="#agregarAlgomonEntrenador2" text="Agregar Algomon" />
     <Label layoutX="54.0" layoutY="309.0" text="Entrenador 2" />
-    <ComboBox fx:id="comboAlgomonesEntrenador2" layoutX="103.0" layoutY="325.0" />
+    <ComboBox fx:id="comboAlgomonesEntrenador2" layoutX="95.0" layoutY="325.0" />
     <Label layoutX="33.0" layoutY="328.0" text="Algomon" />
     <TableView fx:id="tablaAlgomonesAgregadosEntrenador1" editable="false" layoutX="67.0" layoutY="87.0" prefHeight="103.0" prefWidth="200.0" />
     <TableView fx:id="tablaAlgomonesAgregadosEntrenador2" editable="false" layoutX="67.0" layoutY="376.0" prefHeight="103.0" prefWidth="200.0" />
@@ -58,5 +58,7 @@
         <Image url="@../../../../imagenes/vs.png" />
       </image>
     </ImageView>
+    <TextField id="nombreEntrenador1" fx:id="txtNombreEntrenador1"  layoutX="128.0" layoutY="8.0" prefWidth="200.0" />
+    <TextField id="nombreEntrenador2" fx:id="txtNombreEntrenador2" layoutX="151.0" layoutY="303.0" prefWidth="200.0" />
   </children>
 </AnchorPane>
