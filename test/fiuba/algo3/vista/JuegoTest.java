@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.accion.ataque.AtaqueRapido;
 import fiuba.algo3.modelo.accion.ataque.Fogonazo;

@@ -1,10 +1,10 @@
-package fiuba.algo3.vista;
+package fiuba.algo3.controlador;
 
 import fiuba.algo3.MainAlgomon;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 
-public class AlgomonController {
+public class AlgomonCotrolador {
 
 	
     private MainAlgomon mainAlgomon;

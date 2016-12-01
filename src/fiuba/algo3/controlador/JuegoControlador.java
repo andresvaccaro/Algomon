@@ -1,6 +1,7 @@
-package fiuba.algo3.vista;
+package fiuba.algo3.controlador;
 
 import fiuba.algo3.MainAlgomon;
+import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.accion.elemento.Elemento;
 import fiuba.algo3.modelo.algomon.Algomon;
@@ -18,7 +19,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
-public class JuegoController {
+public class JuegoControlador {
 
 	private static final int REALIZAR_ATAQUE_ACCION_INDICE = 0;
 	private static final int EVIAR_ELEMENTO_ACCION_INDICE = 1;
@@ -90,8 +91,8 @@ public class JuegoController {
 	ObservableList<String> datosElementos = FXCollections.observableArrayList();
 	ObservableList<String> datosAlgomones = FXCollections.observableArrayList();
 	
-	ObservableList<ElementoView> datosElementosEntrenador1 = FXCollections.observableArrayList();
-	ObservableList<ElementoView> datosElementosEntrenador2 = FXCollections.observableArrayList();
+	ObservableList<ElementoVista> datosElementosEntrenador1 = FXCollections.observableArrayList();
+	ObservableList<ElementoVista> datosElementosEntrenador2 = FXCollections.observableArrayList();
 
 	@FXML
 	private void initialize() {
@@ -122,16 +123,16 @@ public class JuegoController {
 		vidaTablaEntrenador2.setCellValueFactory(new PropertyValueFactory<Algomon, String>("puntosDeVida"));
 		tablaAlgomonesAgregadosEntrenador2.getColumns().addAll(nombreTablaEntrenador2, vidaTablaEntrenador2);
 		
-		TableColumn<ElementoView, String> nombreColumnaElementoEntrenador1 = new TableColumn<>("Nombre");
-		nombreColumnaElementoEntrenador1.setCellValueFactory(new PropertyValueFactory<ElementoView, String>("nombre"));
-		TableColumn<ElementoView, String> cantidadDeElementosDisponibles1 = new TableColumn<>("Disponibles");
-		cantidadDeElementosDisponibles1.setCellValueFactory(new PropertyValueFactory<ElementoView, String>("cantidadDisponible"));
+		TableColumn<ElementoVista, String> nombreColumnaElementoEntrenador1 = new TableColumn<>("Nombre");
+		nombreColumnaElementoEntrenador1.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("nombre"));
+		TableColumn<ElementoVista, String> cantidadDeElementosDisponibles1 = new TableColumn<>("Disponibles");
+		cantidadDeElementosDisponibles1.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("cantidadDisponible"));
 		this.tablaElementosEntrenador1.getColumns().addAll(nombreColumnaElementoEntrenador1,cantidadDeElementosDisponibles1);
 		
 		TableColumn<Elemento, String> nombreColumnaElementoEntrenador2 = new TableColumn<>("Nombre");
 		nombreColumnaElementoEntrenador2.setCellValueFactory(new PropertyValueFactory<Elemento, String>("nombre"));
-		TableColumn<ElementoView, String> cantidadDeElementosDisponibles2 = new TableColumn<>("Disponibles");
-		cantidadDeElementosDisponibles2.setCellValueFactory(new PropertyValueFactory<ElementoView, String>("cantidadDisponible"));
+		TableColumn<ElementoVista, String> cantidadDeElementosDisponibles2 = new TableColumn<>("Disponibles");
+		cantidadDeElementosDisponibles2.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("cantidadDisponible"));
 		this.tablaElementosEntrenador2.getColumns().addAll(nombreColumnaElementoEntrenador2,cantidadDeElementosDisponibles2);
 	}
 
@@ -215,7 +216,7 @@ public class JuegoController {
 	private void cargarElementosEntrenadores() {
 		this.datosElementosEntrenador1.clear();
 		for (Elemento elemento: juego.getEntrenador1().obtenerElementosDisponibles()) {
-			ElementoView elementoView = new ElementoView();
+			ElementoVista elementoView = new ElementoVista();
 			elementoView.setNombre(elemento.getNombre());
 			elementoView.setCantidadDisponible(String.valueOf(juego.getEntrenador1().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
 			this.datosElementosEntrenador1.add(elementoView);
@@ -224,7 +225,7 @@ public class JuegoController {
 		
 		this.datosElementosEntrenador2.clear();
 		for (Elemento elemento: juego.getEntrenador2().obtenerElementosDisponibles()) {
-			ElementoView elementoView = new ElementoView();
+			ElementoVista elementoView = new ElementoVista();
 			elementoView.setNombre(elemento.getNombre());
 			elementoView.setCantidadDisponible(String.valueOf(juego.getEntrenador2().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
 			this.datosElementosEntrenador2.add(elementoView);

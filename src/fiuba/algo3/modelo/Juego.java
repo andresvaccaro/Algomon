@@ -1,10 +1,9 @@
-package fiuba.algo3.vista;
+package fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import fiuba.algo3.modelo.Entrenador;
 import fiuba.algo3.modelo.accion.ataque.Ataque;
 import fiuba.algo3.modelo.accion.elemento.Elemento;
 import fiuba.algo3.modelo.algomon.Algomon;

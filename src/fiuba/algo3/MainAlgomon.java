@@ -2,9 +2,8 @@ package fiuba.algo3;
 
 import java.io.IOException;
 
-import fiuba.algo3.vista.AlgomonController;
-import fiuba.algo3.vista.Juego;
-import fiuba.algo3.vista.JuegoController;
+import fiuba.algo3.controlador.AlgomonCotrolador;
+import fiuba.algo3.controlador.JuegoControlador;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -41,7 +40,7 @@ public class MainAlgomon extends Application {
 			rootLayout.setCenter(personOverview);
 
 			
-			JuegoController juegoController =  loader.getController();
+			JuegoControlador juegoController =  loader.getController();
 			juegoController.setMainAlgomon(this);
 
 		} catch (IOException e) {
@@ -55,15 +54,15 @@ public class MainAlgomon extends Application {
 	private void inicializarAlgomon() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainAlgomon.class.getResource("vista/AlgomonView.fxml"));
+			loader.setLocation(MainAlgomon.class.getResource("vista/AlgomonVista.fxml"));
 			rootLayout = (BorderPane) loader.load();
 
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
-			AlgomonController algomonController = loader.getController();
-			algomonController.setMainAlgomon(this);
+			AlgomonCotrolador algomonControlador = loader.getController();
+			algomonControlador.setMainAlgomon(this);
 
 		} catch (Exception e) {
 			e.printStackTrace();

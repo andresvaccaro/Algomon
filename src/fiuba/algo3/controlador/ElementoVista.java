@@ -1,6 +1,6 @@
-package fiuba.algo3.vista;
+package fiuba.algo3.controlador;
 
-public class ElementoView {
+public class ElementoVista {
 	
 	private String nombre;
 	private String cantidadDisponible;
