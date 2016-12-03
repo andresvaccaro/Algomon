@@ -9,7 +9,7 @@ import fiuba.algo3.modelo.accion.ataque.CanionDeAgua;
 import fiuba.algo3.modelo.accion.ataque.ContenedorDeAtaque;
 
 public class Squirtle extends Algomon {
-	private final static double PUNTOS_DE_VIDA_INICIAL=20d;
+	private final static double PUNTOS_DE_VIDA_INICIAL=150d;
 	public static final int CANTIDAD_ATAQUES_BURBUJA = 15;
 	public static final int CANTIDAD_ATAQUES_CANIONDEAGUA = 8;
 	public static final int CANTIDAD_ATAQUES_ATAQUE_RAPIDO = 16;

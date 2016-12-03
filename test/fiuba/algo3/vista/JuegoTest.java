@@ -164,7 +164,7 @@ public class JuegoTest {
 				juego.atacar(ataques.get(0));
 			}
 		}
-
+		juego.cambiarJugador();
 		assertEquals(true, juego.elJuegoEstaFinalizado());
 
 	}
