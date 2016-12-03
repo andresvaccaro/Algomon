@@ -10,7 +10,7 @@ import fiuba.algo3.modelo.accion.ataque.LatigoCepa;
 
 public class Bulbasaur extends Algomon {
 
-	private final static double PUNTOS_DE_VIDA_INICIAL=140d;
+	private final static double PUNTOS_DE_VIDA_INICIAL=20d;
 	public static final int CANTIDAD_ATAQUES_CHUPAVIDAS = 8;
 	public static final int CANTIDAD_ATAQUES_LATIGO_CEPA = 10;
 	public static final int CANTIDAD_ATAQUES_ATAQUE_RAPIDO = 16;

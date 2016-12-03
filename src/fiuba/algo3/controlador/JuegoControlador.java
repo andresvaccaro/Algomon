@@ -51,7 +51,7 @@ public class JuegoControlador {
 	private TableView tablaAlgomonesAgregadosEntrenador1 = new TableView();
 	@FXML
 	private TableView tablaAlgomonesAgregadosEntrenador2 = new TableView();
-	
+
 	@FXML
 	private TableView tablaElementosEntrenador1 = new TableView();
 	@FXML
@@ -74,8 +74,7 @@ public class JuegoControlador {
 
 	@FXML
 	private TextField txtAlgomonActivo;
-	
-	
+
 	@FXML
 	private TextField txtEstadoAlgomonActivo;
 
@@ -94,7 +93,7 @@ public class JuegoControlador {
 	ObservableList<String> datosAtaques = FXCollections.observableArrayList();
 	ObservableList<String> datosElementos = FXCollections.observableArrayList();
 	ObservableList<String> datosAlgomones = FXCollections.observableArrayList();
-	
+
 	ObservableList<ElementoVista> datosElementosEntrenador1 = FXCollections.observableArrayList();
 	ObservableList<ElementoVista> datosElementosEntrenador2 = FXCollections.observableArrayList();
 
@@ -102,13 +101,12 @@ public class JuegoControlador {
 	private ImageView imagenAlgomonAtacante;
 	@FXML
 	private ImageView imagenAlgomonAtacado;
-	
-	
+
 	@FXML
 	private TextField txtNombreEntrenador1;
 	@FXML
 	private TextField txtNombreEntrenador2;
-	
+
 	@FXML
 	private void initialize() {
 		juego = new Juego();
@@ -137,18 +135,22 @@ public class JuegoControlador {
 		TableColumn<Algomon, String> vidaTablaEntrenador2 = new TableColumn<>("Vida");
 		vidaTablaEntrenador2.setCellValueFactory(new PropertyValueFactory<Algomon, String>("puntosDeVida"));
 		tablaAlgomonesAgregadosEntrenador2.getColumns().addAll(nombreTablaEntrenador2, vidaTablaEntrenador2);
-		
+
 		TableColumn<ElementoVista, String> nombreColumnaElementoEntrenador1 = new TableColumn<>("Nombre");
 		nombreColumnaElementoEntrenador1.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("nombre"));
 		TableColumn<ElementoVista, String> cantidadDeElementosDisponibles1 = new TableColumn<>("Disponibles");
-		cantidadDeElementosDisponibles1.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("cantidadDisponible"));
-		this.tablaElementosEntrenador1.getColumns().addAll(nombreColumnaElementoEntrenador1,cantidadDeElementosDisponibles1);
-		
+		cantidadDeElementosDisponibles1
+				.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("cantidadDisponible"));
+		this.tablaElementosEntrenador1.getColumns().addAll(nombreColumnaElementoEntrenador1,
+				cantidadDeElementosDisponibles1);
+
 		TableColumn<Elemento, String> nombreColumnaElementoEntrenador2 = new TableColumn<>("Nombre");
 		nombreColumnaElementoEntrenador2.setCellValueFactory(new PropertyValueFactory<Elemento, String>("nombre"));
 		TableColumn<ElementoVista, String> cantidadDeElementosDisponibles2 = new TableColumn<>("Disponibles");
-		cantidadDeElementosDisponibles2.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("cantidadDisponible"));
-		this.tablaElementosEntrenador2.getColumns().addAll(nombreColumnaElementoEntrenador2,cantidadDeElementosDisponibles2);
+		cantidadDeElementosDisponibles2
+				.setCellValueFactory(new PropertyValueFactory<ElementoVista, String>("cantidadDisponible"));
+		this.tablaElementosEntrenador2.getColumns().addAll(nombreColumnaElementoEntrenador2,
+				cantidadDeElementosDisponibles2);
 	}
 
 	@FXML
@@ -178,7 +180,7 @@ public class JuegoControlador {
 
 	@FXML
 	private void agregarAlgomonEntrenador2() {
-		int algomonSeleccionadoIndex = this.comboAlgomonesEntrenador2.getSelectionModel().getSelectedIndex();		
+		int algomonSeleccionadoIndex = this.comboAlgomonesEntrenador2.getSelectionModel().getSelectedIndex();
 		try {
 			if (algomonSeleccionadoIndex < 0) {
 				Alert alertaAlgomonNoSeleccionado = new Alert(AlertType.ERROR);
@@ -194,7 +196,7 @@ public class JuegoControlador {
 				}
 				this.tablaAlgomonesAgregadosEntrenador2.setItems(this.datosTablaAlgomonesEntrenador2);
 			}
-						
+
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
@@ -224,35 +226,37 @@ public class JuegoControlador {
 			this.cbxAtaquesDisponibles.setDisable(true);
 			this.cbxElementosDisponibles.setDisable(true);
 			cargarElementosEntrenadores();
-			cargarImagenAlgomones();			  
+			cargarImagenAlgomones();
 		}
 
 	}
 
-	private void cargarImagenAlgomones() {				
-        Image image = new Image(new File(this.juego.obtenerUrlImagenAtacante()).toURI().toString());        
-        imagenAlgomonAtacante.setImage(image);	
-        
-        Image image2 = new Image(new File(this.juego.obtenerUrlImagenAtacado()).toURI().toString());        
-        imagenAlgomonAtacado.setImage(image2);	
-		
+	private void cargarImagenAlgomones() {
+		Image image = new Image(new File(this.juego.obtenerUrlImagenAtacante()).toURI().toString());
+		imagenAlgomonAtacante.setImage(image);
+
+		Image image2 = new Image(new File(this.juego.obtenerUrlImagenAtacado()).toURI().toString());
+		imagenAlgomonAtacado.setImage(image2);
+
 	}
 
 	private void cargarElementosEntrenadores() {
 		this.datosElementosEntrenador1.clear();
-		for (Elemento elemento: juego.getEntrenador1().obtenerElementosDisponibles()) {
+		for (Elemento elemento : juego.getEntrenador1().obtenerElementosDisponibles()) {
 			ElementoVista elementoView = new ElementoVista();
 			elementoView.setNombre(elemento.getNombre());
-			elementoView.setCantidadDisponible(String.valueOf(juego.getEntrenador1().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
+			elementoView.setCantidadDisponible(
+					String.valueOf(juego.getEntrenador1().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
 			this.datosElementosEntrenador1.add(elementoView);
 		}
 		this.tablaElementosEntrenador1.setItems(this.datosElementosEntrenador1);
-		
+
 		this.datosElementosEntrenador2.clear();
-		for (Elemento elemento: juego.getEntrenador2().obtenerElementosDisponibles()) {
+		for (Elemento elemento : juego.getEntrenador2().obtenerElementosDisponibles()) {
 			ElementoVista elementoView = new ElementoVista();
 			elementoView.setNombre(elemento.getNombre());
-			elementoView.setCantidadDisponible(String.valueOf(juego.getEntrenador2().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
+			elementoView.setCantidadDisponible(
+					String.valueOf(juego.getEntrenador2().obtenerCantidadDeElementosDisponibles(elemento.getNombre())));
 			this.datosElementosEntrenador2.add(elementoView);
 		}
 		this.tablaElementosEntrenador2.setItems(this.datosElementosEntrenador2);
@@ -262,10 +266,19 @@ public class JuegoControlador {
 	private void habilitarAccion() {
 		int accionSeleccionadaIndex = this.acciones.getSelectionModel().getSelectedIndex();
 		if (accionSeleccionadaIndex == REALIZAR_ATAQUE_ACCION_INDICE) {
-			this.cbxAtaquesDisponibles.setDisable(false);
-			cargarAtaques();
-			this.cbxAlgomonesDisponibles.setDisable(true);
-			this.cbxElementosDisponibles.setDisable(true);
+			if(juego.entrenadorActivoTieneAlgomonActivoVivo()){
+				this.cbxAtaquesDisponibles.setDisable(false);
+				cargarAtaques();
+				this.cbxAlgomonesDisponibles.setDisable(true);
+				this.cbxElementosDisponibles.setDisable(true);	
+			}else{
+				Alert alertaAlgomonMuerto = new Alert(AlertType.WARNING);
+				alertaAlgomonMuerto.setTitle("Estado Algomon");
+				alertaAlgomonMuerto.setHeaderText(null);
+				alertaAlgomonMuerto.setContentText("El algomon activo esta muerto, solo puede cambiar el algomon o entregar un elemento");
+				alertaAlgomonMuerto.showAndWait();
+			}
+			
 		} else {
 			if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
 				this.cbxAtaquesDisponibles.setDisable(true);
@@ -284,7 +297,7 @@ public class JuegoControlador {
 
 	private void cargarAlgomonesNoActivos() {
 		datosAlgomones.clear();
-		for (Algomon algomon : juego.getEntrenadorActivo().obtenerAlgomonesNoActivos()) {
+		for (Algomon algomon : juego.getEntrenadorActivo().obtenerAlgomonesNoActivosVivos()) {
 			datosAlgomones.add(algomon.getClass().getSimpleName());
 		}
 		cbxAlgomonesDisponibles.setItems(datosAlgomones);
@@ -342,32 +355,35 @@ public class JuegoControlador {
 	@FXML
 	private void realizarAccion() {
 
-		int accionSeleccionadaIndex = this.acciones.getSelectionModel().getSelectedIndex();
+		int accionSeleccionadaIndex = this.acciones.getSelectionModel().getSelectedIndex();		
+					
 		if (accionSeleccionadaIndex == REALIZAR_ATAQUE_ACCION_INDICE) {
 			String nombreAtaque = obtenerAtaqueSeleccionado();
 			Ataque ataque = this.juego.obetenerAtaque(nombreAtaque);
-			juego.atacar(ataque);			
+			juego.atacar(ataque);
 		} else {
 			if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
 				String nombreElemento = obtenerElementoSeleccionado();
 				Elemento elemento = this.juego.obtenerElemento(nombreElemento);
-				this.juego.enviarElemento(elemento);				
-			}else{
-				String algomonSeleccionado= obtenerAlgomonSeleccionado();
+				this.juego.enviarElemento(elemento);
+			} else {
+				String algomonSeleccionado = obtenerAlgomonSeleccionado();
 				this.juego.cambiarAlgomonActivo(algomonSeleccionado);
 			}
 
 		}
-		if(this.juego.elJuegoEstaFinalizado()){
+		if (this.juego.elJuegoEstaFinalizado()) {
 			Alert alertaJuegoFinalizado = new Alert(AlertType.INFORMATION);
 			alertaJuegoFinalizado.setTitle("Se termino el juego");
 			alertaJuegoFinalizado.setHeaderText("El ganador es");
 			alertaJuegoFinalizado.setContentText(juego.obtenerNombreJugadorActivo());
 			alertaJuegoFinalizado.showAndWait();
-		}else{
+		} else {
 			juego.cambiarJugador();
 			Alert alertaCambioDeTurno = new Alert(AlertType.INFORMATION);
 			alertaCambioDeTurno.setTitle("Cambio de turno");
+			alertaCambioDeTurno.setHeaderText(null);
+			alertaCambioDeTurno.setContentText("Es turno de "+juego.obtenerNombreJugadorActivo());			
 			alertaCambioDeTurno.showAndWait();
 			
 		}
@@ -375,8 +391,8 @@ public class JuegoControlador {
 		refrescarPantalla();
 	}
 
-	private String obtenerAlgomonSeleccionado() {		
-		return this.datosAlgomones.get(this.cbxAlgomonesDisponibles.getSelectionModel().getSelectedIndex()); 	
+	private String obtenerAlgomonSeleccionado() {
+		return this.datosAlgomones.get(this.cbxAlgomonesDisponibles.getSelectionModel().getSelectedIndex());
 	}
 
 	private String obtenerElementoSeleccionado() {

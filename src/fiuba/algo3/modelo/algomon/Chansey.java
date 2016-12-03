@@ -10,7 +10,7 @@ import fiuba.algo3.modelo.accion.ataque.LatigoCepa;
 
 public class Chansey extends AlgomonNormal {
 	
-	private final static double PUNTOS_DE_VIDA_INICIAL=130;
+	private final static double PUNTOS_DE_VIDA_INICIAL=20d;
 	public static final int CANTIDAD_ATAQUES_CANTO = 6;
 	public static final int CANTIDAD_ATAQUES_LATIGO_CEPA = 10;
 	public static final int CANTIDAD_ATAQUES_ATAQUE_RAPIDO = 16;

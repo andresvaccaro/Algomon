@@ -10,7 +10,7 @@ import fiuba.algo3.modelo.accion.ataque.Fogonazo;
 
 public class Charmander extends Algomon {
 	
-	private final static double PUNTOS_DE_VIDA_INICIAL=170d;
+	private final static double PUNTOS_DE_VIDA_INICIAL=10d;
 	public static final int CANTIDAD_ATAQUES_BRASAS = 10;
 	public static final int CANTIDAD_ATAQUES_FOGONAZO = 4;
 	public static final int CANTIDAD_ATAQUES_ATAQUE_RAPIDO = 16;

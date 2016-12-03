@@ -160,4 +160,8 @@ public abstract class Algomon implements Cloneable {
 		return ataquesDisponibles;
 	}
 
+	public Boolean estaVivo() {	
+		return this.puntosDeVida>0;
+	}
+
 }

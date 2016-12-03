@@ -214,4 +214,8 @@ public class Juego {
 		}		
 	}
 
+	public Boolean entrenadorActivoTieneAlgomonActivoVivo() {
+		return getEntrenadorActivo().tieneAlgomonActivoVivo();
+	}
+
 }

@@ -120,10 +120,10 @@ public class Entrenador {
 	}
 
 	public Boolean tieneAlgomonesVivos() {
-		Boolean tieneTodosVivos= Boolean.TRUE;		
+		Boolean tieneTodosVivos= Boolean.FALSE;		
 		for (Algomon algomon : algomones) {
-			if(algomon.getPuntosDeVida()<=0){
-				tieneTodosVivos= Boolean.FALSE;
+			if(algomon.getPuntosDeVida()>0){
+				tieneTodosVivos= Boolean.TRUE;
 			}
 		}
 		
@@ -201,6 +201,21 @@ public class Entrenador {
 			}
 		}
 		return tieneAtaquesDisponibles;
+	}
+
+	public Boolean tieneAlgomonActivoVivo() {
+		return this.algomonActivo.estaVivo();
+	}
+
+	public List<Algomon> obtenerAlgomonesNoActivosVivos() {
+		List<Algomon> algomonesNoActivos= new ArrayList<Algomon>();
+		
+		for (Algomon algomon : this.algomones) {
+			if(!algomon.equals(this.algomonActivo) && algomon.estaVivo()){
+				algomonesNoActivos.add(algomon);
+			}
+		}
+		return algomonesNoActivos;
 	}
 
 	

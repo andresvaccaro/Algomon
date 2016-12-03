@@ -16,8 +16,8 @@
     <ComboBox fx:id="comboAlgomonesEntrenador1" layoutX="97.0" layoutY="34.0" />
     <Label layoutX="28.0" layoutY="34.0" text="Algomon" />
     <Button fx:id="botonAgregarAlgomonEntrenador2" layoutX="93.0" layoutY="350.0" mnemonicParsing="false" onAction="#agregarAlgomonEntrenador2" text="Agregar Algomon" />
-    <Label layoutX="54.0" layoutY="309.0" text="Entrenador 2" />
-    <ComboBox fx:id="comboAlgomonesEntrenador2" layoutX="95.0" layoutY="325.0" />
+    <Label layoutX="101.0" layoutY="302.0" text="Entrenador 2" />
+    <ComboBox fx:id="comboAlgomonesEntrenador2" layoutX="98.0" layoutY="321.0" />
     <Label layoutX="33.0" layoutY="328.0" text="Algomon" />
     <TableView fx:id="tablaAlgomonesAgregadosEntrenador1" editable="false" layoutX="67.0" layoutY="87.0" prefHeight="103.0" prefWidth="200.0" />
     <TableView fx:id="tablaAlgomonesAgregadosEntrenador2" editable="false" layoutX="67.0" layoutY="376.0" prefHeight="103.0" prefWidth="200.0" />
@@ -51,14 +51,12 @@
     </Pane>
     <TableView fx:id="tablaElementosEntrenador1" layoutX="67.0" layoutY="195.0" prefHeight="103.0" prefWidth="200.0" />
     <TableView fx:id="tablaElementosEntrenador2" layoutX="67.0" layoutY="481.0" prefHeight="103.0" prefWidth="200.0" />
-    <ImageView fx:id="imagenAlgomonAtacante" fitHeight="150.0" fitWidth="200.0" layoutX="338.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" />
-    <ImageView fx:id="imagenAlgomonAtacado" fitHeight="150.0" fitWidth="200.0" layoutX="711.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true" />
-    <ImageView fitHeight="91.5" fitWidth="122.0" layoutX="556.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="imagenAlgomonAtacante" fitHeight="150.0" fitWidth="200.0" layoutX="372.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView fx:id="imagenAlgomonAtacado" fitHeight="150.0" fitWidth="200.0" layoutX="745.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView fitHeight="91.5" fitWidth="122.0" layoutX="630.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../../../imagenes/vs.png" />
       </image>
     </ImageView>
-    <TextField id="nombreEntrenador1" fx:id="txtNombreEntrenador1"  layoutX="128.0" layoutY="8.0" prefWidth="200.0" />
-    <TextField id="nombreEntrenador2" fx:id="txtNombreEntrenador2" layoutX="151.0" layoutY="303.0" prefWidth="200.0" />
   </children>
 </AnchorPane>
