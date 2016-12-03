@@ -275,16 +275,25 @@ public class JuegoControlador {
 				Alert alertaAlgomonMuerto = new Alert(AlertType.WARNING);
 				alertaAlgomonMuerto.setTitle("Estado Algomon");
 				alertaAlgomonMuerto.setHeaderText(null);
-				alertaAlgomonMuerto.setContentText("El algomon activo esta muerto, solo puede cambiar el algomon o entregar un elemento");
+				alertaAlgomonMuerto.setContentText("El algomon activo esta muerto, solo puede cambiar el algomon");
 				alertaAlgomonMuerto.showAndWait();
 			}
 			
 		} else {
 			if (accionSeleccionadaIndex == EVIAR_ELEMENTO_ACCION_INDICE) {
-				this.cbxAtaquesDisponibles.setDisable(true);
-				this.cbxAlgomonesDisponibles.setDisable(true);
-				this.cbxElementosDisponibles.setDisable(false);
-				cargarElementos();
+				if(juego.entrenadorActivoTieneAlgomonActivoVivo()){
+					this.cbxAtaquesDisponibles.setDisable(true);
+					this.cbxAlgomonesDisponibles.setDisable(true);
+					this.cbxElementosDisponibles.setDisable(false);
+					cargarElementos();	
+				}else{
+					Alert alertaAlgomonMuerto = new Alert(AlertType.WARNING);
+					alertaAlgomonMuerto.setTitle("Estado Algomon");
+					alertaAlgomonMuerto.setHeaderText(null);
+					alertaAlgomonMuerto.setContentText("El algomon activo esta muerto, solo puede cambiar el algomon");
+					alertaAlgomonMuerto.showAndWait();	
+				}
+				
 			} else {
 				this.cbxAtaquesDisponibles.setDisable(true);
 				this.cbxAlgomonesDisponibles.setDisable(false);
